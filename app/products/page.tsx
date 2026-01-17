@@ -798,54 +798,62 @@ export default function ProductsPage() {
       </section>
 
       {/* Filters Section */}
-      <section className="py-8 bg-white border-b border-gray-200 sticky top-20 lg:top-24 z-40">
-        <div className="container-padding mx-auto">
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
-            {/* Search */}
-            <div className="relative w-full lg:w-80">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search products..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-full focus:border-gold focus:outline-none transition-colors"
-              />
-            </div>
+   <section className="bg-white border-b border-gray-200 sticky top-14 sm:top-16 lg:top-24 z-40">
+  <div className="mx-auto px-4 sm:px-6">
+    <div className="flex flex-col gap-3 lg:flex-row lg:gap-6 lg:items-center lg:justify-between py-3 lg:py-6">
 
-            {/* Category Filter */}
-            <div className="flex gap-2 overflow-x-auto pb-2 lg:pb-0 w-full lg:w-auto">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full whitespace-nowrap transition-all ${selectedCategory === category
-                    ? 'bg-gold text-white shadow-md'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                    }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
+      {/* Search */}
+      <div className="relative w-full lg:w-80 order-1">
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+        <input
+          type="text"
+          placeholder="Search products..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full pl-12 pr-4 py-2.5 border-2 border-gray-200 rounded-full
+                     focus:border-gold focus:outline-none transition-colors text-sm"
+        />
+      </div>
 
-            {/* Sort */}
-            <div className="flex items-center gap-3 w-full lg:w-auto">
-              <Filter className="w-5 h-5 text-gray-600" />
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="px-4 py-3 border-2 border-gray-200 rounded-full focus:border-gold focus:outline-none transition-colors bg-white cursor-pointer"
-              >
-                <option value="featured">Featured</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="rating">Highest Rated</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Category Filter */}
+      <div className="flex gap-2 overflow-x-auto scrollbar-hide w-full order-2 pb-1">
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setSelectedCategory(category)}
+            className={`px-4 py-2 rounded-full whitespace-nowrap text-sm transition-all
+              ${selectedCategory === category
+                ? 'bg-gold text-white shadow'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
+      {/* Sort */}
+      <div className="flex items-center gap-2 w-full lg:w-auto order-3">
+        <Filter className="w-5 h-5 text-gray-600 shrink-0" />
+        <select
+          value={sortBy}
+          onChange={(e) => setSortBy(e.target.value)}
+          className="w-full lg:w-auto px-4 py-2.5 border-2 border-gray-200 rounded-full
+                     focus:border-gold focus:outline-none transition-colors bg-white
+                     cursor-pointer text-sm"
+        >
+          <option value="featured">Featured</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="rating">Highest Rated</option>
+        </select>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
       {/* Products Grid */}
       <section className="py-16">
@@ -865,7 +873,8 @@ export default function ProductsPage() {
 </div>
 
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+
             {sortedProducts.map((product, index) => (
               <ProductCard key={product.id} product={product} index={index} />
             ))}
@@ -903,39 +912,41 @@ function ProductCard({ product, index }: { product: typeof allProducts[0]; index
       transition={{ duration: 0.6, delay: index * 0.05 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-500"
+      className="group relative bg-white rounded overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-500"
     >
       {/* Badges */}
-      <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
+      <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-10 flex flex-col gap-1 sm:gap-2">
         {product.bestseller && (
-          <div className="px-3 py-1 bg-gold text-white text-xs tracking-wider uppercase rounded-full">
+          <div className="px-2 py-0.5 sm:px-3 sm:py-1 bg-gold text-white text-[10px] sm:text-xs tracking-wider uppercase rounded-full">
             Bestseller
           </div>
         )}
         {product.new && (
-          <div className="px-3 py-1 bg-earth text-white text-xs tracking-wider uppercase rounded-full">
+          <div className="px-2 py-0.5 sm:px-3 sm:py-1 bg-earth text-white text-[10px] sm:text-xs tracking-wider uppercase rounded-full">
             New
           </div>
         )}
       </div>
 
-      {/* Favorite Button */}
+      {/* Favorite */}
       <motion.button
         onClick={() => setIsFavorited(!isFavorited)}
-        whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-md"
+        className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10
+                   w-8 h-8 sm:w-10 sm:h-10 bg-white/90 backdrop-blur-sm
+                   rounded-full flex items-center justify-center shadow-md"
       >
         <Heart
-          className={`w-5 h-5 transition-colors ${isFavorited ? 'fill-red-500 text-red-500' : 'text-gray-600'
-            }`}
+          className={`w-4 h-4 sm:w-5 sm:h-5 ${
+            isFavorited ? 'fill-red-500 text-red-500' : 'text-gray-600'
+          }`}
         />
       </motion.button>
 
-      {/* Product Image */}
+      {/* Image */}
       <div className="relative aspect-square overflow-hidden bg-gray-100">
         <motion.div
-          animate={{ scale: isHovered ? 1.1 : 1 }}
+          animate={{ scale: isHovered ? 1.08 : 1 }}
           transition={{ duration: 0.6 }}
         >
           <ImageWithFallback
@@ -945,80 +956,72 @@ function ProductCard({ product, index }: { product: typeof allProducts[0]; index
           />
         </motion.div>
 
-        {/* Hover Overlay */}
+        {/* Hover Overlay (Desktop Only) */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.3 }}
-          className="absolute inset-0 bg-black/20 flex items-center justify-center"
+          className="hidden md:flex absolute inset-0 bg-black/20 items-center justify-center"
         >
           <motion.button
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: isHovered ? 0 : 20, opacity: isHovered ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 bg-white text-charcoal rounded-full flex items-center gap-2 shadow-lg"
+            className="px-5 py-2.5 bg-white text-charcoal rounded-full flex items-center gap-2 shadow-lg"
           >
             <ShoppingCart className="w-4 h-4" />
-            <span className="tracking-wide">Quick Add</span>
+            <span className="tracking-wide text-sm">Quick Add</span>
           </motion.button>
         </motion.div>
       </div>
 
-      {/* Product Info */}
-      <div className="p-6">
-        {/* Category */}
-        <div className="text-xs text-gold tracking-wider uppercase mb-2">
+      {/* Info */}
+      <div className="p-4 sm:p-6">
+        <div className="text-[10px] sm:text-xs text-gold tracking-wider uppercase mb-1 sm:mb-2">
           {product.category}
         </div>
-   
 
         {/* Rating */}
-        <div className="flex items-center gap-2 mb-3">
-          <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 sm:gap-2 mb-2 sm:mb-3">
+          <div className="flex gap-0.5 sm:gap-1">
             {[...Array(5)].map((_, i) => (
               <Star
                 key={i}
-                className={`w-4 h-4 ${i < Math.floor(product.rating)
-                  ? 'fill-gold text-gold'
-                  : 'text-gray-300'
-                  }`}
+                className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${
+                  i < Math.floor(product.rating)
+                    ? 'fill-gold text-gold'
+                    : 'text-gray-300'
+                }`}
               />
             ))}
           </div>
-          <span className="text-sm text-gray-600">
+          <span className="text-xs sm:text-sm text-gray-600">
             {product.rating} ({product.reviews})
           </span>
         </div>
 
-        {/* Name & Description */}
-        <h3 className="text-xl mb-2">{product.name}</h3>
-        <p className="text-sm text-gray-600 mb-4">{product.description}</p>
- {Array.isArray(product.extent) && product.extent.length > 0 && (
-  <div className="mb-4 pt-3 border-t border-gray-100">
-    <span className="text-xs text-gray-500 uppercase tracking-wider">
-      Included:
-    </span>
-    <span className="text-sm text-gray-700 ml-1">
-      {product.extent.join(" • ")}
-    </span>
-  </div>
-)}
+        {/* Name */}
+        <h3 className="text-base sm:text-xl mb-1 sm:mb-2 line-clamp-2">
+          {product.name}
+        </h3>
 
+        {/* Description */}
+        <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 line-clamp-2">
+          {product.description}
+        </p>
 
-        {/* Price & Add to Cart */}
-        {/* <div className="flex items-center justify-between">
-          <span className="text-2xl text-charcoal">${product.price}</span>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-10 h-10 bg-gold/10 hover:bg-gold text-gold hover:text-white rounded-full flex items-center justify-center transition-colors duration-300"
-          >
-            <ShoppingCart className="w-5 h-5" />
-          </motion.button>
-        </div> */}
+        {/* Included */}
+        {Array.isArray(product.extent) && product.extent.length > 0 && (
+          <div className="pt-2 sm:pt-3 border-t border-gray-100">
+            <span className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-wider">
+              Included:
+            </span>
+            <span className="text-xs sm:text-sm text-gray-700 ml-1">
+              {product.extent.join(" • ")}
+            </span>
+          </div>
+        )}
       </div>
     </motion.div>
   );
 }
+

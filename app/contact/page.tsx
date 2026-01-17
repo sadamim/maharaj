@@ -146,15 +146,7 @@ export default function ContactPage() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="mb-4">Send Us a Message</h2>
-              <div className="mb-6">
-                <button
-                  type="button"
-                  onClick={() => setShowEnquiry(true)}
-                  className="inline-flex items-center gap-2 px-3 py-1 bg-gold text-charcoal rounded-md text-sm"
-                >
-                  Quick Enquiry
-                </button>
-              </div>
+
               <p className="text-gray-600 mb-8">
                 Fill out the form below and we'll get back to you within 24 hours.
               </p>
