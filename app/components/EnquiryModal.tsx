@@ -15,7 +15,6 @@ export function EnquiryModal({
     name: "",
     email: "",
     phone: "",
-    subject: "",
     companyName: "",
     message: "",
   });
@@ -23,9 +22,7 @@ export function EnquiryModal({
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -39,7 +36,6 @@ export function EnquiryModal({
         name: "",
         email: "",
         phone: "",
-        subject: "",
         companyName: "",
         message: "",
       });
@@ -54,47 +50,52 @@ export function EnquiryModal({
     <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
       {/* Overlay */}
       <div
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         onClick={onClose}
       />
 
       {/* Modal */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        initial={{ opacity: 0, scale: 0.96, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        className="relative bg-white rounded-2xl shadow-xl w-full max-w-lg max-h-[90vh] overflow-y-auto p-6"
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden"
       >
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
-        >
-          <X className="w-5 h-5" />
-        </button>
+        {/* Header */}
+        <div className="flex items-center justify-between px-6 py-4 border-b">
+          <h3 className="text-lg font-semibold text-gray-800">
+            Quick Enquiry
+          </h3>
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-gray-700 transition"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
 
         {!isSubmitted ? (
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <h3 className="text-xl font-semibold text-gray-800">
-              Quick Enquiry
-            </h3>
-
+          <form onSubmit={handleSubmit} className="p-6 space-y-5">
+            {/* Name + Email */}
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-sm text-gray-700 block mb-1">
-                  Name *
+                <label className="text-sm font-medium text-gray-700">
+                  Full Name *
                 </label>
                 <input
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-gold"
+                  placeholder="John Doe"
+                  className="mt-1 w-full rounded-lg border px-3 py-2 text-sm
+                    focus:border-gold focus:ring-2 focus:ring-gold/30"
                 />
               </div>
 
               <div>
-                <label className="text-sm text-gray-700 block mb-1">
-                  Email *
+                <label className="text-sm font-medium text-gray-700">
+                  Email Address *
                 </label>
                 <input
                   name="email"
@@ -102,63 +103,46 @@ export function EnquiryModal({
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-gold"
+                  placeholder="john@email.com"
+                  className="mt-1 w-full rounded-lg border px-3 py-2 text-sm
+                    focus:border-gold focus:ring-2 focus:ring-gold/30"
                 />
               </div>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label className="text-sm text-gray-700 block mb-1">
-                  Phone
-                </label>
-                <input
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-lg"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-gray-700 block mb-1">
-                  Subject *
-                </label>
-                <select
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2 border rounded-lg bg-white"
-                >
-                  <option value="">Select subject</option>
-                  <option value="general">General Inquiry</option>
-                  <option value="order">Order Support</option>
-                  <option value="custom">Custom Order</option>
-                  <option value="wholesale">Wholesale Inquiry</option>
-                </select>
-              </div>
-            </div>
-
-            {["order", "custom", "wholesale"].includes(
-              formData.subject
-            ) && (
-              <div>
-                <label className="text-sm text-gray-700 block mb-1">
-                  Company / Shop Name *
-                </label>
-                <input
-                  name="companyName"
-                  value={formData.companyName}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2 border rounded-lg"
-                />
-              </div>
-            )}
-
+            {/* Phone */}
             <div>
-              <label className="text-sm text-gray-700 block mb-1">
+              <label className="text-sm font-medium text-gray-700">
+                Phone Number
+              </label>
+              <input
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="+91 XXXXX XXXXX"
+                className="mt-1 w-full rounded-lg border px-3 py-2 text-sm
+                  focus:border-gold focus:ring-2 focus:ring-gold/30"
+              />
+            </div>
+
+            {/* Company */}
+            <div>
+              <label className="text-sm font-medium text-gray-700">
+                Company / Shop Name
+              </label>
+              <input
+                name="companyName"
+                value={formData.companyName}
+                onChange={handleChange}
+                placeholder="Your business name"
+                className="mt-1 w-full rounded-lg border px-3 py-2 text-sm
+                  focus:border-gold focus:ring-2 focus:ring-gold/30"
+              />
+            </div>
+
+            {/* Message */}
+            <div>
+              <label className="text-sm font-medium text-gray-700">
                 Message *
               </label>
               <textarea
@@ -167,24 +151,30 @@ export function EnquiryModal({
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full px-3 py-2 border rounded-lg"
+                placeholder="Tell us how we can help you..."
+                className="mt-1 w-full rounded-lg border px-3 py-2 text-sm resize-none
+                  focus:border-gold focus:ring-2 focus:ring-gold/30"
               />
             </div>
 
-            <div className="flex justify-end">
+            {/* Submit */}
+            <div className="pt-2">
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-5 py-2 bg-gold text-white rounded-lg hover:opacity-90 transition"
+                className="w-full inline-flex items-center justify-center gap-2
+                  rounded-lg bg-gold px-5 py-2.5 text-sm font-medium text-white
+                  hover:opacity-90 transition"
               >
-                <Send className="w-4 h-4" /> Send
+                <Send className="w-4 h-4" />
+                Send Enquiry
               </button>
             </div>
           </form>
         ) : (
-          <div className="text-center py-12">
-            <div className="w-20 h-20 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+          <div className="py-14 text-center">
+            <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
               <svg
-                className="w-10 h-10 text-green-600"
+                className="h-10 w-10 text-green-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -197,9 +187,11 @@ export function EnquiryModal({
                 />
               </svg>
             </div>
-            <h4 className="text-lg font-semibold">Enquiry Sent</h4>
-            <p className="text-sm text-gray-600">
-              Thanks — we'll get back to you shortly.
+            <h4 className="text-lg font-semibold text-gray-800">
+              Enquiry Sent Successfully
+            </h4>
+            <p className="mt-1 text-sm text-gray-600">
+              We’ll contact you shortly.
             </p>
           </div>
         )}

@@ -78,11 +78,7 @@ useEffect(() => {
       <div className="container-padding mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center">
-          <div className="inline-block px-4 py-2 bg-gold/20 rounded-full mb-4">
-            <span className="text-sm text-white tracking-wider uppercase">
-              Testimonials
-            </span>
-          </div>
+        
           <h2 className="mb-6 text-white">What Our Customers Say</h2>
           <p className="text-gray-300">
             Join thousands of satisfied customers who have elevated their daily rituals with Shashi Soap.

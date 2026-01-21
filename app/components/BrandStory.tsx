@@ -37,15 +37,16 @@ export function BrandStory() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-block px-4 py-2 bg-gold/10 rounded-full mb-6">
+<div className="inline-block px-4 py-2 bg-gold/10 rounded-full mb-6 mx-auto lg:mx-0">
+
               <span className="text-sm text-gold tracking-wider uppercase">Our Story</span>
             </div>
 
-            <h2 className="mb-6">
-              Crafting a Cleaner,
-              <br />
-              Tomorrow
-            </h2>
+           <h2 className="mb-6 text-center lg:text-left">
+  Crafting a Cleaner,
+  <br />
+  Tomorrow
+</h2>
 
            <div className="space-y-4 text-gray-700 mb-8 force-justify">
   <p>
@@ -84,7 +85,7 @@ export function BrandStory() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+<div className="relative aspect-[3/4] max-h-[520px] lg:max-h-[600px] rounded-2xl overflow-hidden shadow-2xl mx-auto">
               <ImageWithFallback
                 src="/images/Ourstory.webp"
                 alt="Natural botanical ingredients"
