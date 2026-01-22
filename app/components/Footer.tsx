@@ -1,34 +1,34 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, X, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, X, Mail, Phone, MapPin, Twitter, Youtube, TicketX } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { EnquiryModal } from './EnquiryModal';
 
 export function Footer() {
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
 
-useEffect(() => {
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
 
-  // set initial width
-  handleResize();
+    // set initial width
+    handleResize();
 
-  window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize);
 
-  const timeoutId = setTimeout(() => {
-    setShowEnquiry(true);
-  }, 5000); // 5 seconds
+    const timeoutId = setTimeout(() => {
+      setShowEnquiry(true);
+    }, 5000); // 5 seconds
 
-  return () => {
-    window.removeEventListener('resize', handleResize);
-    clearTimeout(timeoutId);
-  };
-}, []);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timeoutId);
+    };
+  }, []);
 
- 
+
   const footerLinks = {
     shop: [
       { name: 'All Products', href: '#' },
@@ -38,25 +38,24 @@ useEffect(() => {
       { name: 'Maharaj Soaps', href: '#' },
     ],
     company: [
-      { name: 'About Us', href: '#' },
+      { name: 'About Us', href: '/about' },
       { name: 'Our Story', href: '#' },
-      { name: 'Sustainability', href: '#' },
-      { name: 'Press', href: '#' },
       { name: 'Careers', href: '#' },
+      { name: 'Products', href: '/products' },
+
+      { name: 'Contact Us', href: '/contact' },
     ],
     support: [
-      { name: 'Contact Us', href: '#' },
-      { name: 'FAQ', href: '#' },
-      { name: 'Shipping Info', href: '#' },
-      { name: 'Returns', href: '#' },
-      { name: 'Track Order', href: '#' },
+
     ],
   };
 
   const socialLinks = [
     { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Instagram, href: '#', label: 'Instagram' },
-  // { icon: Twitter, href: '#', label: 'X' }, // X is the replacement for XIcon
+    // { icon: Twitter, href: '#', label: 'X' }, 
+    { icon: Youtube, href: '#', label: 'X' },
+
   ];
   const [showEnquiry, setShowEnquiry] = useState(false);
 
@@ -64,18 +63,18 @@ useEffect(() => {
     <footer className="bg-charcoal text-white pt-20 pb-8">
       <div className="container-padding mx-4 md:mx-[5%] lg:mx-[10%] ">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-          {/* Brand Section */}
-          <div className="lg:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16 items-start">
+
+          <div className="">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-6"
             >
-              <div style={{ 
-                width: windowWidth < 768 ? '180px' : '150px', 
-                height: windowWidth < 768 ? '140px' : '122px' 
+              <div style={{
+                width: windowWidth < 768 ? '180px' : '150px',
+                height: windowWidth < 768 ? '140px' : '122px'
               }} className="flex-shrink-0">
                 <img
                   src="/images/Maharaja_logo.webp"
@@ -84,11 +83,7 @@ useEffect(() => {
                 />
               </div>
             </motion.div>
-            
-            <p className="text-white mb-6 leading-relaxed">
-              Handcrafted luxury soaps made with the finest natural ingredients. 
-              Elevating your daily ritual since 2012.
-            </p>
+
 
             {/* Contact Info */}
             <div className="space-y-3">
@@ -113,164 +108,10 @@ useEffect(() => {
                 className="flex items-start gap-3 text-white"
               >
                 <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-                <span className="text-sm">Plot no #2051/A Lokikere Main Road Near Industrial Area Davangere 577005</span>
+                <span className="text-sm">Plot no #2051/A Lokikere Main Road Near <br /> Industrial Area Davangere 577005</span>
               </motion.div>
             </div>
-          </div>
-
-          {/* Shop Links */}
-          <div className='d-desktop'>
-            <h4 className="text-white mb-6">Shop</h4>
-            <ul className="space-y-3">
-              {footerLinks.shop.map((link, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
-                >
-                  <a
-                    href={link.href}
-                    className="text-white hover:text-gold transition-colors text-sm block hover:translate-x-1 transition-transform"
-                  >
-                    {link.name}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company Links */}
-          <div className='d-desktop'>
-            <h4 className="text-white mb-6">Company</h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
-                >
-                  <a
-                    href={link.href}
-                    className="text-white hover:text-gold transition-colors text-sm block hover:translate-x-1 transition-transform"
-                  >
-                    {link.name}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Support Links */}
-          <div className='d-desktop'>
-            <h4 className="text-white mb-6">Support</h4>
-            <ul className="space-y-3">
-              {footerLinks.support.map((link, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
-                >
-                  <a
-                    href={link.href}
-                    className="text-white hover:text-gold transition-colors text-sm block hover:translate-x-1 transition-transform"
-                  >
-                    {link.name}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-
-  {/* Shop Links */}
-  <div className="d-mobile">
-    <h4 className="text-white mb-4 text-base font-semibold">Shop</h4>
-    <ul className="space-y-3">
-      {footerLinks.shop.map((link, index) => (
-        <motion.li
-          key={index}
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.05 }}
-        >
-          <a
-            href={link.href}
-            className="text-white text-sm block transition-all duration-300 hover:text-gold hover:translate-x-1"
-          >
-            {link.name}
-          </a>
-        </motion.li>
-      ))}
-    </ul>
-  </div>
-
-  {/* Company Links */}
-  <div className="d-mobile">
-    <h4 className="text-white mb-4 text-base font-semibold">Company</h4>
-    <ul className="space-y-3">
-      {footerLinks.company.map((link, index) => (
-        <motion.li
-          key={index}
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.05 }}
-        >
-          <a
-            href={link.href}
-            className="text-white text-sm block transition-all duration-300 hover:text-gold hover:translate-x-1"
-          >
-            {link.name}
-          </a>
-        </motion.li>
-      ))}
-    </ul>
-  </div>
-
-  {/* Support Links */}
-  <div className="col-span-2 md:col-span-1 d-mobile">
-    <h4 className="text-white mb-4 text-base font-semibold">Support</h4>
-    <ul className="space-y-3">
-      {footerLinks.support.map((link, index) => (
-        <motion.li
-          key={index}
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.05 }}
-        >
-          <a
-            href={link.href}
-            className="text-white text-sm block transition-all duration-300 hover:text-gold hover:translate-x-1"
-          >
-            {link.name}
-          </a>
-        </motion.li>
-      ))}
-    </ul>
-  </div>
-
-</div>
-
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            {/* Copyright */}
-            <p className="text-sm text-white">
-              © {new Date().getFullYear()} Shashi Soap. All rights reserved.
-            </p>
-
-            {/* Social Links */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 mt-5">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={index}
@@ -284,10 +125,62 @@ useEffect(() => {
                 </motion.a>
               ))}
             </div>
+          </div>
+
+
+
+          <div>
+            <h4 className="text-white mb-6 font-semibold">Company</h4>
+            <ul className="space-y-3">
+              {footerLinks.company.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-white hover:text-gold transition-all hover:translate-x-1 inline-block"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="w-full max-w-md ml-auto ">
+            <h4 className="text-white mb-4 text-base font-semibold enquity-from-h4">
+              Quick Enquiry
+            </h4>
+
+            <form className="space-y-3">
+              <input className="w-full px-3 py-2 rounded bg-white/10 text-white text-sm" placeholder="Your Name" />
+              <input className="w-full px-3 py-2 rounded bg-white/10 text-white text-sm" placeholder="Phone Number" />
+              <input className="w-full px-3 py-2 rounded bg-white/10 text-white text-sm" placeholder="Email Address" />
+              <textarea rows={3} className="w-full px-3 py-2 rounded bg-white/10 text-white text-sm resize-none" placeholder="Your Message" />
+              <button className="w-full bg-gold py-2 rounded text-sm font-semibold">
+                Submit Enquiry
+              </button>
+            </form>
+          </div>
+
+
+
+
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+
+            {/* Copyright */}
+            <p className="text-sm text-white">
+              © {new Date().getFullYear()} Shashi Soap. All rights reserved.
+            </p>
+
+            {/* Social Links */}
+
 
             {/* Legal Links + Enquiry Button */}
             <div className="flex items-center gap-4">
-            
+
               <div className="flex items-center gap-6">
                 <a href="#" className="text-sm text-white hover:text-gold transition-colors">
                   Privacy Policy
@@ -301,31 +194,7 @@ useEffect(() => {
         </div>
 
         {/* Trust Badges */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-12 pt-8 border-t border-white/10"
-        >
-          <div className="flex flex-wrap justify-center items-center gap-8 text-white text-xs tracking-wider uppercase">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-gold rounded-full" />
-              <span>100% Natural</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-gold rounded-full" />
-              <span>Cruelty Free</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-gold rounded-full" />
-              <span>Eco-Friendly</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-gold rounded-full" />
-              <span>Handcrafted</span>
-            </div>
-          </div>
-        </motion.div>
+
       </div>
       <EnquiryModal open={showEnquiry} onClose={() => setShowEnquiry(false)} />
     </footer>

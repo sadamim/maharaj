@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Leaf, Award, Heart, Sparkles } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import Link from 'next/link';
 
 export function BrandStory() {
   const values = [
@@ -37,34 +38,32 @@ export function BrandStory() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-<div className="inline-block px-4 py-2 bg-gold/10 rounded-full mb-6 mx-auto lg:mx-0">
+          
+           
 
-              <span className="text-sm text-gold tracking-wider uppercase">Our Story</span>
+            <h2 className="mb-6  text-center lg:text-left leading-tight text-h1">
+              Crafting a Cleaner
+              <span className="block">Tomorrow</span>
+            </h2>
+
+
+            <div className="space-y-4 text-gray-700 mb-8 force-justify">
+              <p>
+                What began decades ago as a simple mission to make everyday cleaning easier and safer has grown into Maharaja Soap Factory, a name associated with trust, care, and quality.
+              </p>
+
+              <p>
+                Our roots lie in thoughtful craftsmanship. With experience honed over generations, we focus on creating cleansing solutions that carry tradition with innovation. Every formula we develop undergoes careful testing, ensuring it delivers the performance families rely on.
+              </p>
+
+              <p>
+                We believe that a truly clean home is one made with intention. That’s why we choose responsible sourcing, precise manufacturing, and uncompromising quality at every stage.
+              </p>
+
+              <p>
+                From the first wash to the final rinse, our products are designed to bring freshness, comfort and confidence into your home.
+              </p>
             </div>
-
-           <h2 className="mb-6 text-center lg:text-left">
-  Crafting a Cleaner,
-  <br />
-  Tomorrow
-</h2>
-
-           <div className="space-y-4 text-gray-700 mb-8 force-justify">
-  <p>
-    What began decades ago as a simple mission to make everyday cleaning easier and safer has grown into Maharaja Soap Factory, a name associated with trust, care, and quality.
-  </p>
-
-  <p>
-    Our roots lie in thoughtful craftsmanship. With experience honed over generations, we focus on creating cleansing solutions that carry tradition with innovation. Every formula we develop undergoes careful testing, ensuring it delivers the performance families rely on.
-  </p>
-
-  <p>
-    We believe that a truly clean home is one made with intention. That’s why we choose responsible sourcing, precise manufacturing, and uncompromising quality at every stage.
-  </p>
-
-  <p>
-    From the first wash to the final rinse, our products are designed to bring freshness, comfort and confidence into your home.
-  </p>
-</div>
 
 
 
@@ -73,7 +72,10 @@ export function BrandStory() {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-charcoal text-white rounded-full hover:bg-gold transition-colors duration-300"
             >
-              <span className="tracking-wide">Learn More </span>
+              <Link href='/about'>
+               <span className="tracking-wide">Know About </span>
+              </Link>
+             
             </motion.button>
           </motion.div>
 
@@ -85,7 +87,7 @@ export function BrandStory() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-<div className="relative aspect-[3/4] max-h-[520px] lg:max-h-[600px] rounded-2xl overflow-hidden shadow-2xl mx-auto">
+            <div className="relative aspect-[3/4] max-h-[520px] lg:max-h-[600px] rounded-2xl overflow-hidden shadow-2xl mx-auto">
               <ImageWithFallback
                 src="/images/Ourstory.webp"
                 alt="Natural botanical ingredients"
@@ -103,7 +105,7 @@ export function BrandStory() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-gray-100"
+              className="absolute -top-5 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-gray-100"
             >
               <div className="flex items-center gap-1">
                 <div className="w-22 h-22 bg-[#ac1e23]/10 rounded-full flex items-center justify-center">

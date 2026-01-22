@@ -38,7 +38,7 @@ export function Header({ currentPage = 'home', onNavigate }: HeaderProps) {
     { name: "About Us", href: "/about" },
     { name: "Products", href: "/products" },
     { name: "Contact", href: "/contact" },
-    { name: "FAQ", href: "/faq" },
+    { name: "Enquiry", href: "/enquiry" },
   ];
 
   const handleNavClick = (pageId: string) => {
@@ -93,15 +93,15 @@ export function Header({ currentPage = 'home', onNavigate }: HeaderProps) {
           </motion.button>
 
           {/* Desktop Navigation */}
-         <nav className="hidden lg:flex gap-8">
+          <nav className="hidden lg:flex gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative uppercase text-sm transition-colors ${
+                className={`relative uppercase text-sm transition-colors   ${
                   pathname === link.href
-                    ? "text-gold"
-                    : "text-charcoal hover:text-gold"
+                    ? !isScrolled ?`text-white` : `text-gold` 
+                    :isScrolled ?`text-gold`  :  "text-white hover:text-white" 
                 }`}
               >
                 {link.name}

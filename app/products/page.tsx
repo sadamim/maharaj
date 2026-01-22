@@ -8,12 +8,10 @@ import { useState } from 'react';
 
 const categories = [
   'All Products',
-  'Bath & Beauty Soaps',
   'Washing Powders',
   'Liquid Detergents',
   'Dishwash',
   'Dishwash Gel',
-  'Fabric Conditioner',
   'Toilet Cleaner',
   'Floor Cleaner',
   'Detergent Cake',
@@ -28,7 +26,7 @@ const allProducts = [
     price: 15,
     rating: 4.5,
     reviews: 120,
-    image: "/images/Shashi Pink M-Lore Detergent Cake.webp",
+    image: "/images/SHASHI PIKK DEETERGENT CAKE.webp",
     bestseller: false,
     new: false,
   },
@@ -53,7 +51,7 @@ const allProducts = [
     price: 180,
     rating: 4.6,
     reviews: 85,
-    image: "/images/Shashi Pink Bullet Set.webp",
+    image: "/images/SHASHI PINK BULLET.webp",
     bestseller: false,
     new: false,
   },
@@ -77,7 +75,7 @@ const allProducts = [
     price: 26,
     rating: 4.6,
     reviews: 130,
-    image: "/images/Shashi Arya Blue Detergent Cake.webp",
+    image: "/images/SHASHI ARYA BLUE.webp",
     bestseller: false,
     new: false,
     extent: ['(250g)', '(300g)']
@@ -94,31 +92,8 @@ const allProducts = [
     bestseller: false,
     new: false,
   },
-  {
-    id: 7,
-    name: "Shashi Scouring Dishwash Powder",
-    category: "Dishwash",
-    description: "Scouring powder for utensils 275G ₹ 10 /- 65 PCS , 600G ₹ 20 /- 65 PCS,1 KG35 /- 65 PCS",
-    price: 10,
-    rating: 4.3,
-    reviews: 90,
-    image: "/images/Shashi Scouring Dishwash Powder.webp",
-    bestseller: false,
-    new: false,
-  },
-  {
-    id: 8,
-    name: "Shashi Dishwash Round",
-    category: "Dishwash",
-    description: "Round dishwash bar",
-    price: 32,
-    rating: 4.5,
-    reviews: 115,
-    image: "/images/Shashi Dishwash Round.webp",
-    bestseller: false,
-    new: false,
-  },
-
+ 
+ 
   {
     id: 9,
     name: "Shashi Pink & Blue Washing Powder",
@@ -127,7 +102,7 @@ const allProducts = [
     price: 90,
     rating: 4.7,
     reviews: 155,
-    "image": "/images/Shashi Pink Blue Washing Powder.webp",
+    "image": "/images/SHASHI PINK & BLUE WASHING POWDE 1kg-MRP-100.webp",
     bestseller: false,
     new: false,
   },
@@ -139,22 +114,11 @@ const allProducts = [
     price: 10,
     rating: 4.5,
     reviews: 140,
-    image: "/images/Shashi Hi-Clean Washing Powder 2.webp",
+    image: "/images/SHASHI CLEAN WASHING POWDER.webp",
     bestseller: false,
     new: false,
   },
-  {
-    id: 11,
-    name: "Shashi White Washing Powder",
-    category: "Washing Powder",
-    description: "White washing powder",
-    price: 10,
-    rating: 4.4,
-    reviews: 135,
-    image: "/images/Shashi White Washing Powder.webp",
-    bestseller: false,
-    new: false,
-  },
+ 
   {
     id: 12,
     name: "Shashi Triple Action Detergent Powder",
@@ -163,23 +127,12 @@ const allProducts = [
     price: 99,
     rating: 4.8,
     reviews: 210,
-    image: "/images/Shashi Triple Action Detergent Powder.webp",
+    image: "/images/SHASHI TRIPLE ACTION.webp",
     bestseller: false,
     new: false,
     extent: ['(500g)', '(1kg)', '(3+1kg)']
   },
-  {
-    id: 13,
-    name: "Shashi Gramflour Beauty Soap",
-    category: "Beauty Soap",
-    description: "Traditional gram flour soap",
-    price: 45,
-    rating: 4.8,
-    reviews: 190,
-    image: "/images/Shashi Gramflour Beauty Soap.webp",
-    bestseller: false,
-    new: false,
-  },
+ 
   {
     id: 14,
     name: "Shashi Bheema Phenyl",
@@ -188,22 +141,11 @@ const allProducts = [
     price: 90,
     rating: 4.6,
     reviews: 160,
-    image: "/images/Shashi Bheema Phenyl 4.webp",
+    image: "/images/SHASHI BHEEMAA PHYNYL.webp",
     bestseller: false,
     new: false,
   },
-  {
-    id: 15,
-    name: "Shashi Liquid Detergent Matic",
-    category: "Liquid Detergent",
-    description: "Liquid detergent for machines",
-    price: 243,
-    rating: 4.7,
-    reviews: 150,
-    image: "/images/Shashi Liquid Detergent Matic.webp",
-    bestseller: false,
-    new: false,
-  },
+  
   {
     id: 16,
     name: "Mr Win Washing Powder",
@@ -212,7 +154,7 @@ const allProducts = [
     price: 10,
     rating: 4.3,
     reviews: 120,
-    image: "/images/Mr Win Washing Powder.webp",
+    image: "/images/Mr WIN WASHING POWDER.webp",
     bestseller: false,
     new: false,
   },
@@ -266,18 +208,7 @@ const allProducts = [
     bestseller: false,
     new: false,
   },
-  {
-    id: 21,
-    name: "Savaal Captain Toilet Cleaner",
-    category: "Toilet Cleaner",
-    description: "Toilet cleaning liquid",
-    price: 199,
-    rating: 4.7,
-    reviews: 155,
-    image: "/images/Savaal Captain Toilet Cleaner.webp",
-    bestseller: false,
-    new: false,
-  },
+ 
   {
     id: 22,
     name: "Savaal Captain Floor Cleaner",
@@ -286,7 +217,7 @@ const allProducts = [
     price: 199,
     rating: 4.7,
     reviews: 160,
-    image: "/images/Savaal Captain Floor Cleaner.webp",
+    image: "/images/SAVAAL CAPTAIN FLOOR CLEANER.webp",
     bestseller: false,
     new: false,
   },
@@ -323,22 +254,11 @@ const allProducts = [
     "price": 60,
     "rating": 4.6,
     "reviews": 140,
-    "image": "/images/Shashi Hi-Clean Washing Powder.webp",
+    "image": "/images/SHASHI CLEAN WASHING POWDER.webp",
     "bestseller": true,
     "new": false
   },
-  {
-    "id": 26,
-    "name": "Shashi Pink & Blue Washing Powder",
-    "category": "Washing Powder",
-    "description": "Dual color washing powder",
-    "price": 100,
-    "rating": 4.7,
-    "reviews": 180,
-    "image": "/images/Shashi Pink Blue Washing Powder.webp",
-    "bestseller": true,
-    "new": false
-  },
+ 
   {
     "id": 27,
     "name": "Mr Win Washing Powder",
@@ -347,7 +267,7 @@ const allProducts = [
     "price": 50,
     "rating": 4.3,
     "reviews": 90,
-    image: "/images/Mr Win Washing Powder.webp",
+    image: "/images/Mr WIN WASHING POWDER.webp",
     "bestseller": false,
     "new": false
   },
@@ -359,7 +279,7 @@ const allProducts = [
     "price": 100,
     "rating": 4.5,
     "reviews": 110,
-    "image": "/images/Savaal Gold Washing Powder.webp",
+    "image": "/images/SAVAAL GOLD WASHING POWDER.webp",
     "bestseller": false,
     "new": false
   },
@@ -383,7 +303,7 @@ const allProducts = [
     "price": 10,
     "rating": 4.4,
     "reviews": 80,
-    "image": "/images/Savaal Blue Pouch.webp",
+    "image": "/images/SAVAAL BLUE POUCH 100g-MP-10.webp",
     "bestseller": false,
     "new": false
   },
@@ -395,7 +315,7 @@ const allProducts = [
     "price": 10,
     "rating": 4.5,
     "reviews": 150,
-    "image": "/images/Shashi Pink Pouch.webp",
+    "image": "/images/SHASHI PINK POUCH.webp",
     "bestseller": true,
     "new": false
   },
@@ -407,7 +327,7 @@ const allProducts = [
     "price": 10,
     "rating": 4.5,
     "reviews": 145,
-    image: "/images/Shashi Blue Pouch.webp",
+    image: "/images/SHASHI BLUE POUCH.webp",
     "bestseller": true,
     "new": false
   },
@@ -443,7 +363,7 @@ const allProducts = [
     "price": 15,
     "rating": 4.4,
     "reviews": 160,
-    "image": "/images/Mr. Bheem Detergent Cake.webp",
+    "image": "/images/MBHEEM DETERGENT CAKE.webp",
     "bestseller": false,
     "new": false
   },
@@ -479,7 +399,7 @@ const allProducts = [
     "price": 10,
     "rating": 4.5,
     "reviews": 170,
-    "image": "/images/Savaal Max Blue Detergent Cake.webp",
+    "image": "/images/SAVAAL MAX BLUE DETERGENT CAKE.webp",
     "bestseller": true,
     "new": false
   },
@@ -491,7 +411,7 @@ const allProducts = [
     "price": 25,
     "rating": 4.6,
     "reviews": 200,
-    "image": "/images/Savaal White Gold Detergent Cake.webp",
+    "image": "/images/SAVAAL WHITE GOLD DETINGENT CAKE.webp",
     "bestseller": true,
     "new": false
   },
@@ -515,7 +435,7 @@ const allProducts = [
     "price": 10,
     "rating": 4.5,
     "reviews": 165,
-    "image": "/images/Savaal Max White Detergent Cake.webp",
+    "image": "/images/SAVAAL MAX WHITE DETERGENT CAKE.webp",
     "bestseller": false,
     "new": false
   },
@@ -527,7 +447,7 @@ const allProducts = [
     "price": 12,
     "rating": 4.4,
     "reviews": 150,
-    "image": "/images/Savaal White Detergent Cake.webp",
+    "image": "/images/SAVAAL WHITE DETERGENT CAKE.webp",
     "bestseller": false,
     "new": false
   },
@@ -539,7 +459,7 @@ const allProducts = [
     "price": 10,
     "rating": 4.6,
     "reviews": 180,
-    "image": "/images/SAVAAL OXYDOL DISHWASH BAR .webp",
+    "image": "/images/SAVAAL OXYEOL DISHWASH BAR.webp",
     "bestseller": true,
     "new": false
   },
@@ -563,7 +483,7 @@ const allProducts = [
     "price": 105,
     "rating": 4.7,
     "reviews": 170,
-    "image": "/images/Savaal Oxydol Dishwash Gel.webp",
+    "image": "/images/SAVAAL OXYDOL DISHWASH GEL.webp",
     "bestseller": true,
     "new": false
   },
@@ -635,7 +555,7 @@ const allProducts = [
     "price": 120,
     "rating": 4.9,
     "reviews": 300,
-    "image": "/images/Shashi Beauty Soap.webp",
+    "image": "/images/SHASHI GRAM POWDER BEAUTY SOAP.webp",
     "bestseller": true,
     "new": false
   },
@@ -647,7 +567,7 @@ const allProducts = [
     "price": 70,
     "rating": 4.6,
     "reviews": 180,
-    "image": "/images/Shashi Bheema Phenyl 3.webp",
+    "image": "/images/SHASHI BHEEMAA PHYNYL.webp",
     "bestseller": false,
     "new": false
   },
@@ -695,7 +615,7 @@ const allProducts = [
     "price": 93,
     "rating": 4.7,
     "reviews": 200,
-    "image": "/images/Savaal Captain Floor Cleaner.webp",
+    "image": "/images/SAVAAL CAPTAIN FLOOR CLEANER.webp",
     "bestseller": true,
     "new": false
   },
@@ -707,7 +627,7 @@ const allProducts = [
     "price": 90,
     "rating": 4.6,
     "reviews": 190,
-    "image": "/images/Savaal Captain Toilet Cleaner.webp",
+    "image": "/images/SAVAAL CAPTAIN TOILET CLEANE.webp",
     "bestseller": true,
     "new": false
   },
@@ -719,7 +639,7 @@ const allProducts = [
     "price": 220,
     "rating": 4.6,
     "reviews": 160,
-    "image": "/images/Shashi Matic Liquid Detergent .webp",
+    "image": "/images/SHASHI MATIC.webp",
     "bestseller": true,
     "new": false
   },
@@ -738,12 +658,13 @@ const allProducts = [
 
 
 ];
+
 export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState('All Products');
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('featured');
 
-  const filteredProducts = allProducts.filter(product => {
+  const filteredProducts =  allProducts.filter(product => {
     const matchesCategory = selectedCategory === 'All Products' || product.category === selectedCategory;
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       product.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -792,17 +713,7 @@ export default function ProductsPage() {
           <div className="flex flex-col gap-3 lg:flex-row lg:gap-6 lg:items-center lg:justify-between py-3 lg:py-6">
 
             {/* Search */}
-            <div className="relative w-full lg:w-80 order-1">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search products..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-2.5 border-2 border-gray-200 rounded-full
-                     focus:border-gold focus:outline-none transition-colors text-sm"
-              />
-            </div>
+            
 
             {/* Category Filter */}
             <div className="flex gap-2 overflow-x-auto scrollbar-hide w-full order-2 pb-1">
@@ -823,7 +734,6 @@ export default function ProductsPage() {
 
             {/* Sort */}
             <div className="flex items-center gap-2 w-full lg:w-auto order-3">
-              <Filter className="w-5 h-5 text-gray-600 shrink-0" />
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
@@ -969,22 +879,7 @@ function ProductCard({ product, index }: { product: typeof allProducts[0]; index
         </div>
 
         {/* Rating */}
-        <div className="flex items-center gap-1 sm:gap-2 mb-2 sm:mb-3">
-          <div className="flex gap-0.5 sm:gap-1">
-            {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${i < Math.floor(product.rating)
-                    ? 'fill-gold text-gold'
-                    : 'text-gray-300'
-                  }`}
-              />
-            ))}
-          </div>
-          <span className="text-xs sm:text-sm text-gray-600">
-            {product.rating} ({product.reviews})
-          </span>
-        </div>
+     
 
         {/* Name */}
         <h3 className="text-base sm:text-xl mb-1 sm:mb-2 line-clamp-2">

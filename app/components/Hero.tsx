@@ -59,7 +59,7 @@ export function Hero() {
           </picture>
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/20" />
+        
         </div>
 
         {/* LEFT ARROW */}
