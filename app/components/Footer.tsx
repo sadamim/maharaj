@@ -20,7 +20,7 @@ export function Footer() {
 
     const timeoutId = setTimeout(() => {
       setShowEnquiry(true);
-    }, 5000); // 5 seconds
+    }, 30000); // 5 seconds
 
     return () => {
       window.removeEventListener('resize', handleResize);

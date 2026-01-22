@@ -9,13 +9,25 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 const products = [
-  { id: 1, image: '/images/g1.webp' },
+ 
+    { id: 8, image: '/images/g8.webp' },
+
+      { id: 9, image: '/images/g9.webp' },
+  { id: 10, image: '/images/g10.webp' },
+  { id: 11, image: '/images/g11.webp' },
+  { id: 12, image: '/images/g12.webp' },
+  { id: 13, image: '/images/g13.webp' },
+  { id: 14, image: '/images/g14.webp' },
+  { id: 15, image: '/images/g15.webp' },
+  { id: 16, image: '/images/g16.webp' },
+   { id: 1, image: '/images/g1.webp' },
   { id: 2, image: '/images/g2.webp' },
   { id: 3, image: '/images/g3.webp' },
   // { id: 4, image: '/images/g4.webp' },
   { id: 5, image: '/images/g5.webp' },
   { id: 6, image: '/images/g6.webp' },
   { id: 7, image: '/images/g7.webp' },
+
 ];
 
 export function FeaturedGallary() {

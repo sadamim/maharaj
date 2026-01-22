@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import Link from "next/link";
+import { useEffect } from "react";
 
 /* ---------------- SHASHI ---------------- */
 const ingredients = [
@@ -39,7 +40,7 @@ const ingredients = [
     benefit: "Effective utensil cleaning",
     description:
       "Scouring dishwash powder that removes grease and food residue efficiently, leaving utensils clean and hygienic.",
-    image: "/images/SHASHI SCOURING DISHWASH POWDER.webp",
+    image: "/images/SHASHI SCOURING POWDER .webp",
   },
 ];
 
@@ -49,7 +50,7 @@ const ingredients2 = [
     name: "Savaal Gold Washing Powder",
     benefit: "Premium washing care",
     description: "Premium washing powder for superior cleanliness and freshness.",
-    image: "/images/SAVAAL GOLD WASHING POWDER.webp",
+    image: "/images/SAVAAL_GOLD_WASHING_POWDER.webp",
   },
   {
     name: "Savaal 999 Washing Powder",
@@ -73,10 +74,10 @@ const ingredients2 = [
     name: "Savaal Max Blue Detergent Cake",
     benefit: "Powerful stain removal",
     description: "Blue detergent cake that removes stubborn stains effectively.",
-    image: "/images/SAVAAL MAX BLUE DETERGENT CAKE.webp",
+    image: "/images/SAVAAL_MAX_BLUE_DETERGENT_CAKE.webp",
   },
-  
 ];
+
 type SliderRowProps = {
   data: any[];
   reverse?: boolean;
@@ -84,18 +85,35 @@ type SliderRowProps = {
 
 /* ---------------- SLIDER ROW ---------------- */
 const SliderRow = ({ data, reverse = false }: SliderRowProps) => {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start({
+      x: reverse ? ["0%", "-50%"] : ["-50%", "0%"],
+      transition: {
+        duration: 35,
+        repeat: Infinity,
+        ease: "linear",
+      },
+    });
+  }, [controls, reverse]);
+
   return (
-    <div className="ingredients-slider">
+    <div className="ingredients-slider overflow-hidden">
       <motion.div
-        className="ingredients-track"
-        animate={{
-          x: reverse ? ["0%", "-50%"] : ["-50%", "0%"],
-        }}
-        transition={{
-          duration: 35,
-          repeat: Infinity,
-          ease: "linear",
-        }}
+        className="ingredients-track flex"
+        animate={controls}
+        onHoverStart={() => controls.stop()}
+        onHoverEnd={() =>
+          controls.start({
+            x: reverse ? ["0%", "-50%"] : ["-50%", "0%"],
+            transition: {
+              duration: 35,
+              repeat: Infinity,
+              ease: "linear",
+            },
+          })
+        }
       >
         {[...data, ...data].map((item, index) => (
           <div className="ingredient-card" key={index}>
@@ -142,16 +160,13 @@ export function Ingredients() {
             superior cleanliness, long-lasting freshness, and everyday care.
           </p>
         </motion.div>
-                  <h2 className="mb-6 text-center">SHASHI</h2>
 
-
-        {/* SHASHI (Top → Left to Right) */}
+        <h2 className="mb-6 text-center">SHASHI</h2>
         <SliderRow data={ingredients} />
 
         <div className="h-14" />
-                  <h2 className="mb-6 text-center">SAVAAL</h2>
 
-        {/* SAVAAL (Bottom → Right to Left) */}
+        <h2 className="mb-6 text-center">SAVAAL</h2>
         <SliderRow data={ingredients2} reverse />
 
         {/* CTA */}
@@ -167,8 +182,8 @@ export function Ingredients() {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-charcoal text-white rounded-full hover:bg-gold transition-colors duration-300"
           >
-            <Link href="/products"> 
-            <span className="tracking-wide">View All Products</span>
+            <Link href="/products">
+              <span className="tracking-wide">View All Products</span>
             </Link>
           </motion.button>
         </motion.div>

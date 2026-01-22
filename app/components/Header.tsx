@@ -37,8 +37,9 @@ export function Header({ currentPage = 'home', onNavigate }: HeaderProps) {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Products", href: "/products" },
-    { name: "Contact", href: "/contact" },
     { name: "Enquiry", href: "/enquiry" },
+        { name: "Contact", href: "/contact" },
+
   ];
 
   const handleNavClick = (pageId: string) => {

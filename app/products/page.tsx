@@ -88,7 +88,7 @@ const allProducts = [
     price: 10,
     rating: 4.4,
     reviews: 100,
-    image: "/images/Shashi Blue Pouch.webp",
+    image: "/images/SHASHI BLUE POUCH.webp",
     bestseller: false,
     new: false,
   },
@@ -154,7 +154,7 @@ const allProducts = [
     price: 10,
     rating: 4.3,
     reviews: 120,
-    image: "/images/Mr WIN WASHING POWDER.webp",
+    image: "/images/Mr_WIN_WASHING_POWDER.webp",
     bestseller: false,
     new: false,
   },
@@ -204,7 +204,7 @@ const allProducts = [
     price: 150,
     rating: 4.6,
     reviews: 145,
-    image: "/images/SAVAAL OXYDOL DISH WASH GEL.webp",
+    image: "/images/SAVAAL_OXYDOL_DISHWASH_GEL.webp",
     bestseller: false,
     new: false,
   },
@@ -217,7 +217,7 @@ const allProducts = [
     price: 199,
     rating: 4.7,
     reviews: 160,
-    image: "/images/SAVAAL CAPTAIN FLOOR CLEANER.webp",
+    image: "/images/SAVAAL_CAPTAIN_FLOOR_CLEANER.webp",
     bestseller: false,
     new: false,
   },
@@ -267,7 +267,7 @@ const allProducts = [
     "price": 50,
     "rating": 4.3,
     "reviews": 90,
-    image: "/images/Mr WIN WASHING POWDER.webp",
+    image: "/images/Mr_WIN_WASHING_POWDER.webp",
     "bestseller": false,
     "new": false
   },
@@ -279,7 +279,7 @@ const allProducts = [
     "price": 100,
     "rating": 4.5,
     "reviews": 110,
-    "image": "/images/SAVAAL GOLD WASHING POWDER.webp",
+    "image": "/images/SAVAAL_GOLD_WASHING_POWDER.webp",
     "bestseller": false,
     "new": false
   },
@@ -307,18 +307,7 @@ const allProducts = [
     "bestseller": false,
     "new": false
   },
-  {
-    "id": 31,
-    "name": "Shashi Pink Pouch",
-    "category": "Detergent Cake",
-    "description": "Pink detergent pouch",
-    "price": 10,
-    "rating": 4.5,
-    "reviews": 150,
-    "image": "/images/SHASHI PINK POUCH.webp",
-    "bestseller": true,
-    "new": false
-  },
+  
   {
     "id": 32,
     "name": "Shashi Blue Pouch",
@@ -399,7 +388,7 @@ const allProducts = [
     "price": 10,
     "rating": 4.5,
     "reviews": 170,
-    "image": "/images/SAVAAL MAX BLUE DETERGENT CAKE.webp",
+    "image": "/images/SAVAAL_MAX_BLUE_DETERGENT_CAKE.webp",
     "bestseller": true,
     "new": false
   },
@@ -435,7 +424,7 @@ const allProducts = [
     "price": 10,
     "rating": 4.5,
     "reviews": 165,
-    "image": "/images/SAVAAL MAX WHITE DETERGENT CAKE.webp",
+    "image": "/images/SAVAAL_MAX_WHITE_DETERGENT_CAKE.webp",
     "bestseller": false,
     "new": false
   },
@@ -447,7 +436,7 @@ const allProducts = [
     "price": 12,
     "rating": 4.4,
     "reviews": 150,
-    "image": "/images/SAVAAL WHITE DETERGENT CAKE.webp",
+    "image": "/images/SAVAAL_WHITE_DETERGENT_CAKE.webp",
     "bestseller": false,
     "new": false
   },
@@ -483,7 +472,7 @@ const allProducts = [
     "price": 105,
     "rating": 4.7,
     "reviews": 170,
-    "image": "/images/SAVAAL OXYDOL DISHWASH GEL.webp",
+    "image": "/images/SAVAAL_OXYDOL_DISHWASH_GEL.webp",
     "bestseller": true,
     "new": false
   },
@@ -615,7 +604,7 @@ const allProducts = [
     "price": 93,
     "rating": 4.7,
     "reviews": 200,
-    "image": "/images/SAVAAL CAPTAIN FLOOR CLEANER.webp",
+    "image": "/images/SAVAAL_CAPTAIN_FLOOR_CLEANER.webp",
     "bestseller": true,
     "new": false
   },
@@ -679,8 +668,9 @@ export default function ProductsPage() {
   });
 
   return (
-    <div className="pt-24 min-h-screen bg-cream">
-      {/* Hero Section */}
+    <div className="pt-24 min-h-screen ">
+      <div className='bg-cream'>
+ {/* Hero Section */}
 
       <section className="relative py-20 lg:py-32 bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal overflow-hidden">
         <div className="absolute inset-0 opacity-50">
@@ -763,7 +753,7 @@ export default function ProductsPage() {
             </span>
 
             <a
-              href="/files/sample.pdf"
+              href="/images/Shashi_Catalogue.pdf"
               download
               className="px-4 py-2 rounded-full whitespace-nowrap transition-all bg-gold text-white shadow-md"
             >
@@ -795,6 +785,8 @@ export default function ProductsPage() {
           )}
         </div>
       </section>
+      </div>
+     
     </div>
   );
 }
