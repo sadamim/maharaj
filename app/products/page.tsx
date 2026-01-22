@@ -80,18 +80,7 @@ const allProducts = [
     new: false,
     extent: ['(250g)', '(300g)']
   },
-  {
-    id: 6,
-    name: "Shashi Blue Pouch",
-    category: "Detergent Cake",
-    description: "Blue detergent pouch",
-    price: 10,
-    rating: 4.4,
-    reviews: 100,
-    image: "/images/SHASHI BLUE POUCH.webp",
-    bestseller: false,
-    new: false,
-  },
+ 
  
  
   {
@@ -316,7 +305,7 @@ const allProducts = [
     "price": 10,
     "rating": 4.5,
     "reviews": 145,
-    image: "/images/SHASHI BLUE POUCH.webp",
+    "image": "/images/SHASHI_BLUE_POUCH.webp",
     "bestseller": true,
     "new": false
   },
