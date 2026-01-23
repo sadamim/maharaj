@@ -58,13 +58,14 @@ export default function AboutPage() {
   return (
     <div className="pt-24">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal overflow-hidden">
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal overflow-hidden ">
         <div className="absolute inset-0">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url('/images/Aboutus.webp')`,
+            backgroundImage: `url('/images/aboutbanner.webp')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }} />
+          <div className="absolute inset-0 bg-black opacity-50" />
         </div>
 
         <div className="container-padding mx-auto relative z-10">
@@ -75,7 +76,7 @@ export default function AboutPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <div className="inline-block px-4 py-2 bg-gold/20 rounded-full mb-6">
-              <span className="text-sm text-gold tracking-wider uppercase">Our Story</span>
+              <span className="text-sm text-white tracking-wider uppercase">Our Story</span>
             </div>
             <h1 className="text-white mb-6">
               Crafting a Cleaner
@@ -296,7 +297,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-6xl mx-auto mb-24"
+            className="max-w-9xl mx-auto mb-24"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
@@ -308,13 +309,15 @@ export default function AboutPage() {
                 transition={{ duration: 0.6 }}
                 className="relative"
               >
-                <div className="aspect-square rounded-3xl overflow-hidden shadow-xl">
-                  <ImageWithFallback
-                    src="/images/raviraja.jpg"   // 👈 replace with actual image path
-                    alt="Dr. Raviraja M.E. - Chairman Maharaj Soaps"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+               <div className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-xl">
+  <Image
+    src="/images/raviraja.jpg"
+    alt="Dr. Raviraja M.E. - Chairman Maharaj Soaps"
+    fill
+    className="object-cover"
+  />
+</div>
+
               </motion.div>
 
               {/* Content Section */}

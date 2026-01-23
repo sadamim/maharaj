@@ -61,7 +61,7 @@ export function Footer() {
   const [showEnquiry, setShowEnquiry] = useState(false);
 
   return (
-    <footer className="bg-charcoal text-white pt-20 pb-8">
+    <footer className="bg-charcoal text-white pt-20 pb-8 py-20 lg:py-32 bg-gradient-to-br from-gold via-earth to-gold-dark">
       <div className="container-padding mx-4 md:mx-[5%] lg:mx-[10%] ">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16 items-start">
@@ -130,8 +130,8 @@ export function Footer() {
 
 
 
-          <div>
-            <h4 className="text-white mb-6 font-semibold">Company</h4>
+          <div className='margin-top-mov'>
+            <h4 className="text-white mb-6 font-semibold ">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
@@ -145,7 +145,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
-
+        
           <div className="w-full max-w-md ml-auto ">
             <h4 className="text-white mb-4 text-base font-semibold enquity-from-h4">
               Quick Enquiry

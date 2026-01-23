@@ -663,9 +663,9 @@ export default function ProductsPage() {
  {/* Hero Section */}
 
       <section className="relative py-20 lg:py-32 bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal overflow-hidden">
-        <div className="absolute inset-0 opacity-50">
+        <div className="absolute inset-0 opacity-100">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url('/images/productbanner.webp')`,
+            backgroundImage: `url('/images/MSIPL_banner.webp')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }} />
@@ -676,12 +676,13 @@ export default function ProductsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="inline-block px-4 py-2 bg-gold/20 rounded-full mb-6">
-              <span className="text-sm text-gold tracking-wider uppercase">Our Collection</span>
+            <div className="inline-block px-4 py-2 bg-white/20 rounded-full mb-6">
+              <span className="text-sm text-white tracking-wider uppercase">Our Collection</span>
             </div>
             <h1 className="text-white mb-6">Premium Home-Care Essentials</h1>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Discover our refined range of detergents, soaps, and cleaning solutions — thoughtfully crafted to deliver powerful performance, fabric safety, and long-lasting freshness for every home.
+             We offer a wide range of home care essentials that deliver deep cleaning, long-lasting freshness, and gentle care for everyday use.
+
             </p>
           </motion.div>
         </div>
@@ -742,13 +743,27 @@ export default function ProductsPage() {
               Showing <b>{sortedProducts.length}</b> products
             </span>
 
-            <a
-              href="/images/Shashi_Catalogue.pdf"
-              download
-              className="px-4 py-2 rounded-full whitespace-nowrap transition-all bg-gold text-white shadow-md"
-            >
-              Download All Products
-            </a>
+           <button
+  onClick={() => {
+    const files = [
+      "/images/Shashi_Catalogue.pdf",
+      "/images/Catalogue_image.pdf",
+    ];
+
+    files.forEach((file) => {
+      const link = document.createElement("a");
+      link.href = file;
+      link.download = file.split("/").pop(); // keeps original file name
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  }}
+  className="px-4 py-2 rounded-full whitespace-nowrap transition-all bg-gold text-white shadow-md"
+>
+  Download All Catalogues
+</button>
+
           </div>
 
 

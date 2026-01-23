@@ -70,27 +70,37 @@ export default function ContactPage() {
   return (
     <div className="pt-24 min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal">
-        <div className="container-padding mx-auto">
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal overflow-hidden ">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url('/images/enquiry.webp')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }} />
+          <div className="absolute inset-0 bg-black opacity-50" />
+        </div>
+
+        <div className="container-padding mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="inline-block px-4 py-2 bg-gold/20 rounded-full mb-6">
-              <span className="text-sm text-gold tracking-wider uppercase">              Business Enquiry</span>
+             <div className="inline-block px-4 py-2 bg-white/20 rounded-full mb-6">
+              <span className="text-sm text-white tracking-wider uppercase">Get In Touch</span>
             </div>
             <h1 className="text-white mb-6">
-             Let’s Build a<br />Business Partnership
+             Let’s Build a
+              <br />
+             Business Partnership
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
-             For bulk orders, wholesale pricing, private labeling, or custom
-              manufacturing enquiries — our business team is ready to assist you.
+              For bulk orders, wholesale pricing, private labeling, or custom manufacturing enquiries — our business team is ready to assist you.
             </p>
           </motion.div>
         </div>
       </section>
-
       {/* Contact Info Cards */}
       {/* <section className="py-20 bg-cream">
         <div className="container-padding mx-auto">

@@ -59,7 +59,7 @@ export function Testimonials() {
   }, []);
 
   return (
-    <section className="py-20 lg:py-32 bg-charcoal relative overflow-hidden">
+    <section className="py-20 lg:py-32 py-20 lg:py-32 bg-gradient-to-br from-gold via-earth to-gold-dark">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div

@@ -82,7 +82,7 @@ export function Hero() {
       </section>
 
       {/* ================= STATS ================= */}
-      <section className="stats-section py-16 sm:py-20">
+      <section className="stats-section py-16 sm:py-20 ">
         <div className="max-w-7xl mx-auto px-4 flex justify-between gap-6">
           {[
             { value: "100%", label: "Natural Ingredients" },

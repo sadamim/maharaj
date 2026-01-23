@@ -112,15 +112,7 @@ export function Header({ currentPage = 'home', onNavigate }: HeaderProps) {
 
           {/* Right Icons */}
           <div className="flex items-center gap-4 lg:gap-6">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className={`hidden md:block transition-colors ${isScrolled || currentPage !== 'home' ? 'text-charcoal hover:text-gold' : 'text-white hover:text-gold-light'
-                }`}
-            >
-              <Search className="w-5 h-5" />
-            </motion.button>
-
+           
 
 
 

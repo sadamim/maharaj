@@ -69,15 +69,27 @@ export default function ContactPage() {
   return (
     <div className="pt-24 min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal">
-        <div className="container-padding mx-auto">
+     
+
+       <section className="relative py-20 lg:py-32 bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal overflow-hidden ">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url('/images/contact_us.webp')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }} />
+          <div className="absolute inset-0 bg-black opacity-50" />
+        </div>
+
+        <div className="container-padding mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="inline-block px-4 py-2 bg-gold/20 rounded-full mb-6">
-              <span className="text-sm text-gold tracking-wider uppercase">Get In Touch</span>
+             <div className="inline-block px-4 py-2 bg-white/20 rounded-full mb-6">
+              <span className="text-sm text-white tracking-wider uppercase">Get In Touch</span>
             </div>
             <h1 className="text-white mb-6">
               We'd Love to
@@ -200,27 +212,7 @@ export default function ContactPage() {
                         placeholder="+1 (234) 567-890"
                       />
                     </div>
-                    <div>
-                      <label htmlFor="subject" className="block text-sm text-gray-700 mb-2">
-                        Subject *
-                      </label>
-                      <select
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-gold focus:outline-none transition-colors bg-white"
-                      >
-                        <option value="">Select a subject</option>
-                        <option value="general">General Inquiry</option>
-                        <option value="product">Product Question</option>
-                        <option value="order">Order Support</option>
-                        <option value="custom">Custom Order</option>
-                        <option value="wholesale">Wholesale Inquiry</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
+                   
                   </div>
 
                  
