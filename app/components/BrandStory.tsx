@@ -42,28 +42,32 @@ export function BrandStory() {
            
 
             <h2 className="mb-6  text-center lg:text-left leading-tight text-h1">
-              Crafting a Cleaner
-              <span className="block">Tomorrow</span>
+              Crafting Cleanliness.
+              <span className="block">Inspiring Confidence.</span>
             </h2>
 
 
-            <div className="space-y-4 text-gray-700 mb-8 force-justify">
-              <p>
-                What began decades ago as a simple mission to make everyday cleaning easier and safer has grown into Maharaja Soap Factory, a name associated with trust, care, and quality.
-              </p>
+           <div className="space-y-4 text-gray-700 mb-8 force-justify">
+  <p>
+    For over two decades, Maharaj Soaps Industries Pvt. Ltd. has stood for pure,
+    reliable, and effective home care solutions. Born in Davangere, India, our
+    products are thoughtfully designed to bring freshness and hygiene to every
+    household — with quality you can trust and care you can feel.
+  </p>
 
-              <p>
-                Our roots lie in thoughtful craftsmanship. With experience honed over generations, we focus on creating cleansing solutions that carry tradition with innovation. Every formula we develop undergoes careful testing, ensuring it delivers the performance families rely on.
-              </p>
+  <p>
+    Our legacy is built on commitment — to purity, performance, and a brighter
+    everyday life. Every product reflects our dedication to responsible
+    manufacturing, consistent quality, and the well-being of the families who
+    rely on us.
+  </p>
 
-              <p>
-                We believe that a truly clean home is one made with intention. That’s why we choose responsible sourcing, precise manufacturing, and uncompromising quality at every stage.
-              </p>
+  <p>
+    Experience cleanliness that goes beyond the surface, transforming everyday
+    routines into moments of care, comfort, and confidence.
+  </p>
+</div>
 
-              <p>
-                From the first wash to the final rinse, our products are designed to bring freshness, comfort and confidence into your home.
-              </p>
-            </div>
 
 
 
@@ -73,7 +77,7 @@ export function BrandStory() {
               className="px-8 py-4 bg-charcoal text-white rounded-full hover:bg-gold transition-colors duration-300"
             >
               <Link href='/about'>
-               <span className="tracking-wide">Know About </span>
+               <span className="tracking-wide">View More </span>
               </Link>
              
             </motion.button>
@@ -125,29 +129,95 @@ export function BrandStory() {
         </div>
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20 lg:mt-32">
-          {values.map((value, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="text-center group"
-            >
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-gold to-earth rounded-2xl flex items-center justify-center shadow-lg"
-              >
-                <value.icon className="w-8 h-8 text-white" />
-              </motion.div>
-              <h4 className="mb-3 group-hover:text-gold transition-colors">{value.title}</h4>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                {value.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20 lg:mt-32">
+  {values.map((value, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: index * 0.12 }}
+      whileHover={{ y: -8 }}
+      className="text-center group relative"
+    >
+      {/* ICON CONTAINER */}
+      <motion.div
+        className="relative w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center shadow-xl overflow-hidden"
+        initial={{ backgroundPosition: "0% 50%" }}
+        animate={{
+          backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+          y: [0, -4, 0], // floating effect
+        }}
+        transition={{
+          backgroundPosition: {
+            duration: 4,
+            repeat: Infinity,
+            ease: "linear",
+          },
+          y: {
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          },
+        }}
+        whileHover={{
+          scale: 1.2,
+          rotate: 8,
+        }}
+        style={{
+          backgroundImage:
+            "linear-gradient(270deg, #7a0f12, #ac1e23, #d63a3f, #ac1e23, #7a0f12)",
+          backgroundSize: "400% 400%",
+        }}
+      >
+        {/* Glow pulse */}
+        <motion.div
+          className="absolute inset-0 rounded-2xl"
+          animate={{
+            boxShadow: [
+              "0 0 0px rgba(172,30,35,0.0)",
+              "0 0 20px rgba(172,30,35,0.45)",
+              "0 0 0px rgba(172,30,35,0.0)",
+            ],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* Shine sweep */}
+        <motion.div
+          className="absolute inset-0 bg-white/20 rotate-12"
+          initial={{ x: "-120%" }}
+          whileHover={{ x: "120%" }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+        />
+
+        {/* Icon */}
+        <motion.div
+          whileHover={{ scale: 1.15 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          className="relative z-10"
+        >
+          <value.icon className="w-8 h-8 text-white drop-shadow-md" />
+        </motion.div>
+      </motion.div>
+
+      {/* TEXT */}
+      <h4 className="mb-3 transition-colors group-hover:text-[#ac1e23]">
+        {value.title}
+      </h4>
+
+      <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+        {value.description}
+      </p>
+    </motion.div>
+  ))}
+</div>
+
+
       </div>
     </section>
   );

@@ -10,7 +10,6 @@ const testimonials = [
     content:
       'I started using Maharaj soaps after my kids developed skin sensitivity. Five years later, we still haven’t switched. The soaps feel gentle, smell natural, and give me peace of mind every day.',
     rating: 5,
-    image: 'https://randomuser.me/api/portraits/women/68.jpg',
   },
   {
     id: 2,
@@ -19,7 +18,6 @@ const testimonials = [
     content:
       'After long workdays, I look for products that are simple and effective. Maharaj’s herbal soaps do exactly that — no harsh feel, no overpowering fragrance, just clean and refreshing.',
     rating: 5,
-    image: 'https://randomuser.me/api/portraits/men/45.jpg',
   },
   {
     id: 3,
@@ -28,7 +26,6 @@ const testimonials = [
     content:
       'I’m very particular about what touches my skin. Maharaj soaps leave my skin feeling fresh and hydrated without dryness. It’s become a small but important part of my daily routine.',
     rating: 5,
-    image: 'https://randomuser.me/api/portraits/women/32.jpg',
   },
   {
     id: 4,
@@ -37,7 +34,6 @@ const testimonials = [
     content:
       'We introduced Maharaj soaps across our hotel properties, and guests noticed the change immediately. The feedback has been genuinely positive, especially about fragrance and skin comfort.',
     rating: 5,
-    image: 'https://randomuser.me/api/portraits/men/61.jpg',
   },
   {
     id: 5,
@@ -46,21 +42,21 @@ const testimonials = [
     content:
       'From elders to kids, everyone at home uses Maharaj soap. It feels reassuring to use a product that’s affordable, reliable, and proudly made in India.',
     rating: 5,
-    image: 'https://randomuser.me/api/portraits/women/75.jpg',
   },
 ];
 
 export function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
-useEffect(() => {
-  const interval = setInterval(() => {
-    setActiveIndex((prevIndex) =>
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-    );
-  }, 5000); // 5 seconds
 
-  return () => clearInterval(interval); // cleanup
-}, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) =>
+        prev === testimonials.length - 1 ? 0 : prev + 1
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="py-20 lg:py-32 bg-charcoal relative overflow-hidden">
@@ -69,23 +65,23 @@ useEffect(() => {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`,
+            backgroundImage:
+              'radial-gradient(circle, white 1px, transparent 1px)',
             backgroundSize: '50px 50px',
           }}
         />
       </div>
 
       <div className="container-padding mx-auto relative z-10">
-        {/* Section Header */}
+        {/* Header */}
         <div className="text-center">
-        
           <h2 className="mb-6 text-white">What Our Customers Say</h2>
           <p className="text-gray-300">
-            Join thousands of satisfied customers who have elevated their daily rituals with Shashi Soap.
+            Join thousands of satisfied customers who trust Maharaj Soaps every day.
           </p>
         </div>
 
-        {/* Main Testimonial */}
+        {/* Testimonial Card */}
         <div className="max-w-4xl mx-auto mb-12 mt-16">
           <AnimatePresence mode="wait">
             <motion.div
@@ -102,54 +98,44 @@ useEffect(() => {
               </div>
 
               {/* Rating */}
-              <div className="flex items-center gap-2 mb-6">
-                {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 fill-gold text-gold" />
-                ))}
-              </div>
-
-              {/* Content */}
-              <p className="text-xl lg:text-2xl text-white leading-relaxed mb-8">
+              
+              {/* ✅ FIXED FONT SIZE HERE */}
+              <p className="text-sm lg:text-base text-white leading-relaxed mb-8">
                 “{testimonials[activeIndex].content}”
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4">
-               
-                <div>
-                  <div className="text-white mb-1">
-                    {testimonials[activeIndex].name}
-                  </div>
-                  <div className="text-sm text-white">
-                    {testimonials[activeIndex].role}
-                  </div>
+              <div>
+                <div className="text-white font-medium">
+                  {testimonials[activeIndex].name}
+                </div>
+                <div className="text-sm text-white/70">
+                  {testimonials[activeIndex].role}
                 </div>
               </div>
             </motion.div>
           </AnimatePresence>
         </div>
 
-        {/* Pagination Dots */}
-       {/* Dots Pagination */}
-<div className="flex justify-center gap-3 mt-8">
-  {testimonials.map((_, index) => (
-    <motion.button
-      key={index}
-      onClick={() => setActiveIndex(index)}
-      whileHover={{ scale: 1.2 }}
-      whileTap={{ scale: 0.9 }}
-      className={`h-2 rounded-full transition-all duration-300 ${
-        activeIndex === index
-          ? 'bg-white w-6 opacity-100'
-          : 'bg-white w-2 opacity-50 hover:opacity-80'
-      }`}
-      aria-label={`Go to testimonial ${index + 1}`}
-    />
-  ))}
-</div>
+        {/* Dots */}
+        <div className="flex justify-center gap-3 mt-8">
+          {testimonials.map((_, index) => (
+            <motion.button
+              key={index}
+              onClick={() => setActiveIndex(index)}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                activeIndex === index
+                  ? 'bg-white w-6 opacity-100'
+                  : 'bg-white w-2 opacity-50'
+              }`}
+              aria-label={`Go to testimonial ${index + 1}`}
+            />
+          ))}
+        </div>
 
-
-        {/* Trust Badges */}
+        {/* Trust Stats */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -163,21 +149,14 @@ useEffect(() => {
             { value: '15+', label: 'Cities Delivery' },
             { value: '100%', label: 'Natural Ingredients' },
           ].map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="text-center"
-            >
+            <div key={index} className="text-center">
               <div className="text-3xl lg:text-4xl text-white mb-2">
                 {stat.value}
               </div>
-              <div className="text-sm text-white tracking-wider uppercase">
+              <div className="text-sm text-white/70 uppercase tracking-wider">
                 {stat.label}
               </div>
-            </motion.div>
+            </div>
           ))}
         </motion.div>
       </div>

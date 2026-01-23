@@ -12,7 +12,6 @@ export default function ContactPage() {
     email: '',
     phone: '',
     subject: '',
-    companyName: '',
     message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -22,7 +21,7 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitted(true);
     setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '', subject: '', companyName: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       setIsSubmitted(false);
     }, 3000);
   };
@@ -224,23 +223,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  {['order', 'custom', 'wholesale'].includes(formData.subject) && (
-                    <div>
-                      <label htmlFor="companyName" className="block text-sm text-gray-700 mb-2">
-                        Company / Shop Name {['order', 'custom', 'wholesale'].includes(formData.subject) ? '*' : ''}
-                      </label>
-                      <input
-                        type="text"
-                        id="companyName"
-                        name="companyName"
-                        value={formData.companyName}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-gold focus:outline-none transition-colors"
-                        placeholder="Acme Corp or Shop Name"
-                      />
-                    </div>
-                  )}
+                 
 
                   <div>
                     <label htmlFor="message" className="block text-sm text-gray-700 mb-2">

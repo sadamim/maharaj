@@ -35,7 +35,7 @@ export function Header({ currentPage = 'home', onNavigate }: HeaderProps) {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
+    { name: "Our Factory", href: "/about" },
     { name: "Products", href: "/products" },
     { name: "Enquiry", href: "/enquiry" },
         { name: "Contact", href: "/contact" },

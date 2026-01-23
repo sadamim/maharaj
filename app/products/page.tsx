@@ -6,22 +6,23 @@ import { Star, ShoppingCart, Heart, Filter, Search } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useState } from 'react';
 
-const categories = [
-  'All Products',
-  'Washing Powders',
-  'Liquid Detergents',
-  'Dishwash',
-  'Dishwash Gel',
-  'Toilet Cleaner',
-  'Floor Cleaner',
-  'Detergent Cake',
+const categories =[
+  "All Products",
+  "Detergent Cakes & Bars",
+  "Washing Powders",
+  "Dishwash",
+  "Beauty Soap",
+  "Floor & Toilet Cleaners",
+  "Fabric Conditioner",
+  "Pouches & Packs",
+  "Cleaning Aids",
 ];
 
 const allProducts = [
   {
     id: 1,
     name: "Shashi Pink M-Lore Detergent Cake",
-    category: "Detergent Cake",
+    category: "Detergent Cakes & Bars",
     description: "Detergent cake for daily washing 150G & 60 PCS",
     price: 15,
     rating: 4.5,
@@ -33,7 +34,7 @@ const allProducts = [
   {
     id: 2,
     name: "Shashi Pink Pouch",
-    category: "Detergent Cake",
+    category: "Pouches & Packs",
     description: "Compact detergent pouch",
     price: 10,
     rating: 4.4,
@@ -46,7 +47,7 @@ const allProducts = [
   {
     id: 3,
     name: "Shashi Pink Bullet Set",
-    category: "Detergent Cake",
+    category: "Detergent Cakes & Bars",
     description: "Bullet detergent cake 1 SET ,6 PCS",
     price: 180,
     rating: 4.6,
@@ -58,7 +59,7 @@ const allProducts = [
   {
     id: 4,
     name: "Shashi Pink Bullet Pouch",
-    category: "Detergent Cake",
+    category: "Pouches & Packs",
     description: "Bullet detergent cake 250G 60 PCS",
     price: 30,
     rating: 4.6,
@@ -70,7 +71,7 @@ const allProducts = [
   {
     id: 5,
     name: "Shashi Arya Blue Detergent Cake",
-    category: "Detergent Cake",
+    category: "Detergent Cakes & Bars",
     description: "Arya blue detergent cake",
     price: 26,
     rating: 4.6,
@@ -86,7 +87,7 @@ const allProducts = [
   {
     id: 9,
     name: "Shashi Pink & Blue Washing Powder",
-    category: "Washing Powder",
+    category: "Washing Powders",
     description: "Dual colour washing powder",
     price: 90,
     rating: 4.7,
@@ -98,7 +99,7 @@ const allProducts = [
   {
     id: 10,
     name: "Shashi Hi-Clean Washing Powder",
-    category: "Washing Powder",
+    category: "Washing Powders",
     description: "Hi-clean detergent powder",
     price: 10,
     rating: 4.5,
@@ -111,7 +112,7 @@ const allProducts = [
   {
     id: 12,
     name: "Shashi Triple Action Detergent Powder",
-    category: "Washing Powder",
+    category: "Washing Powders",
     description: "Triple action detergent powder",
     price: 99,
     rating: 4.8,
@@ -125,7 +126,7 @@ const allProducts = [
   {
     id: 14,
     name: "Shashi Bheema Phenyl",
-    category: "Phenyl",
+    category: "Floor & Toilet Cleaners",
     description: "Phenyl floor cleaner",
     price: 90,
     rating: 4.6,
@@ -138,7 +139,7 @@ const allProducts = [
   {
     id: 16,
     name: "Mr Win Washing Powder",
-    category: "Washing Powder",
+    category: "Washing Powders",
     description: "Budget washing powder",
     price: 10,
     rating: 4.3,
@@ -188,7 +189,7 @@ const allProducts = [
   {
     id: 20,
     name: "Savaal Oxydol Dishwash Gel",
-    category: "Dishwash Gel",
+    category: "Dishwash",
     description: "Dishwash gel",
     price: 150,
     rating: 4.6,
@@ -226,7 +227,7 @@ const allProducts = [
   {
     "id": 24,
     "name": "Shashi Washing Powder",
-    "category": "Washing Powder",
+    "category": "Washing Powders",
     "description": "General purpose washing powder",
     "price": 55,
     "rating": 4.5,
@@ -238,7 +239,7 @@ const allProducts = [
   {
     "id": 25,
     "name": "Shashi Hi-Clean Washing Powder",
-    "category": "Washing Powder",
+    "category": "Washing Powders",
     "description": "Hi-clean detergent powder",
     "price": 60,
     "rating": 4.6,
@@ -251,7 +252,7 @@ const allProducts = [
   {
     "id": 27,
     "name": "Mr Win Washing Powder",
-    "category": "Washing Powder",
+    "category": "Washing Powders",
     "description": "Economical washing powder",
     "price": 50,
     "rating": 4.3,
@@ -263,7 +264,7 @@ const allProducts = [
   {
     "id": 28,
     "name": "Savaal Gold Washing Powder",
-    "category": "Washing Powder",
+    "category": "Washing Powders",
     "description": "Premium washing powder",
     "price": 100,
     "rating": 4.5,
@@ -275,7 +276,7 @@ const allProducts = [
   {
     "id": 29,
     "name": "Savaal 999 Washing Powder",
-    "category": "Washing Powder",
+    "category": "Washing Powders",
     "description": "High performance detergent",
     "price": 60,
     "rating": 4.6,
@@ -287,7 +288,7 @@ const allProducts = [
   {
     "id": 30,
     "name": "Savaal Blue Pouch",
-    "category": "Washing Powder",
+    "category": "Washing Powders",
     "description": "Compact washing powder pouch",
     "price": 10,
     "rating": 4.4,
@@ -300,7 +301,7 @@ const allProducts = [
   {
     "id": 32,
     "name": "Shashi Blue Pouch",
-    "category": "Detergent Cake",
+    "category": "Detergent Cakes & Bars",
     "description": "Blue detergent pouch",
     "price": 10,
     "rating": 4.5,
@@ -312,7 +313,7 @@ const allProducts = [
   {
     "id": 33,
     "name": "Shashi Pink Detergent Cake",
-    "category": "Detergent Cake",
+    "category": "Detergent Cakes & Bars",
     "description": "Classic pink detergent cake",
     "price": 12,
     "rating": 4.6,
@@ -324,7 +325,7 @@ const allProducts = [
   {
     "id": 34,
     "name": "Shashi Anti Bacterial Detergent Cake",
-    "category": "Detergent Cake",
+    "category": "Detergent Cakes & Bars",
     "description": "Anti bacterial detergent cake",
     "price": 25,
     "rating": 4.7,
@@ -336,7 +337,7 @@ const allProducts = [
   {
     "id": 35,
     "name": "Mr Bheem Detergent Cake",
-    "category": "Detergent Cake",
+    "category": "Detergent Cakes & Bars",
     "description": "Heavy duty detergent cake",
     "price": 15,
     "rating": 4.4,
@@ -360,7 +361,7 @@ const allProducts = [
   {
     "id": 37,
     "name": "Savaal White Pouch",
-    "category": "Detergent Cake",
+    "category": "Detergent Cakes & Bars",
     "description": "White detergent pouch",
     "price": 10,
     "rating": 4.3,
@@ -372,7 +373,7 @@ const allProducts = [
   {
     "id": 38,
     "name": "Savaal Max Blue Detergent Cake",
-    "category": "Detergent Cake",
+    "category": "Detergent Cakes & Bars",
     "description": "Blue detergent cake",
     "price": 10,
     "rating": 4.5,
@@ -384,7 +385,7 @@ const allProducts = [
   {
     "id": 39,
     "name": "Savaal White Gold Detergent Cake",
-    "category": "Detergent Cake",
+    "category": "Detergent Cakes & Bars",
     "description": "Premium detergent cake",
     "price": 25,
     "rating": 4.6,
@@ -396,7 +397,7 @@ const allProducts = [
   {
     "id": 40,
     "name": "Savaal More Bright Detergent Cake",
-    "category": "Detergent Cake",
+    "category": "Detergent Cakes & Bars",
     "description": "Extra bright detergent cake",
     "price": 20,
     "rating": 4.4,
@@ -408,7 +409,7 @@ const allProducts = [
   {
     "id": 41,
     "name": "Savaal Max White Detergent Cake",
-    "category": "Detergent Cake",
+    "category": "Detergent Cakes & Bars",
     "description": "White detergent cake",
     "price": 10,
     "rating": 4.5,
@@ -420,7 +421,7 @@ const allProducts = [
   {
     "id": 42,
     "name": "Savaal White Detergent Cake",
-    "category": "Detergent Cake",
+    "category": "Detergent Cakes & Bars",
     "description": "Standard white detergent cake",
     "price": 12,
     "rating": 4.4,
@@ -492,7 +493,7 @@ const allProducts = [
   {
     "id": 48,
     "name": "Shashi Scouring Powder",
-    "category": "Dishwash",
+    "category": "Cleaning Aids",
     "description": "Scouring powder",
     "price": 10,
     "rating": 4.4,
@@ -516,7 +517,7 @@ const allProducts = [
   {
     "id": 50,
     "name": "Shashi Neem & Tulasi Beauty Soap",
-    "category": "Beauty Soap",
+    "category": "Floor & Toilet Cleaners",
     "description": "Herbal soap",
     "price": 30,
     "rating": 4.7,
@@ -540,7 +541,7 @@ const allProducts = [
   {
     "id": 52,
     "name": "Shashi Bheema Phenyl",
-    "category": "Phenyl",
+    "category": "Floor & Toilet Cleaners",
     "description": "Phenyl floor cleaner",
     "price": 70,
     "rating": 4.6,
@@ -552,7 +553,7 @@ const allProducts = [
   {
     "id": 53,
     "name": "Savaal Extra Act Phenyl",
-    "category": "Phenyl",
+    "category": "Floor & Toilet Cleaners",
     "description": "Extra active phenyl",
     "price": 70,
     "rating": 4.6,
@@ -564,7 +565,7 @@ const allProducts = [
   {
     "id": 54,
     "name": "Shashi Scrubber",
-    "category": "Scrubber",
+    "category": "Cleaning Aids",
     "description": "Steel scrubber",
     "price": 15,
     "rating": 4.4,
@@ -576,7 +577,7 @@ const allProducts = [
   {
     "id": 64,
     "name": "Savaal Scrubber",
-    "category": "Scrubber",
+    "category": "Cleaning Aids",
     "description": "Steel scrubber",
     "price": 15,
     "rating": 4.4,
@@ -588,7 +589,7 @@ const allProducts = [
   {
     "id": 55,
     "name": "Savaal Captain Floor Cleaner",
-    "category": "Floor Cleaner",
+    "category": "Floor & Toilet Cleaners",
     "description": "Floor cleaning liquid",
     "price": 93,
     "rating": 4.7,
@@ -600,7 +601,7 @@ const allProducts = [
   {
     "id": 56,
     "name": "Savaal Captain Toilet Cleaner",
-    "category": "Toilet Cleaner",
+    "category": "Floor & Toilet Cleaners",
     "description": "Toilet cleaning liquid",
     "price": 90,
     "rating": 4.6,
@@ -612,7 +613,7 @@ const allProducts = [
   {
     "id": 57,
     "name": "Shashi Matic Liquid Detergent",
-    "category": "Liquid Detergent",
+    "category": "Fabric Conditioner",
     "description": "Liquid detergent for machines",
     "price": 220,
     "rating": 4.6,
@@ -624,7 +625,7 @@ const allProducts = [
   {
     "id": 58,
     "name": "Shashi Pink Detergent Cake",
-    "category": "Detergent Cake",
+    "category": "Detergent Cakes & Bars",
     "description": "Pink detergent cake",
     "price": 20,
     "rating": 4.5,

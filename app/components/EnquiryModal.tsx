@@ -15,7 +15,6 @@ export function EnquiryModal({
     name: "",
     email: "",
     phone: "",
-    companyName: "",
     message: "",
   });
 
@@ -36,7 +35,6 @@ export function EnquiryModal({
         name: "",
         email: "",
         phone: "",
-        companyName: "",
         message: "",
       });
       setIsSubmitted(false);
@@ -126,19 +124,7 @@ export function EnquiryModal({
             </div>
 
             {/* Company */}
-            <div>
-              <label className="text-sm font-medium text-gray-700">
-                Company / Shop Name
-              </label>
-              <input
-                name="companyName"
-                value={formData.companyName}
-                onChange={handleChange}
-                placeholder="Your business name"
-                className="mt-1 w-full rounded-lg border px-3 py-2 text-sm
-                  focus:border-gold focus:ring-2 focus:ring-gold/30"
-              />
-            </div>
+          
 
             {/* Message */}
             <div>

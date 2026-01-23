@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, X, Mail, Phone, MapPin, Twitter, Youtube, TicketX } from 'lucide-react';
+import { Facebook, Instagram, X, Mail, Phone, MapPin, Twitter, Youtube, TicketX, Linkedin } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { EnquiryModal } from './EnquiryModal';
 
@@ -51,10 +51,11 @@ export function Footer() {
   };
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Facebook, href: 'https://www.facebook.com/msiplgroup/|', label: 'Facebook' },
+    // { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/msipl/', label: 'Instagram' },
     // { icon: Twitter, href: '#', label: 'X' }, 
-    { icon: Youtube, href: '#', label: 'X' },
+    // { icon: Youtube, href: '#', label: 'X' },
 
   ];
   const [showEnquiry, setShowEnquiry] = useState(false);

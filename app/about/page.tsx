@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Heart, Leaf, Award, Users, Globe, Sparkles } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import Image from 'next/image';
 
 export default function AboutPage() {
   const milestones = [
@@ -18,7 +19,7 @@ export default function AboutPage() {
       role: 'Chairman, MSIPL',
       image: '/images/raviraja.jpg',
     },
-   
+
   ];
 
   const values = [
@@ -65,7 +66,7 @@ export default function AboutPage() {
             backgroundPosition: 'center',
           }} />
         </div>
-        
+
         <div className="container-padding mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -77,7 +78,7 @@ export default function AboutPage() {
               <span className="text-sm text-gold tracking-wider uppercase">Our Story</span>
             </div>
             <h1 className="text-white mb-6">
-              Crafting a Cleaner 
+              Crafting a Cleaner
               <br />
               Tomorrow
             </h1>
@@ -98,21 +99,44 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="mb-6">Our Journey</h2>
-              <div className="space-y-6 text-gray-700">
-                <p>
-                 Maharaja Soap Factory began decades ago in a modest production space, where our founders dedicated themselves to creating cleaning solutions that were both effective and gentle for everyday use. What started as a small initiative to make dependable, family-friendly detergents soon grew into a mission to uplift the daily lives of households with products they could trust.
-                </p>
-                <p>
-                 In the early years, our approach was simple — combine thoughtful formulation with honest craftsmanship. Over time, this philosophy shaped every stage of our process, from the selection of raw materials to the final finishing of each product. We work with reliable suppliers and quality-driven partners to ensure every ingredient meets our stringent standards for safety, consistency, and performance.
-                </p>
-                <p>
-                 Today, Maharaja Soap Factory has evolved into a brand embraced by thousands of homes. Yet, our foundation remains unchanged: purity, care, and a commitment to delivering a superior cleaning experience. Whether it’s laundry essentials or household cleaners, each product carries forward our promise of quality and our dedication to making every wash a little brighter, fresher, and more comforting.
-                </p>
-                <p>
-                  Every pack tells a story of trust — built over years, crafted with responsibility, and made for families who deserve the best.
-                </p>
-              </div>
+              <h2 className="mb-6">Who We Are</h2>
+             <div className="space-y-6 text-gray-700">
+  <p className="text-justify-better">
+    At Maharaj Soaps Industries, we believe that clean living begins at home. Since
+    the year 2000, we have been dedicated to crafting dependable and high-quality
+    home care solutions that families can trust every day. From detergent soaps
+    and washing powders to liquid detergents, dish wash bars, and phenyls, each
+    product is thoughtfully developed to deliver effective cleanliness with care.
+  </p>
+
+  <p className="text-justify-better">
+    Our products are manufactured under trusted brands such as <strong>Shashi</strong> and
+    <strong> Savaal</strong>, reflecting our commitment to quality, consistency, and
+    performance. What began as a focused manufacturing effort has grown into a
+    purpose-driven organization serving thousands of households with reliable
+    hygiene solutions.
+  </p>
+
+  <p className="text-justify-better">
+    <strong>Our Mission</strong> is to deliver world-class cleaning products that are safe,
+    effective, and accessible — helping families live healthier, happier lives
+    through better hygiene and care.
+  </p>
+
+  <p className="text-justify-better">
+    <strong>Our Vision</strong> is to become a household name trusted in every home,
+    recognized for consistent quality, continuous innovation, and integrity in
+    hygiene care.
+  </p>
+
+  <p className="text-justify-better">
+    Our values guide everything we do — a quality-first mindset with strict checks
+    at every stage, a customer-centric approach that puts household needs first,
+    eco-friendly practices that respect health and the environment, and affordable
+    goodness that delivers premium quality without premium price tags.
+  </p>
+</div>
+
             </motion.div>
 
             <motion.div
@@ -123,35 +147,49 @@ export default function AboutPage() {
               className="relative"
             >
               <div className="grid grid-cols-2 gap-4">
+                {/* LEFT COLUMN */}
                 <div className="space-y-4">
-                  <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
-                    <ImageWithFallback
-                      src="https://images.unsplash.com/photo-1607006555278-8d2de55615e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYW5kbWFkZSUyMHNvYXAlMjBhZXN0aGV0aWN8ZW58MXx8fHwxNzY1NTIyMDE1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl">
+                    <Image
+                      src="/images/about1.webp"
                       alt="Handmade soap"
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      className="object-cover"
+                      priority
                     />
                   </div>
-                  <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-                    <ImageWithFallback
-                      src="https://images.unsplash.com/photo-1758614029926-ce31d385b9ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib3RhbmljYWwlMjBpbmdyZWRpZW50c3xlbnwxfHx8fDE3NjU1MjIwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+
+                  <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+                    <Image
+                      src="/images/about2.webp"
                       alt="Natural ingredients"
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      className="object-cover"
                     />
                   </div>
                 </div>
+
+                {/* RIGHT COLUMN */}
                 <div className="space-y-4 pt-12">
-                  <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-                    <ImageWithFallback
-                      src="https://images.unsplash.com/photo-1588546071922-7c599cdf651b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpc2FuJTIwc29hcCUyMGVsZWdhbnR8ZW58MXx8fHwxNzY1NTIyMDE0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+                    <Image
+                      src="/images/about3.webp"
                       alt="Artisan soap"
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      className="object-cover"
                     />
                   </div>
-                  <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
-                    <ImageWithFallback
-                      src="https://images.unsplash.com/photo-1763485955921-d3842bd90eb7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBzb2FwJTIwbmF0dXJhbHxlbnwxfHx8fDE3NjU1MjIwMTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+
+                  <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl">
+                    <Image
+                      src="/images/about4.webp"
                       alt="Luxury soap"
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      className="object-cover"
                     />
                   </div>
                 </div>
@@ -251,87 +289,105 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-       <section className="py-20 lg:py-32 bg-cream">
+      <section className="py-20 lg:py-32 bg-cream">
         <div className="container-padding mx-auto">
-    <motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.6 }}
-  className="max-w-6xl mx-auto mb-24"
->
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-    
-    {/* Image Section */}
-    <motion.div
-      initial={{ opacity: 0, x: -30 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="relative"
-    >
-      <div className="aspect-square rounded-3xl overflow-hidden shadow-xl">
-        <ImageWithFallback
-          src="/images/raviraja.jpg"   // 👈 replace with actual image path
-          alt="Dr. Raviraja M.E. - Chairman Maharaj Soaps"
-          className="w-full h-full object-cover"
-        />
-      </div>
-    </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-6xl mx-auto mb-24"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-    {/* Content Section */}
-    <motion.div
-      initial={{ opacity: 0, x: 30 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-    >
-      <h3 className="text-2xl lg:text-3xl mb-2">
-        Dr. Raviraja M.E.
-      </h3>
-      <p className="text-sm text-gold mb-6">
-        Chairman & Managing Director <br />
-        Maharaj Soaps Industry (P) Ltd.
-      </p>
+              {/* Image Section */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative"
+              >
+                <div className="aspect-square rounded-3xl overflow-hidden shadow-xl">
+                  <ImageWithFallback
+                    src="/images/raviraja.jpg"   // 👈 replace with actual image path
+                    alt="Dr. Raviraja M.E. - Chairman Maharaj Soaps"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </motion.div>
 
-      {/* Quality */}
-      <div className="mb-6">
-        <h4 className="text-lg mb-2">Our Quality</h4>
-        <p className="text-gray-600 leading-relaxed">
-          To be the leader in domestic as well as global markets through sincere
-          and dedicated efforts of staff, management, and employees. Maharaj
-          Soaps and Detergents is a customer-focused firm committed to
-          consistently offering better quality products and services that
-          maximise value to the customer.
-        </p>
-      </div>
+              {/* Content Section */}
+              <motion.section
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="max-w-4xl mx-auto px-6 py-16"
+              >
+                {/* Heading */}
+                <h1 className="text-3xl font-semibold mb-8">
+                  Chairman’s Message
+                </h1>
 
-      {/* Vision */}
-      <div className="mb-6">
-        <h4 className="text-lg mb-2">Our Vision</h4>
-        <p className="text-gray-600 leading-relaxed">
-          Quality has always been the foremost concern for us. We have adopted
-          several international quality control standards to ensure superior
-          quality. Our quality inspectors monitor every stage of the production
-          process—from raw materials to final dispatch.
-        </p>
-      </div>
+                {/* Message Content */}
+                <div className="space-y-5 text-gray-700 leading-relaxed text-base">
+                  <p>
+                    At Maharaj Soaps Industries Pvt. Ltd., our journey began with a simple belief —
+                    cleanliness is not a luxury, it is a necessity. From the very first day, our focus
+                    has been clear: to create high-quality home care products that families can trust,
+                    use every day, and feel confident about.
+                  </p>
 
-      {/* Mission */}
-      <div>
-        <h4 className="text-lg mb-2">Our Mission</h4>
-        <p className="text-gray-600 leading-relaxed">
-          To excel in soaps and detergents by delivering high-quality products
-          at attractive prices, achieving sustainable profitability, making
-          India’s presence felt globally, and setting benchmarks for future
-          companies.
-        </p>
-      </div>
-    </motion.div>
+                  <p>
+                    Over the years, we have grown from a small manufacturing unit into a respected name
+                    in the home care segment. This growth has not come from shortcuts, but from discipline,
+                    consistency, and an uncompromising commitment to quality. Every soap bar, every
+                    detergent, and every cleaning solution we produce carries the same promise — effective
+                    performance, safe formulation, and honest value.
+                  </p>
 
-  </div>
-</motion.div>
-</div>
+                  <p>
+                    What truly drives us forward is our responsibility toward households that rely on our
+                    products. We continuously invest in better processes, modern manufacturing practices,
+                    and product innovation, while ensuring that our offerings remain affordable and
+                    accessible. At the same time, we remain deeply conscious of our duty toward the
+                    environment and the communities we serve.
+                  </p>
+
+                  <p>
+                    As we move into the future, our vision is strong and focused — to build a brand that
+                    stands for trust across generations, to expand our reach while staying rooted in our
+                    values, and to keep improving the everyday lives of our customers through better,
+                    smarter cleaning solutions.
+                  </p>
+
+                  <p>
+                    I extend my sincere gratitude to our employees, partners, distributors, and customers
+                    who have been an integral part of this journey. Your trust inspires us to raise our
+                    standards every single day.
+                  </p>
+
+                  <p>
+                    Together, we will continue to build a cleaner, healthier, and brighter tomorrow.
+                  </p>
+                </div>
+
+                {/* Signature */}
+                <div className="mt-10">
+                  <p className="font-medium">Warm regards,</p>
+                  <p className="font-semibold mt-1">Dr. Raviraja M.E.</p>
+                  <p className="text-gray-600">
+                    Chairman & Managing Director <br />
+                    Maharaj Soaps Industries Pvt. Ltd.
+                  </p>
+                </div>
+              </motion.section>
+
+
+            </div>
+          </motion.div>
+        </div>
       </section>
 
 
