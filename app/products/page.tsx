@@ -743,7 +743,7 @@ export default function ProductsPage() {
               Showing <b>{sortedProducts.length}</b> products
             </span>
 
-           <button
+<button
   onClick={() => {
     const files = [
       "/images/Shashi_Catalogue.pdf",
@@ -753,7 +753,7 @@ export default function ProductsPage() {
     files.forEach((file) => {
       const link = document.createElement("a");
       link.href = file;
-      link.download = file.split("/").pop(); // keeps original file name
+      link.download = file.split("/").pop() ?? "catalogue.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
