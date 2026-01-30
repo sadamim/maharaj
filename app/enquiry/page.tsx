@@ -44,8 +44,8 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: 'Call Us',
-      details: ['+91 8192262826', 'Mon-Fri, 9AM-6PM EST'],
-      action: 'tel:+918192262826',
+      details: ['+91 7353011355', 'Mon-Fri, 9AM-6PM EST'],
+      action: 'tel:+917353011355',
     },
     {
       icon: MapPin,

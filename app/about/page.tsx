@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export default function AboutPage() {
   const milestones = [
-    { year: '1998', title: 'The Beginning', description: 'Started as a small-scale unit with a vision to uplift daily cleaning with better-quality products' },
+    { year: '2000', title: 'The Beginning', description: 'Started as a small-scale unit with a vision to uplift daily cleaning with better-quality products' },
     { year: '2008', title: 'Breakthrough in Formulation', description: 'Developed advanced stain-removal and fabric-care formulas that set new standards in performance' },
     { year: '2016', title: 'Production Upgrade', description: 'Enhanced manufacturing capabilities with improved processes for consistency, purity, and efficiency' },
     { year: '2023', title: 'Trusted by Millions', description: 'Proudly serving families across the country, becoming a household name in dependable cleaning' },
@@ -76,7 +76,7 @@ export default function AboutPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <div className="inline-block px-4 py-2 bg-gold/20 rounded-full mb-6">
-              <span className="text-sm text-white tracking-wider uppercase">Our Story</span>
+              <span className="text-sm text-white tracking-wider uppercase">Our Factory</span>
             </div>
             <h1 className="text-white mb-6">
               Crafting a Cleaner

@@ -53,7 +53,7 @@ export function Testimonials() {
       setActiveIndex((prev) =>
         prev === testimonials.length - 1 ? 0 : prev + 1
       );
-    }, 5000);
+    }, 15000);
 
     return () => clearInterval(interval);
   }, []);
@@ -61,16 +61,7 @@ export function Testimonials() {
   return (
     <section className="py-20 lg:py-32 py-20 lg:py-32 bg-gradient-to-br from-gold via-earth to-gold-dark">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle, white 1px, transparent 1px)',
-            backgroundSize: '50px 50px',
-          }}
-        />
-      </div>
+  
 
       <div className="container-padding mx-auto relative z-10">
         {/* Header */}

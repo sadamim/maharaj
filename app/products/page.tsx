@@ -16,6 +16,7 @@ const categories =[
   "Fabric Conditioner",
   "Pouches & Packs",
   "Cleaning Aids",
+  
 ];
 
 const allProducts = [
@@ -517,7 +518,7 @@ const allProducts = [
   {
     "id": 50,
     "name": "Shashi Neem & Tulasi Beauty Soap",
-    "category": "Floor & Toilet Cleaners",
+    "category": "Beauty Soap",
     "description": "Herbal soap",
     "price": 30,
     "rating": 4.7,
@@ -719,8 +720,8 @@ export default function ProductsPage() {
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
                 className="w-full lg:w-auto px-4 py-2.5 border-2 border-gray-200 rounded-full
-                     focus:border-gold focus:outline-none transition-colors bg-white
-                     cursor-pointer text-sm"
+                     focus:border-gold focus:outline-none transition-colors bg-drak
+                     cursor-pointer text-sm text-black"
               >
                 <option value="featured">Featured</option>
                 <option value="price-low">Price: Low to High</option>

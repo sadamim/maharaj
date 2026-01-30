@@ -38,12 +38,11 @@ export function Footer() {
       { name: 'Maharaj Soaps', href: '#' },
     ],
     company: [
-      { name: 'About Us', href: '/about' },
-      { name: 'Our Story', href: '#' },
-      { name: 'Careers', href: '#' },
-      { name: 'Products', href: '/products' },
-
-      { name: 'Contact Us', href: '/contact' },
+      { name: "Home", href: "/" },
+    { name: "Our Factory", href: "/about" },
+    { name: "Products", href: "/products" },
+    { name: "Enquiry", href: "/enquiry" },
+        { name: "Contact", href: "/contact" },
     ],
     support: [
 
@@ -64,7 +63,7 @@ export function Footer() {
     <footer className="bg-charcoal text-white pt-20 pb-8 py-20 lg:py-32 bg-gradient-to-br from-gold via-earth to-gold-dark">
       <div className="container-padding mx-4 md:mx-[5%] lg:mx-[10%] ">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16 items-start">
 
           <div className="">
             <motion.div
@@ -97,12 +96,12 @@ export function Footer() {
                 <span className="text-sm">customercare@msiplgroup.com</span>
               </motion.a>
               <motion.a
-                href="tel:+918192262826"
+                href="tel:+917353011355"
                 whileHover={{ x: 5 }}
                 className="flex items-center gap-3 text-white hover:text-gold transition-colors group"
               >
                 <Phone className="w-4 h-4" />
-                <span className="text-sm">+91 81922 62826</span>
+                <span className="text-sm">+91 7353011355</span>
               </motion.a>
               <motion.div
                 whileHover={{ x: 5 }}
