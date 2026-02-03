@@ -157,7 +157,7 @@ const allProducts = [
     price: 150,
     rating: 4.7,
     reviews: 140,
-    image: "/images/Shashi Gramflour Beauty Soap (6pc Jar).webp",
+    image: "/images/Shashi Gramflour Beauty Soap.webp",
     bestseller: false,
     new: false,
     extent: ['(4pc Jar)', '(6pc Jar)']
