@@ -70,7 +70,7 @@ export default function ContactPage() {
   return (
     <div className="pt-24 min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal overflow-hidden ">
+      <section className="relative py-20 lg:py-32 bg-deep-maroon overflow-hidden ">
         <div className="absolute inset-0">
           <div className="absolute inset-0" style={{
             backgroundImage: `url('/images/enquiry.webp')`,
@@ -175,7 +175,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-gold focus:outline-none transition-colors"
-                        placeholder="John Doe"
+                        placeholder="Your name"
                       />
                     </div>
                     <div>
@@ -190,7 +190,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-gold focus:outline-none transition-colors"
-                        placeholder="john@example.com"
+                        placeholder="Your email address"
                       />
                     </div>
                   </div>
@@ -207,7 +207,7 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-gold focus:outline-none transition-colors"
-                        placeholder="+1 (234) 567-890"
+                        placeholder="+91 98765 43210"
                       />
                     </div>
                     <div>
@@ -362,27 +362,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Social Media */}
-              <div className="bg-gradient-to-br from-gold to-earth rounded-2xl p-8 text-white">
-                <h3 className="text-white mb-4">Follow Our Journey</h3>
-                <p className="text-white/90 mb-6">
-                  Join our community on social media for exclusive content, tips, and special offers.
-                </p>
-                <div className="flex gap-4">
-                  {socialLinks.map((social, index) => (
-                    <motion.a
-                      key={index}
-                      href={social.href}
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`w-12 h-12 bg-white/20 backdrop-blur-sm ${social.color} rounded-xl flex items-center justify-center transition-colors group`}
-                      aria-label={social.label}
-                    >
-                      <social.icon className="w-6 h-6 text-white" />
-                    </motion.a>
-                  ))}
-                </div>
-              </div>
             </motion.div>
           </div>
         </div>

@@ -83,7 +83,7 @@ export default function ServicesPage() {
   return (
     <div className="pt-24 min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal overflow-hidden">
+      <section className="relative py-20 lg:py-32 bg-deep-maroon overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0" style={{
             backgroundImage: `url('/images/Servicesbanner.webp')`,
@@ -258,7 +258,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-gold via-earth to-gold-dark">
+      <section className="py-20 lg:py-32 bg-deep-maroon">
         <div className="container-padding mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

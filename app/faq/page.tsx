@@ -144,7 +144,7 @@ export default function FAQPage() {
   return (
     <div className="pt-24 min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal">
+      <section className="py-20 lg:py-32 bg-deep-maroon">
         <div className="container-padding mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -295,7 +295,7 @@ export default function FAQPage() {
       </section>
 
       {/* Still Have Questions */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-gold via-earth to-gold-dark">
+      <section className="py-20 lg:py-32 bg-deep-maroon">
         <div className="container-padding mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

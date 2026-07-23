@@ -59,7 +59,7 @@ export function Testimonials() {
   }, []);
 
   return (
-    <section className="py-20 lg:py-32 py-20 lg:py-32 bg-gradient-to-br from-gold via-earth to-gold-dark">
+    <section className="py-20 lg:py-32 py-20 lg:py-32 bg-deep-maroon">
       {/* Background Pattern */}
   
 

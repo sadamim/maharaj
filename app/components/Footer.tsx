@@ -6,7 +6,9 @@ import { useState, useEffect } from 'react';
 import { EnquiryModal } from './EnquiryModal';
 
 export function Footer() {
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+  // Initialise to a fixed value so the server and client render the same markup.
+  // The real width is picked up in the effect below, after hydration.
+  const [windowWidth, setWindowWidth] = useState(1024);
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,7 +41,7 @@ export function Footer() {
     ],
     company: [
       { name: "Home", href: "/" },
-    { name: "Our Factory", href: "/about" },
+    { name: "About Us", href: "/about" },
     { name: "Products", href: "/products" },
     { name: "Enquiry", href: "/enquiry" },
         { name: "Contact", href: "/contact" },
@@ -60,7 +62,7 @@ export function Footer() {
   const [showEnquiry, setShowEnquiry] = useState(false);
 
   return (
-    <footer className="bg-charcoal text-white pt-20 pb-8 py-20 lg:py-32 bg-gradient-to-br from-gold via-earth to-gold-dark">
+    <footer className="text-white pt-20 pb-8 py-20 lg:py-32 bg-deep-maroon">
       <div className="container-padding mx-4 md:mx-[5%] lg:mx-[10%] ">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16 items-start">

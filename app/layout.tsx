@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Maraja Soap | Pure, Natural & Premium  Experience",
+  title: "Maharaja Soaps | Trusted Home & Personal Care",
   description:
     "Maraja Soap offers premium natural soaps crafted with care for healthy skin. Experience purity, freshness, and luxury in every bath.",
   keywords: [

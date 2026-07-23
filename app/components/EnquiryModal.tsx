@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { X, Send } from "lucide-react";
+import { X, Send, MessageSquare, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 
 export function EnquiryModal({
@@ -44,11 +44,16 @@ export function EnquiryModal({
 
   if (!open) return null;
 
+  const inputClass =
+    "mt-1.5 w-full rounded-lg border border-[#e4d7c9] bg-[#fffaf3] px-3.5 py-2.5 text-sm text-[#3a2226] placeholder:text-[#b7a8a0] outline-none transition focus:border-[#b9773c] focus:ring-2 focus:ring-[#b9773c]/25";
+  const labelClass =
+    "text-[11px] font-bold uppercase tracking-[0.08em] text-[#7a3b32]";
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
       {/* Overlay */}
       <div
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        className="absolute inset-0 bg-[#2b090c]/70 backdrop-blur-sm"
         onClick={onClose}
       />
 
@@ -57,80 +62,81 @@ export function EnquiryModal({
         initial={{ opacity: 0, scale: 0.96, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
-        className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden"
+        className="relative w-full max-w-lg overflow-hidden rounded-2xl bg-white shadow-[0_30px_80px_rgba(43,9,13,0.45)] ring-1 ring-[#591015]/10"
       >
-        {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b">
-          <h3 className="text-lg font-semibold text-gray-800">
-            Quick Enquiry
-          </h3>
-          <button
-            onClick={onClose}
-            className="text-gray-400 hover:text-gray-700 transition"
-          >
-            <X className="w-5 h-5" />
-          </button>
+        {/* Branded header */}
+        <div className="relative overflow-hidden bg-gradient-to-r from-[#3f090d] to-[#591015] px-6 py-5 text-white">
+          {/* soft decorative glow */}
+          <div className="pointer-events-none absolute -right-10 -top-16 h-40 w-40 rounded-full bg-[#e9a877]/20 blur-2xl" />
+          <div className="relative flex items-start justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/12 ring-1 ring-white/20">
+                <MessageSquare className="h-5 w-5 text-[#f2b18b]" />
+              </span>
+              <div>
+                <h3 className="text-lg font-bold leading-tight text-white">Quick Enquiry</h3>
+                <p className="text-xs text-[#f3d8c7]">
+                  We&apos;d love to hear from you.
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={onClose}
+              aria-label="Close enquiry form"
+              className="rounded-full p-1.5 text-white/80 transition hover:bg-white/15 hover:text-white"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+          {/* gold accent line */}
+          <div className="absolute inset-x-0 bottom-0 h-[3px] bg-gradient-to-r from-[#e9a877] via-[#f2b18b] to-transparent" />
         </div>
 
         {!isSubmitted ? (
-          <form onSubmit={handleSubmit} className="p-6 space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5 p-6">
             {/* Name + Email */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <label className="text-sm font-medium text-gray-700">
-                  Full Name *
-                </label>
+                <label className={labelClass}>Full Name *</label>
                 <input
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  placeholder="John Doe"
-                  className="mt-1 w-full rounded-lg border px-3 py-2 text-sm
-                    focus:border-gold focus:ring-2 focus:ring-gold/30"
+                  placeholder="Your name"
+                  className={inputClass}
                 />
               </div>
 
               <div>
-                <label className="text-sm font-medium text-gray-700">
-                  Email Address *
-                </label>
+                <label className={labelClass}>Email Address *</label>
                 <input
                   name="email"
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder="john@email.com"
-                  className="mt-1 w-full rounded-lg border px-3 py-2 text-sm
-                    focus:border-gold focus:ring-2 focus:ring-gold/30"
+                  placeholder="Your email address"
+                  className={inputClass}
                 />
               </div>
             </div>
 
             {/* Phone */}
             <div>
-              <label className="text-sm font-medium text-gray-700">
-                Phone Number
-              </label>
+              <label className={labelClass}>Phone Number</label>
               <input
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="+91 XXXXX XXXXX"
-                className="mt-1 w-full rounded-lg border px-3 py-2 text-sm
-                  focus:border-gold focus:ring-2 focus:ring-gold/30"
+                className={inputClass}
               />
             </div>
 
-            {/* Company */}
-          
-
             {/* Message */}
             <div>
-              <label className="text-sm font-medium text-gray-700">
-                Message *
-              </label>
+              <label className={labelClass}>Message *</label>
               <textarea
                 name="message"
                 value={formData.message}
@@ -138,46 +144,31 @@ export function EnquiryModal({
                 required
                 rows={4}
                 placeholder="Tell us how we can help you..."
-                className="mt-1 w-full rounded-lg border px-3 py-2 text-sm resize-none
-                  focus:border-gold focus:ring-2 focus:ring-gold/30"
+                className={`${inputClass} resize-none`}
               />
             </div>
 
             {/* Submit */}
-            <div className="pt-2">
+            <div className="pt-1">
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2
-                  rounded-lg bg-gold px-5 py-2.5 text-sm font-medium text-white
-                  hover:opacity-90 transition"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#591015] px-5 py-3 text-sm font-bold uppercase tracking-[0.08em] text-white shadow-[0_10px_24px_rgba(89,16,21,0.3)] transition hover:-translate-y-0.5 hover:bg-[#3f090d] hover:shadow-[0_14px_30px_rgba(89,16,21,0.45)]"
               >
-                <Send className="w-4 h-4" />
+                <Send className="h-4 w-4" />
                 Send Enquiry
               </button>
             </div>
           </form>
         ) : (
-          <div className="py-14 text-center">
-            <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
-              <svg
-                className="h-10 w-10 text-green-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
+          <div className="px-6 py-14 text-center">
+            <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-[#f6e2d4]">
+              <CheckCircle2 className="h-11 w-11 text-[#591015]" />
             </div>
-            <h4 className="text-lg font-semibold text-gray-800">
+            <h4 className="text-lg font-bold text-[#3a2226]">
               Enquiry Sent Successfully
             </h4>
-            <p className="mt-1 text-sm text-gray-600">
-              We’ll contact you shortly.
+            <p className="mt-1 text-sm text-[#6e5f5a]">
+              We&apos;ll contact you shortly.
             </p>
           </div>
         )}

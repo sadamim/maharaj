@@ -71,7 +71,7 @@ export default function ContactPage() {
       {/* Hero Section */}
      
 
-       <section className="relative py-20 lg:py-32 bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal overflow-hidden ">
+       <section className="relative py-20 lg:py-32 bg-deep-maroon overflow-hidden ">
         <div className="absolute inset-0">
           <div className="absolute inset-0" style={{
             backgroundImage: `url('/images/contact_us.webp')`,
@@ -177,7 +177,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-gold focus:outline-none transition-colors"
-                        placeholder="John Doe"
+                        placeholder="Your name"
                       />
                     </div>
                     <div>
@@ -192,7 +192,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-gold focus:outline-none transition-colors"
-                        placeholder="john@example.com"
+                        placeholder="Your email address"
                       />
                     </div>
                   </div>
@@ -209,7 +209,7 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-gold focus:outline-none transition-colors"
-                        placeholder="+1 (234) 567-890"
+                        placeholder="+91 98765 43210"
                       />
                     </div>
                    
@@ -328,62 +328,11 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Social Media */}
-              <div className="bg-gradient-to-br from-gold to-earth rounded-2xl p-8 text-white">
-                <h3 className="text-white mb-4">Follow Our Journey</h3>
-                <p className="text-white/90 mb-6">
-                  Join our community on social media for exclusive content, tips, and special offers.
-                </p>
-                <div className="flex gap-4">
-                  {socialLinks.map((social, index) => (
-                    <motion.a
-                      key={index}
-                      href={social.href}
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`w-12 h-12 bg-white/20 backdrop-blur-sm ${social.color} rounded-xl flex items-center justify-center transition-colors group`}
-                      aria-label={social.label}
-                    >
-                      <social.icon className="w-6 h-6 text-white" />
-                    </motion.a>
-                  ))}
-                </div>
-              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="py-20 bg-cream">
-        <div className="container-padding mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className=" mx-auto text-center"
-          >
-            <h2 className="mb-4">Stay Connected</h2>
-            <p className="text-gray-600 mb-8">
-              Subscribe to our newsletter for skincare tips, exclusive offers, and new product launches.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-4 border-2 border-gray-200 rounded-full focus:border-gold focus:outline-none transition-colors"
-              />
-              {/* <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gold text-white rounded-full hover:bg-gold-dark transition-colors shadow-lg"
-              >
-                Subscribe
-              </motion.button> */}
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }

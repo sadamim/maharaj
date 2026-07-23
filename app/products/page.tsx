@@ -663,7 +663,7 @@ export default function ProductsPage() {
       <div className='bg-cream'>
  {/* Hero Section */}
 
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal overflow-hidden">
+      <section className="relative py-20 lg:py-32 bg-deep-maroon overflow-hidden">
         <div className="absolute inset-0 opacity-100">
           <div className="absolute inset-0" style={{
             backgroundImage: `url('/images/MSIPL_banner.webp')`,
@@ -681,10 +681,7 @@ export default function ProductsPage() {
               <span className="text-sm text-white tracking-wider uppercase">Our Collection</span>
             </div>
             <h1 className="text-white mb-6">Premium Home-Care Essentials</h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
-             We offer a wide range of home care essentials that deliver deep cleaning, long-lasting freshness, and gentle care for everyday use.
 
-            </p>
           </motion.div>
         </div>
       </section>
@@ -848,7 +845,7 @@ function ProductCard({ product, index }: { product: typeof allProducts[0]; index
           <ImageWithFallback
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain p-5 sm:p-8"
           />
         </motion.div>
 
@@ -904,4 +901,3 @@ function ProductCard({ product, index }: { product: typeof allProducts[0]; index
     </motion.div>
   );
 }
-

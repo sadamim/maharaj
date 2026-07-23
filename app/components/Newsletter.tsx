@@ -23,7 +23,7 @@ export function Newsletter() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto bg-gradient-to-br from-gold via-earth to-gold-dark rounded-3xl overflow-hidden shadow-2xl"
+          className="max-w-5xl mx-auto bg-deep-maroon rounded-3xl overflow-hidden shadow-2xl"
         >
           <div className="grid lg:grid-cols-2 gap-0">
             {/* Left - Content */}

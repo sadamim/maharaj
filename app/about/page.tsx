@@ -17,7 +17,7 @@ export default function AboutPage() {
     {
       name: 'Mr. Raviraja M.E',
       role: 'Chairman, MSIPL',
-      image: '/images/raviraja.jpg',
+      image: '/images/raviraja.webp',
     },
 
   ];
@@ -58,7 +58,7 @@ export default function AboutPage() {
   return (
     <div className="pt-24">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal overflow-hidden ">
+      <section className="relative py-20 lg:py-32 bg-deep-maroon overflow-hidden ">
         <div className="absolute inset-0">
           <div className="absolute inset-0" style={{
             backgroundImage: `url('/images/aboutbanner.webp')`,
@@ -76,7 +76,7 @@ export default function AboutPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <div className="inline-block px-4 py-2 bg-gold/20 rounded-full mb-6">
-              <span className="text-sm text-white tracking-wider uppercase">Our Factory</span>
+              <span className="text-sm text-white tracking-wider uppercase">About</span>
             </div>
             <h1 className="text-white mb-6">
               Crafting a Cleaner
@@ -311,7 +311,7 @@ export default function AboutPage() {
               >
                <div className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-xl">
   <Image
-    src="/images/raviraja.jpg"
+    src="/images/raviraja.webp"
     alt="Dr. Raviraja M.E. - Chairman Maharaj Soaps"
     fill
     className="object-cover"
@@ -395,29 +395,6 @@ export default function AboutPage() {
 
 
 
-      {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-gold via-earth to-gold-dark">
-        <div className="container-padding mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mx-auto"
-          >
-            <h2 className="text-white mb-6">Join Our Journey</h2>
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              Interested in partnering with a trusted personal care brand
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-white text-charcoal rounded-full hover:bg-cream transition-colors duration-300 shadow-xl"
-            >
-              <span className="tracking-wide">Join the MSIPL family</span>
-            </motion.button>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }
