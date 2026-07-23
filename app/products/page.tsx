@@ -2,7 +2,7 @@
 
 
 import { motion } from 'framer-motion';
-import { Star, ShoppingCart, Heart, Filter, Search } from 'lucide-react';
+import { Download } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useState } from 'react';
 
@@ -663,7 +663,7 @@ export default function ProductsPage() {
       <div className='bg-cream'>
  {/* Hero Section */}
 
-      <section className="relative py-20 lg:py-32 bg-deep-maroon overflow-hidden">
+      <section className="products-hero relative py-20 lg:py-32 bg-deep-maroon overflow-hidden">
         <div className="absolute inset-0 opacity-100">
           <div className="absolute inset-0" style={{
             backgroundImage: `url('/images/MSIPL_banner.webp')`,
@@ -687,7 +687,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Filters Section */}
-      <section className="bg-white border-b border-gray-200 sticky products-filter-bar z-40">
+      <section className="products-filter-section bg-white border-b border-gray-200 sticky products-filter-bar z-40">
         <div className="mx-auto px-4 sm:px-6">
           <div className="flex flex-col gap-3 lg:flex-row lg:gap-6 lg:items-center lg:justify-between py-3 lg:py-6">
 
@@ -700,7 +700,7 @@ export default function ProductsPage() {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full whitespace-nowrap text-sm transition-all
+                  className={`product-category-pill px-4 py-2 rounded-full whitespace-nowrap text-sm transition-all
               ${selectedCategory === category
                       ? 'bg-gold text-white shadow'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -716,7 +716,7 @@ export default function ProductsPage() {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="w-full lg:w-auto px-4 py-2.5 border-2 border-gray-200 rounded-full
+                className="product-sort w-full lg:w-auto px-4 py-2.5 border-2 border-gray-200 rounded-full
                      focus:border-gold focus:outline-none transition-colors bg-drak
                      cursor-pointer text-sm text-black"
               >
@@ -734,9 +734,9 @@ export default function ProductsPage() {
 
 
       {/* Products Grid */}
-      <section className="py-16">
+      <section className="products-catalog-section py-16">
         <div className="container-padding mx-auto">
-          <div className="mb-6 flex flex-wrap items-center justify-between gap-3 text-gray-600">
+          <div className="products-catalog-toolbar mb-6 flex flex-wrap items-center justify-between gap-3 text-gray-600">
             <span className="text-sm md:text-base">
               Showing <b>{sortedProducts.length}</b> products
             </span>
@@ -757,15 +757,15 @@ export default function ProductsPage() {
       document.body.removeChild(link);
     });
   }}
-  className="px-4 py-2 rounded-full whitespace-nowrap transition-all bg-gold text-white shadow-md"
+  className="catalog-download px-4 py-2 rounded-full whitespace-nowrap transition-all bg-gold text-white shadow-md"
 >
-  Download All Catalogues
+  <Download className="w-4 h-4" /> Download All Catalogues
 </button>
 
           </div>
 
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <div className="products-page-grid grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
 
             {sortedProducts.map((product, index) => (
               <ProductCard key={product.id} product={product} index={index} />
@@ -796,7 +796,6 @@ export default function ProductsPage() {
 
 function ProductCard({ product, index }: { product: typeof allProducts[0]; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
-  const [isFavorited, setIsFavorited] = useState(false);
 
   return (
     <motion.div
@@ -806,7 +805,7 @@ function ProductCard({ product, index }: { product: typeof allProducts[0]; index
       transition={{ duration: 0.6, delay: index * 0.05 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative bg-white rounded overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-500"
+      className="catalog-product-card group relative bg-white rounded overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-500"
     >
       {/* Badges */}
       <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-10 flex flex-col gap-1 sm:gap-2">
@@ -822,22 +821,8 @@ function ProductCard({ product, index }: { product: typeof allProducts[0]; index
         )}
       </div>
 
-      {/* Favorite */}
-      <motion.button
-        onClick={() => setIsFavorited(!isFavorited)}
-        whileTap={{ scale: 0.9 }}
-        className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10
-                   w-8 h-8 sm:w-10 sm:h-10 bg-white/90 backdrop-blur-sm
-                   rounded-full flex items-center justify-center shadow-md"
-      >
-        <Heart
-          className={`w-4 h-4 sm:w-5 sm:h-5 ${isFavorited ? 'fill-red-500 text-red-500' : 'text-gray-600'
-            }`}
-        />
-      </motion.button>
-
       {/* Image */}
-      <div className="relative aspect-square overflow-hidden bg-gray-100">
+      <div className="catalog-product-image relative aspect-square overflow-hidden bg-gray-100">
         <motion.div
           animate={{ scale: isHovered ? 1.08 : 1 }}
           transition={{ duration: 0.6 }}
@@ -849,26 +834,10 @@ function ProductCard({ product, index }: { product: typeof allProducts[0]; index
           />
         </motion.div>
 
-        {/* Hover Overlay (Desktop Only) */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isHovered ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
-          className="hidden md:flex absolute inset-0 bg-black/20 items-center justify-center"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-5 py-2.5 bg-white text-charcoal rounded-full flex items-center gap-2 shadow-lg"
-          >
-            <ShoppingCart className="w-4 h-4" />
-            <span className="tracking-wide text-sm">Quick Add</span>
-          </motion.button>
-        </motion.div>
       </div>
 
       {/* Info */}
-      <div className="p-4 sm:p-6">
+      <div className="catalog-product-info p-4 sm:p-6">
         <div className="text-[10px] sm:text-xs text-gold tracking-wider uppercase mb-1 sm:mb-2">
           {product.category}
         </div>

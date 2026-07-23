@@ -88,14 +88,15 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-20 lg:py-32 bg-cream">
+      <section className="about-story-section py-20 lg:py-32 bg-cream">
         <div className="container-padding mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="about-story-grid grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              className="about-story-copy"
             >
               <h2 className="mb-6">Who We Are</h2>
              <div className="space-y-6 text-gray-700">
@@ -142,7 +143,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative"
+              className="about-collage relative"
             >
               <div className="grid grid-cols-2 gap-4">
                 {/* LEFT COLUMN */}
@@ -198,13 +199,13 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 lg:py-32 bg-white">
+      <section className="milestone-section py-20 lg:py-32 bg-white">
         <div className="container-padding mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className=" mx-auto mb-20 flex flex-col items-center"
+            className="milestone-heading mx-auto mb-20 flex flex-col items-center"
           >
             <h2 className="mb-6">Our Milestones</h2>
             <p className="text-gray-600">
@@ -212,8 +213,8 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="max-w-5xl mx-auto mt-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="milestone-wrap max-w-6xl mx-auto mt-16">
+            <div className="milestone-grid">
               {milestones.map((milestone, index) => (
                 <motion.div
                   key={index}
@@ -221,17 +222,18 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="relative"
+                  className="milestone-card relative"
                 >
-                  <div className="text-center">
-                    <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-gold to-earth rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-2xl text-white">{milestone.year}</span>
+                  <div className="milestone-content">
+                    <div className="milestone-year">
+                      <span>{milestone.year}</span>
                     </div>
-                    <h4 className="mb-2">{milestone.title}</h4>
-                    <p className="text-sm text-gray-600">{milestone.description}</p>
+                    <span className="milestone-index">0{index + 1}</span>
+                    <h4>{milestone.title}</h4>
+                    <p>{milestone.description}</p>
                   </div>
                   {index < milestones.length - 1 && (
-                    <div className="hidden lg:block absolute top-10 -right-4 w-8 h-[2px] bg-gold/30" />
+                    <div className="milestone-connector" />
                   )}
                 </motion.div>
               ))}
@@ -241,7 +243,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 lg:py-32 bg-cream">
+      <section className="about-values-section py-20 lg:py-32 bg-cream">
         <div className="container-padding mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -266,7 +268,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow group flex flex-col items-center"
+                className="about-value-card bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow group flex flex-col items-center"
               >
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
@@ -287,16 +289,16 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="py-20 lg:py-32 bg-cream">
+      <section className="chairman-section py-20 lg:py-32 bg-cream">
         <div className="container-padding mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-9xl mx-auto mb-24"
+            className="chairman-wrap max-w-9xl mx-auto"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="chairman-grid grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
               {/* Image Section */}
               <motion.div
@@ -304,7 +306,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="relative"
+                className="chairman-photo relative"
               >
                <div className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-xl">
   <Image
@@ -323,7 +325,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="max-w-4xl mx-auto px-6 py-16"
+                className="chairman-message max-w-4xl mx-auto px-6 py-16"
               >
                 {/* Heading */}
                 <h1 className="text-3xl font-semibold mb-8">

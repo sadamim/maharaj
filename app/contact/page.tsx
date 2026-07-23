@@ -71,7 +71,7 @@ export default function ContactPage() {
       {/* Hero Section */}
      
 
-       <section className="relative py-20 lg:py-32 bg-deep-maroon overflow-hidden ">
+       <section className="contact-hero relative py-20 lg:py-32 bg-deep-maroon overflow-hidden ">
         <div className="absolute inset-0">
           <div className="absolute inset-0" style={{
             backgroundImage: `url('/images/contact_us.webp')`,
@@ -96,18 +96,15 @@ export default function ContactPage() {
               <br />
               Hear From You
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Have questions about our products or services? Our team is here to help. 
-              Reach out and let's start a conversation.
-            </p>
+           
           </motion.div>
         </div>
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-20 bg-cream">
+      <section className="contact-info-section py-20 bg-cream">
         <div className="container-padding mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="contact-info-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
               <motion.div
                 key={index}
@@ -115,7 +112,7 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow group"
+                className="contact-info-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow group"
               >
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
@@ -146,15 +143,16 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form & Map */}
-      <section className="py-20 lg:py-32 bg-white">
+      <section className="contact-main-section py-20 lg:py-32 bg-white">
         <div className="container-padding mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="contact-main-grid grid lg:grid-cols-2 gap-16">
             {/* Form */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              className="contact-form-panel"
             >
               <h2 className="mb-4">Send Us a Message</h2>
 
@@ -163,7 +161,7 @@ export default function ContactPage() {
               </p>
 
               {!isSubmitted ? (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="contact-page-form space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm text-gray-700 mb-2">
@@ -197,7 +195,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="contact-phone-row">
                     <div>
                       <label htmlFor="phone" className="block text-sm text-gray-700 mb-2">
                         Phone Number
@@ -288,10 +286,10 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
+              className="contact-side-panel space-y-8"
             >
               {/* Map */}
-              <div className="aspect-square lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-gray-200">
+              <div className="contact-map aspect-square lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-gray-200">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3864.063950497897!2d75.930972!3d14.423477!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bba2533c6e96893%3A0x959d11254ad198b0!2sMaharaj%20Soaps%20Industry%20Private%20Limited.!5e0!3m2!1sen!2sin!4v1767094072547!5m2!1sen!2sin"
                   width="100%"
@@ -304,7 +302,7 @@ export default function ContactPage() {
               </div>
 
               {/* FAQ */}
-              <div className="bg-cream rounded-2xl p-8">
+              <div className="contact-answers bg-cream rounded-2xl p-8">
                 <h3 className="mb-6">Quick Answers</h3>
                 <div className="space-y-4">
                   <div>
