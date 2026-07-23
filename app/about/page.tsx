@@ -76,16 +76,13 @@ export default function AboutPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <div className="inline-block px-4 py-2 bg-gold/20 rounded-full mb-6">
-              <span className="text-sm text-white tracking-wider uppercase">About</span>
+              <span className="text-sm text-white tracking-wider uppercase">About Us</span>
             </div>
             <h1 className="text-white mb-6">
               Crafting a Cleaner
               <br />
               Tomorrow
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Maharaja Soap Factory blends time-tested expertise with modern cleaning science to create products that uplift your daily routines with purity and comfort.
-            </p>
           </motion.div>
         </div>
       </section>

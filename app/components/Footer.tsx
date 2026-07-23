@@ -52,9 +52,8 @@ export function Footer() {
   };
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://www.facebook.com/msiplgroup/|', label: 'Facebook' },
-    // { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/company/msipl/', label: 'Instagram' },
+    { icon: Facebook, href: 'https://www.facebook.com/msiplgroup/', label: 'Facebook' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/msipl/', label: 'LinkedIn' },
     // { icon: Twitter, href: '#', label: 'X' }, 
     // { icon: Youtube, href: '#', label: 'X' },
 
@@ -65,14 +64,14 @@ export function Footer() {
     <footer className="text-white pt-20 pb-8 py-20 lg:py-32 bg-deep-maroon">
       <div className="container-padding mx-4 md:mx-[5%] lg:mx-[10%] ">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16 items-start text-center">
 
           <div className="">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-6"
+              className="mb-6 flex justify-center"
             >
               <div style={{
                 width: windowWidth < 768 ? '180px' : '150px',
@@ -92,7 +91,7 @@ export function Footer() {
               <motion.a
                 href="mailto:customercare@msiplgroup.com"
                 whileHover={{ x: 5 }}
-                className="flex items-center gap-3 text-white hover:text-gold transition-colors group"
+                className="flex items-center justify-center gap-3 text-white hover:text-gold transition-colors group"
               >
                 <Mail className="w-4 h-4" />
                 <span className="text-sm">customercare@msiplgroup.com</span>
@@ -100,20 +99,20 @@ export function Footer() {
               <motion.a
                 href="tel:+917353011355"
                 whileHover={{ x: 5 }}
-                className="flex items-center gap-3 text-white hover:text-gold transition-colors group"
+                className="flex items-center justify-center gap-3 text-white hover:text-gold transition-colors group"
               >
                 <Phone className="w-4 h-4" />
                 <span className="text-sm">+91 7353011355</span>
               </motion.a>
               <motion.div
                 whileHover={{ x: 5 }}
-                className="flex items-start gap-3 text-white"
+                className="flex items-start justify-center gap-3 text-white text-left"
               >
                 <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
                 <span className="text-sm">Plot no #2051/A Lokikere Main Road Near <br /> Industrial Area Davangere 577005</span>
               </motion.div>
             </div>
-            <div className="flex items-center gap-4 mt-5">
+            <div className="flex items-center justify-center gap-4 mt-5">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={index}
@@ -147,7 +146,7 @@ export function Footer() {
             </ul>
           </div>
         
-          <div className="w-full max-w-md ml-auto ">
+          <div className="w-full max-w-md mx-auto ">
             <h4 className="text-white mb-4 text-base font-semibold enquity-from-h4">
               Quick Enquiry
             </h4>

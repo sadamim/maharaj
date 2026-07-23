@@ -687,12 +687,12 @@ export default function ProductsPage() {
       </section>
 
       {/* Filters Section */}
-      <section className="bg-white border-b border-gray-200 sticky top-14 sm:top-16 lg:top-24 z-40">
+      <section className="bg-white border-b border-gray-200 sticky products-filter-bar z-40">
         <div className="mx-auto px-4 sm:px-6">
           <div className="flex flex-col gap-3 lg:flex-row lg:gap-6 lg:items-center lg:justify-between py-3 lg:py-6">
 
             {/* Search */}
-            
+
 
             {/* Category Filter */}
             <div className="flex gap-2 overflow-x-auto scrollbar-hide w-full order-2 pb-1">
@@ -874,7 +874,7 @@ function ProductCard({ product, index }: { product: typeof allProducts[0]; index
         </div>
 
         {/* Rating */}
-     
+
 
         {/* Name */}
         <h3 className="text-base sm:text-xl mb-1 sm:mb-2 line-clamp-2">

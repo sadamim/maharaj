@@ -48,9 +48,22 @@ body{font-family:var(--font-geist-sans),Arial,sans-serif;background:var(--brand-
 .pt-24 p{text-align:justify;text-justify:inter-word}
 /* Deep maroon brand fill used across hero/CTA/footer sections */
 .bg-deep-maroon{background-color:#510406!important}
+/* Why-Maharaja cards: centre the icon + title, justify the copy */
+.why-grid article{text-align:center}
+.why-grid svg{display:block;margin-left:auto;margin-right:auto}
+.why-grid p{text-align:justify}
+/* Meet-the-family: old product-card design (full-bleed image, category pill, title) */
+.new-products article{border-radius:16px;box-shadow:0 8px 24px #5410160f}
+.new-products article>div{height:auto;aspect-ratio:1/1;background:none}
+.new-products img{object-fit:cover;padding:0}
+.new-products .np-tag{display:inline-block;margin:18px 0 0 22px;padding:6px 12px;border-radius:20px;background:#f7ecd9;color:#b0813f;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.new-products h3{color:var(--brand-red);margin-top:8px}
 /* Match inner-page top offset to the fixed header height so no body gap shows */
 main>.pt-24{padding-top:80px}
 @media(max-width:860px){main>.pt-24{padding-top:64px}}
+/* Sticky products filter bar sits flush under the fixed header (matches its scrolled height) */
+.products-filter-bar{top:70px}
+@media(max-width:860px){.products-filter-bar{top:60px}}
 
 /* Contrast safeguards against legacy index.css heading defaults */
 .new-hero .hero-layout h1{color:#fff!important}

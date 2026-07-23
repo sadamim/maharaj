@@ -38,13 +38,13 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: 'Email Us',
-      details: ['customercare@msiplgroup.com', 'customercare@msiplgroup.com'],
+      details: ['customercare@msiplgroup.com'],
       action: 'mailto:customercare@msiplgroup.com',
     },
     {
       icon: Phone,
       title: 'Call Us',
-      details: ['+91 7353011355', 'Mon-Fri, 9AM-6PM EST'],
+      details: ['+91 7353011355'],
       action: 'tel:+917353011355',
     },
     {
