@@ -139,6 +139,11 @@ main>.pt-24{padding-top:80px}
 @media(max-width:900px){.reference-footer-grid{grid-template-columns:1fr 1fr;gap:50px}.reference-enquiry{grid-column:1/-1}.reference-footer{padding-top:65px}}
 @media(max-width:760px){.reference-footer-grid{grid-template-columns:1fr;gap:34px}.reference-enquiry{grid-column:auto}.reference-contact>img{width:110px;height:110px}.reference-company h2,.reference-enquiry h2{margin-top:0}.reference-footer-bottom{flex-direction:column;align-items:flex-start;gap:18px}.reference-footer{min-height:0}.reference-footer-bottom>div{gap:20px}}
 
+/* Remove doubled spacing between features and products */
+.why-area{padding-bottom:35px}
+.why-area+#ingredients{padding-top:45px!important}
+@media(max-width:760px){.why-area{padding-bottom:24px}.why-area+#ingredients{padding-top:35px!important}}
+
 /* ===== Full-width site header nav ===== */
 .site-nav{position:fixed;top:0;left:0;right:0;z-index:60;height:80px;background:#fffaf3;color:var(--brand-red);border-bottom:1px solid rgba(89,16,21,.10);box-shadow:0 6px 22px rgba(43,9,13,.10);transition:box-shadow .3s ease,height .3s ease,background .3s ease}
 .site-nav.scrolled{height:70px;background:#fff;box-shadow:0 10px 30px rgba(43,9,13,.16)}

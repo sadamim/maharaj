@@ -155,10 +155,7 @@ export function Ingredients() {
           className="text-center mb-16 mx-auto"
         >
           <h2 className="mb-6">Premium Home-Care Essentials</h2>
-          <p className="text-gray-600">
-            Discover our trusted detergent and dishwash products crafted for
-            superior cleanliness, long-lasting freshness, and everyday care.
-          </p>
+         
         </motion.div>
 
         <h2 className="mb-6 text-center">SHASHI</h2>

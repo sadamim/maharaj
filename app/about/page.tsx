@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Heart, Leaf, Award, Users, Globe, Sparkles } from 'lucide-react';
+import { Factory, FlaskConical, Handshake, House, ShieldCheck, Sprout } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import Image from 'next/image';
 
@@ -24,32 +24,32 @@ export default function AboutPage() {
 
   const values = [
     {
-      icon: Award,
+      icon: ShieldCheck,
       title: 'Quality You Can Trust',
       description: 'Every product is crafted with carefully selected ingredients to ensure consistent cleaning performance, fabric safety, and long-lasting freshness.',
     },
     {
-      icon: Heart,
+      icon: House,
       title: 'Safe for Your Home',
       description: 'Formulated to be gentle on fabrics and surfaces while staying tough on stains, ensuring peace of mind for every family.',
     },
     {
-      icon: Leaf,
+      icon: Handshake,
       title: 'Responsible Sourcing',
       description: 'We work with reliable suppliers who follow ethical practices, ensuring every ingredient meets our strict quality and safety standards.',
     },
     {
-      icon: Globe,
+      icon: Factory,
       title: 'Clean Manufacturing Practices',
       description: 'Our production processes focus on hygiene, precision, and efficiency — ensuring each pack delivers the performance we promise.',
     },
     {
-      icon: Sparkles,
+      icon: FlaskConical,
       title: 'Innovation with Purpose',
       description: 'We continuously refine our formulations to deliver better stain removal, improved fragrance, and enhanced user experience.',
     },
     {
-      icon: Users,
+      icon: Sprout,
       title: 'Made for Every Indian Home',
       description: 'Affordable, dependable, and designed for real everyday needs — from busy households to large families.',
     },
@@ -266,18 +266,18 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow group"
+                className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow group flex flex-col items-center"
               >
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="w-16 h-16 mb-6 bg-gradient-to-br from-gold to-earth rounded-2xl flex items-center justify-center shadow-lg"
+                  className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-gold to-earth rounded-2xl flex items-center justify-center shadow-lg"
                 >
                   <value.icon className="w-8 h-8 text-white" />
                 </motion.div>
-                <h3 className="text-xl mb-3 group-hover:text-gold transition-colors">
+                <h3 className="text-xl mb-3 text-center group-hover:text-gold transition-colors">
                   {value.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-justify w-full">
                   {value.description}
                 </p>
               </motion.div>
