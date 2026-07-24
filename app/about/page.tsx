@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Factory, FlaskConical, Handshake, House, ShieldCheck, Sprout } from 'lucide-react';
+import { Atom, BadgeCheck, Factory, HandCoins, HeartHandshake, UsersRound } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import Image from 'next/image';
 
@@ -24,17 +24,17 @@ export default function AboutPage() {
 
   const values = [
     {
-      icon: ShieldCheck,
+      icon: BadgeCheck,
       title: 'Quality You Can Trust',
       description: 'Every product is crafted with carefully selected ingredients to ensure consistent cleaning performance, fabric safety, and long-lasting freshness.',
     },
     {
-      icon: House,
+      icon: HeartHandshake,
       title: 'Safe for Your Home',
       description: 'Formulated to be gentle on fabrics and surfaces while staying tough on stains, ensuring peace of mind for every family.',
     },
     {
-      icon: Handshake,
+      icon: HandCoins,
       title: 'Responsible Sourcing',
       description: 'We work with reliable suppliers who follow ethical practices, ensuring every ingredient meets our strict quality and safety standards.',
     },
@@ -44,12 +44,12 @@ export default function AboutPage() {
       description: 'Our production processes focus on hygiene, precision, and efficiency — ensuring each pack delivers the performance we promise.',
     },
     {
-      icon: FlaskConical,
+      icon: Atom,
       title: 'Innovation with Purpose',
       description: 'We continuously refine our formulations to deliver better stain removal, improved fragrance, and enhanced user experience.',
     },
     {
-      icon: Sprout,
+      icon: UsersRound,
       title: 'Made for Every Indian Home',
       description: 'Affordable, dependable, and designed for real everyday needs — from busy households to large families.',
     },
@@ -114,18 +114,6 @@ export default function AboutPage() {
     performance. What began as a focused manufacturing effort has grown into a
     purpose-driven organization serving thousands of households with reliable
     hygiene solutions.
-  </p>
-
-  <p className="text-justify-better">
-    <strong>Our Mission</strong> is to deliver world-class cleaning products that are safe,
-    effective, and accessible — helping families live healthier, happier lives
-    through better hygiene and care.
-  </p>
-
-  <p className="text-justify-better">
-    <strong>Our Vision</strong> is to become a household name trusted in every home,
-    recognized for consistent quality, continuous innovation, and integrity in
-    hygiene care.
   </p>
 
   <p className="text-justify-better">
@@ -198,6 +186,44 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Mission & Vision */}
+      <section className="mission-vision-section py-20 bg-white">
+        <div className="container-padding mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mission-vision-heading text-center mx-auto"
+          >
+            <span>Purpose & Direction</span>
+            <h2>Built With Purpose. Growing With Trust.</h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="mission-vision-cards"
+          >
+            <div>
+              <span className="text-center">Our Mission</span>
+              <p>
+                To deliver world-class cleaning products that are safe, effective, and
+                accessible helping families live healthier, happier lives through better
+                hygiene and care.
+              </p>
+            </div>
+            <div>
+              <span className="text-center">Our Vision</span>
+              <p>
+                To become a household name trusted in every home, recognized for consistent
+                quality, continuous innovation, and integrity in hygiene care.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Timeline */}
       <section className="milestone-section py-20 lg:py-32 bg-white">
         <div className="container-padding mx-auto">
@@ -260,7 +286,7 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-5">
+          <div className="about-values-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-5">
             {values.map((value, index) => (
               <motion.div
                 key={index}
@@ -268,15 +294,22 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="about-value-card bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow group flex flex-col items-center"
+                className="about-value-card bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow group"
               >
+               
                 <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-gold to-earth rounded-2xl flex items-center justify-center shadow-lg"
+                  whileHover={{ scale: 1.08, rotate: -4 }}
+                  className="about-value-icon"
                 >
-                  <value.icon className="w-8 h-8 text-white" />
+                  <svg className="about-value-gradient-def" width="0" height="0" aria-hidden="true" focusable="false">
+                    <linearGradient id={`about-value-gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#591015" />
+                      <stop offset="100%" stopColor="#c98a4f" />
+                    </linearGradient>
+                  </svg>
+                  <value.icon style={{ stroke: `url(#about-value-gradient-${index})` }} />
                 </motion.div>
-                <h3 className="text-xl mb-3 text-center group-hover:text-gold transition-colors">
+                <h3 className="text-xl mb-3 text-center transition-colors">
                   {value.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-justify w-full">

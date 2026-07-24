@@ -129,7 +129,7 @@ const SliderRow = ({ data, reverse = false }: SliderRowProps) => {
             {/* Content */}
             <div className="ingredient-content">
               <span className="ingredient-badge">{item.benefit}</span>
-              <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
+              <h3 className="text-lg font-semibold mb-2 text-center">{item.name}</h3>
               <p className="text-gray-600 text-sm">{item.description}</p>
             </div>
           </div>
