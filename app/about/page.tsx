@@ -207,7 +207,7 @@ export default function AboutPage() {
           >
             <div>
               <span className="text-center">Our Mission</span>
-              <p>
+              <p className="text-justify-better primary-text">
                 To deliver world-class cleaning products that are safe, effective, and
                 accessible helping families live healthier, happier lives through better
                 hygiene and care.
@@ -215,7 +215,7 @@ export default function AboutPage() {
             </div>
             <div>
               <span className="text-center">Our Vision</span>
-              <p>
+              <p className="text-justify-better primary-text">
                 To become a household name trusted in every home, recognized for consistent
                 quality, continuous innovation, and integrity in hygiene care.
               </p>

@@ -2349,7 +2349,6 @@ main>.pt-24 {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #d8e8f4c7 0%, #dce9f565 50%, #d8e8f4b8 100%);
   z-index: 1
 }
 
