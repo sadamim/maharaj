@@ -84,7 +84,7 @@ export function FeaturedProducts() {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-charcoal text-white rounded-full hover:bg-gold transition-colors duration-300"
           >
-            <span className="tracking-wide">View All Products</span>
+            <span className="tracking-wide home-about-intro">View All Products</span>
           </motion.button>
         </motion.div>
       </div>

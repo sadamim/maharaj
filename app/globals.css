@@ -26,17 +26,32 @@ body {
 }
 
 /* Heritage homepage — retains the original Geist typography */
+/* ===== Pastel blue palette =====
+   Surfaces that used to be deep maroon are now light pastel, so every
+   piece of text that sat on them must be dark: use --brand-accent-ink. */
 :root {
-  --brand-red: #591015;
-  --brand-dark: #3f090d;
-  --brand-cream: #f8f0e3;
+  --brand-accent-ink: #24485e;
+  /* deep blue — headings, links, any text on a pastel surface */
+  --brand-accent: #a7c5db;
+  /* mid pastel blue — borders, dividers, hover states */
+  --brand-accent-soft: #d5e6f3;
+  /* soft pastel blue — secondary surfaces */
+
+  --brand-red: #dce9f5;
+  /* primary pastel surface (was #24485e) */
+  --brand-dark: #cbdff0;
+  /* deeper pastel surface (was #3f090d) */
+  --brand-cream: #dce9f5;
   --brand-paper: #fffaf3;
-  --brand-ink: #29233b;
-  --brand-coral: #8a2830;
-  --color-gold: #591015;
-  --color-gold-dark: #3f090d;
-  --color-earth: #70171d;
-  --color-charcoal: #591015
+  --brand-ink: #4a2a30;
+  /* warm dark body text */
+  --brand-coral: #b4cfe4;
+  --color-gold: #dce9f5;
+  --color-gold-dark: #cbdff0;
+  --color-earth: #d5e6f3;
+  /* charcoal is the default heading colour (h1–h6) *and* bg-charcoal,
+     so it must stay dark: deep blue works for both text and as a surface. */
+  --color-charcoal: #24485e
 }
 
 body {
@@ -82,7 +97,7 @@ p {
 
 .hero-layout h1 em {
   font-weight: 350;
-  color: #f5c49a
+  color: #2f6081
 }
 
 .kicker,
@@ -91,13 +106,13 @@ p {
   font-size: 10px;
   letter-spacing: .2em;
   font-weight: 800;
-  color: #f2b18b
+  color: #2f6081
 }
 
 .hero-layout p {
   max-width: 570px;
   line-height: 1.8;
-  color: #f4dddd;
+  color: #35586d;
   margin: 28px 0
 }
 
@@ -121,7 +136,7 @@ p {
 
 .hero-buttons a:first-child {
   background: #fff;
-  color: var(--brand-red);
+  color: var(--brand-accent-ink);
   border-color: #fff
 }
 
@@ -139,7 +154,7 @@ p {
   gap: 8px;
   align-items: center;
   margin-top: 25px;
-  color: #eac9ca
+  color: #3c5f75
 }
 
 .hero-layout small svg {
@@ -198,7 +213,7 @@ p {
   margin-top: -65px;
   position: relative;
   z-index: 4;
-  background: #651016;
+  background: #d8e8f4;
   color: #fff;
   border-radius: 8px;
   min-height: 190px;
@@ -212,7 +227,7 @@ p {
 .stats-shell>div span {
   font-size: 9px;
   letter-spacing: .18em;
-  color: #efb38d
+  color: #2f6081
 }
 
 .stats-shell h2 {
@@ -229,7 +244,7 @@ p {
   height: 92px;
   border-radius: 50%;
   margin: auto;
-  background: conic-gradient(#ef8b72 var(--p), #ffffff25 0);
+  background: conic-gradient(#7fb0cc var(--p), #ffffff25 0);
   display: grid;
   place-items: center;
   transform: scale(.6);
@@ -246,7 +261,7 @@ p {
   content: "";
   width: 80px;
   height: 80px;
-  background: #651016;
+  background: #d8e8f4;
   border-radius: 50%;
   position: absolute
 }
@@ -288,7 +303,7 @@ p {
 
 .section-title>span {
   grid-column: 1/-1;
-  color: var(--brand-red)
+  color: var(--brand-accent-ink)
 }
 
 .section-title h2,
@@ -344,7 +359,7 @@ p {
   padding: 14px;
   background: #f8ded5;
   border-radius: 50%;
-  color: var(--brand-red);
+  color: var(--brand-accent-ink);
   margin-bottom: 33px
 }
 
@@ -442,7 +457,7 @@ p {
 }
 
 .new-products small {
-  color: var(--brand-red);
+  color: var(--brand-accent-ink);
   font-weight: 800;
   letter-spacing: .15em;
   margin-top: 19px
@@ -522,7 +537,7 @@ p {
   width: 35px;
   height: 35px;
   border: 1px solid #ac1e2340;
-  color: var(--brand-red);
+  color: var(--brand-accent-ink);
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -812,7 +827,7 @@ p {
 }
 
 .heritage-footer {
-  background: #591015;
+  background: #dce9f5;
   color: white;
   padding: 85px 0 25px
 }
@@ -831,7 +846,7 @@ p {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: .12em;
-  color: #f0a58c;
+  color: #2f6081;
   margin: 18px 0
 }
 
@@ -848,7 +863,7 @@ p {
   align-items: flex-start;
   font-size: 11px;
   margin: 12px 0;
-  color: #ead5d6
+  color: #3c5f75
 }
 
 .footer-layout svg {
@@ -887,7 +902,7 @@ p {
 .footer-enquiry a {
   display: inline-block;
   background: white;
-  color: var(--brand-red);
+  color: var(--brand-accent-ink);
   padding: 11px 14px;
   font-size: 10px;
   font-weight: bold
@@ -974,7 +989,7 @@ p {
 
 /* Deep maroon brand fill used across hero/CTA/footer sections */
 .bg-deep-maroon {
-  background-color: #510406 !important
+  background-color: #dce9f5 !important
 }
 
 /* Why-Maharaja cards: centre the icon + title, justify the copy */
@@ -1023,7 +1038,7 @@ p {
 }
 
 .new-products h3 {
-  color: var(--brand-red);
+  color: var(--brand-accent-ink);
   margin-top: 8px
 }
 
@@ -1049,54 +1064,77 @@ main>.pt-24 {
   }
 }
 
-/* Home stats: icon in an outlined circle above each figure (matches reference) */
-.stat-icon {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 16px;
-  border: 1px solid rgba(242, 216, 210, .45);
-  border-radius: 50%;
+/* Brand label flanked by rules: — SHASHI — */
+.brand-divider {
   display: flex;
   align-items: center;
+  gap: 22px;
   justify-content: center;
-  color: #f2d8d2
+  margin-bottom: 34px;
+  color: var(--brand-accent-ink);
+  letter-spacing: .06em
 }
-.stat-icon svg {
-  width: 26px;
-  height: 26px
+.brand-divider::before,
+.brand-divider::after {
+  content: "";
+  height: 1px;
+  width: min(160px, 18vw);
+  background: linear-gradient(90deg, transparent, #c9a86f)
 }
-@media(max-width:640px) {
-  .stat-icon {
-    width: 44px;
-    height: 44px;
-    margin-bottom: 10px
-  }
-  .stat-icon svg {
-    width: 20px;
-    height: 20px
-  }
+.brand-divider::after {
+  background: linear-gradient(90deg, #c9a86f, transparent)
 }
 
-/* Contrast safeguards against legacy index.css heading defaults */
+/* Ingredient card: brand-toned badge + "View Product" link */
+.ingredient-badge {
+  background: #f7ecd9 !important;
+  color: #a8763a !important;
+  font-weight: 700
+}
+.ingredient-content h3 {
+  color: var(--brand-accent-ink)
+}
+.ingredient-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  padding-top: 13px;
+  border-top: 1px solid #efe4d6;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--brand-accent-ink);
+  transition: gap .2s ease, color .2s ease
+}
+.ingredient-link:hover {
+  gap: 12px;
+  color: #a8763a
+}
+
+/* Contrast safeguards against legacy index.css heading defaults.
+   These surfaces are pastel now, so the headings must be dark ink. */
 .new-hero .hero-layout h1 {
-  color: #fff !important
+  color: var(--brand-accent-ink) !important
 }
 
 .stats-shell h2,
 .stats-shell article p {
-  color: #fff !important
+  color: var(--brand-accent-ink) !important
 }
 
 .review-area>div>header h2 {
-  color: #fff !important
+  color: var(--brand-accent-ink) !important
 }
 
 .heritage-footer h2 {
-  color: #fff !important
+  color: var(--brand-accent-ink) !important
 }
 
 .heritage-footer .footer-layout>div:first-child p {
-  color: #ead5d6 !important
+  color: #3c5f75 !important
 }
 
 /* Earlier header treatment */
@@ -1161,16 +1199,16 @@ main>.pt-24 {
 /* Maharaja primary red */
 .stats-shell,
 .stats-shell article>div:before {
-  background-color: #591015
+  background-color: #dce9f5
 }
 
 .review-card button {
-  color: #591015;
-  border-color: #59101555
+  color: #24485e;
+  border-color: #24485e55
 }
 
 .footer-enquiry {
-  background: #70171d
+  background: #d5e6f3
 }
 
 /* Floating white navigation */
@@ -1225,18 +1263,18 @@ main>.pt-24 {
 }
 
 .old-nav nav a:hover {
-  color: #591015
+  color: #24485e
 }
 
 .old-nav nav a:after {
   height: 2px;
   bottom: 18px;
-  background: #591015;
+  background: #dce9f5;
   border-radius: 2px
 }
 
 .old-nav>div>button {
-  color: #591015
+  color: #24485e
 }
 
 @media(max-width:760px) {
@@ -1294,7 +1332,7 @@ main>.pt-24 {
 }
 
 .footer-quick-form {
-  background: #70171d;
+  background: #d5e6f3;
   border: 1px solid #ffffff18;
   border-radius: 10px;
   padding: 24px;
@@ -1349,7 +1387,7 @@ main>.pt-24 {
   border: 0;
   border-radius: 6px;
   background: #fff;
-  color: #591015;
+  color: #24485e;
   padding: 11px 14px;
   display: flex;
   align-items: center;
@@ -1394,7 +1432,7 @@ main>.pt-24 {
 /* Reference-style footer */
 .reference-footer {
   color: #fff;
-  background: linear-gradient(125deg, #591015 0%, #7b1118 55%, #ef1723 100%);
+  background: linear-gradient(125deg, #dce9f5 0%, #d5e6f3 55%, #c9dff5 100%);
   padding: 90px 0 34px;
   min-height: 560px
 }
@@ -1520,7 +1558,7 @@ main>.pt-24 {
 
 .reference-enquiry button:hover {
   background: #fff;
-  color: #591015;
+  color: #24485e;
   transform: translateY(-2px);
   box-shadow: 0 10px 22px #3c070a40
 }
@@ -1602,7 +1640,7 @@ main>.pt-24 {
 }
 
 .contact-hero:after {
-  background: linear-gradient(90deg, #250608c9 0%, #59101575 55%, #25060892 100%) !important
+  background: linear-gradient(90deg, #d8e8f4c9 0%, #dce9f575 55%, #d8e8f492 100%) !important
 }
 
 .contact-hero h1 {
@@ -1616,7 +1654,7 @@ main>.pt-24 {
 
 .contact-info-section {
   position: relative;
-  background: linear-gradient(180deg, #fffaf3, #f8f0e3) !important
+  background: linear-gradient(180deg, #fffaf3, #dce9f5) !important
 }
 
 .contact-info-grid {
@@ -1625,7 +1663,7 @@ main>.pt-24 {
 
 .contact-info-card {
   min-height: 265px;
-  border: 1px solid #59101510;
+  border: 1px solid #24485e10;
   border-radius: 12px !important;
   padding: 28px !important;
   display: flex;
@@ -1640,14 +1678,14 @@ main>.pt-24 {
 }
 
 .contact-info-card>div:first-child {
-  background: linear-gradient(145deg, #70171d, #591015) !important;
+  background: linear-gradient(145deg, #d5e6f3, #dce9f5) !important;
   border-radius: 50% !important;
   box-shadow: 0 10px 22px rgba(89, 16, 21, .24) !important
 }
 
 .contact-info-card h4 {
   font-size: 21px;
-  color: #591015;
+  color: #24485e;
   margin-top: 3px
 }
 
@@ -1658,7 +1696,7 @@ main>.pt-24 {
 
 .contact-info-card>a {
   margin-top: auto !important;
-  color: #591015 !important;
+  color: #24485e !important;
   font-weight: 700
 }
 
@@ -1673,7 +1711,7 @@ main>.pt-24 {
 
 .contact-form-panel {
   background: #fffaf3;
-  border: 1px solid #59101512;
+  border: 1px solid #24485e12;
   border-radius: 16px;
   padding: 38px;
   box-shadow: 0 18px 42px rgba(89, 16, 21, .09)
@@ -1681,7 +1719,7 @@ main>.pt-24 {
 
 .contact-form-panel>h2 {
   font-size: 40px;
-  color: #591015;
+  color: #24485e;
   letter-spacing: -.03em
 }
 
@@ -1701,58 +1739,58 @@ main>.pt-24 {
 .contact-page-form input,
 .contact-page-form textarea {
   background: #fff;
-  border: 1px solid #59101520 !important;
+  border: 1px solid #24485e20 !important;
   border-radius: 8px !important;
   padding: 14px 15px !important;
-  box-shadow: inset 0 1px 2px #59101508
+  box-shadow: inset 0 1px 2px #24485e08
 }
 
 .contact-page-form input:focus,
 .contact-page-form textarea:focus {
-  border-color: #591015 !important;
-  box-shadow: 0 0 0 3px #59101512
+  border-color: #24485e !important;
+  box-shadow: 0 0 0 3px #24485e12
 }
 
 .contact-page-form button {
-  background: #591015 !important;
+  background: #dce9f5 !important;
   border-radius: 8px !important;
   box-shadow: 0 12px 25px rgba(89, 16, 21, .25) !important
 }
 
 .contact-page-form button:hover {
-  background: #3f090d !important;
+  background: #cbdff0 !important;
   transform: translateY(-2px) !important
 }
 
 .contact-map {
   border: 7px solid #fff;
-  outline: 1px solid #59101514;
+  outline: 1px solid #24485e14;
   border-radius: 16px !important;
   box-shadow: 0 18px 42px rgba(89, 16, 21, .12) !important
 }
 
 .contact-answers {
-  background: #f8f0e3 !important;
-  border: 1px solid #59101510;
+  background: #dce9f5 !important;
+  border: 1px solid #24485e10;
   border-radius: 14px !important;
   padding: 30px !important
 }
 
 .contact-answers>h3 {
   font-size: 26px;
-  color: #591015
+  color: #24485e
 }
 
 .contact-answers>div>div {
   background: #fff;
-  border-left: 3px solid #591015;
+  border-left: 3px solid #24485e;
   border-radius: 7px;
   padding: 15px 17px;
-  box-shadow: 0 5px 16px #59101508
+  box-shadow: 0 5px 16px #24485e08
 }
 
 .contact-answers h4 {
-  color: #591015;
+  color: #24485e;
   font-weight: 800
 }
 
@@ -1815,7 +1853,7 @@ main>.pt-24 {
 
 /* Cohesive About page */
 .about-story-section {
-  background: linear-gradient(180deg, #fffaf3, #f8f0e3) !important;
+  background: linear-gradient(180deg, #fffaf3, #dce9f5) !important;
   position: relative;
   overflow: hidden
 }
@@ -1828,8 +1866,8 @@ main>.pt-24 {
   border-radius: 50%;
   right: -210px;
   bottom: -180px;
-  border: 1px solid #5910150d;
-  box-shadow: 0 0 0 70px #59101504
+  border: 1px solid #24485e0d;
+  box-shadow: 0 0 0 70px #24485e04
 }
 
 .about-story-grid {
@@ -1839,7 +1877,7 @@ main>.pt-24 {
 
 .about-story-copy {
   background: #fff;
-  border: 1px solid #59101510;
+  border: 1px solid #24485e10;
   border-radius: 16px;
   padding: 42px;
   box-shadow: 0 18px 42px rgba(89, 16, 21, .08)
@@ -1848,7 +1886,7 @@ main>.pt-24 {
 .about-story-copy:before {
   content: "OUR HERITAGE";
   display: block;
-  color: #591015;
+  color: #24485e;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: .2em;
@@ -1857,7 +1895,7 @@ main>.pt-24 {
 
 .about-story-copy h2 {
   font-size: 46px;
-  color: #591015;
+  color: #24485e;
   letter-spacing: -.04em
 }
 
@@ -1868,14 +1906,14 @@ main>.pt-24 {
 }
 
 .about-story-copy strong {
-  color: #591015
+  color: #24485e
 }
 
 .mission-vision-section {
   position: relative;
   overflow: hidden;
-  border-top: 1px solid #5910150c;
-  border-bottom: 1px solid #5910150c
+  border-top: 1px solid #24485e0c;
+  border-bottom: 1px solid #24485e0c
 }
 
 .mission-vision-section:before {
@@ -1885,7 +1923,7 @@ main>.pt-24 {
   right: 8%;
   top: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #59101525, transparent)
+  background: linear-gradient(90deg, transparent, #dce9f525, transparent)
 }
 
 .mission-vision-heading {
@@ -1895,7 +1933,7 @@ main>.pt-24 {
 
 .mission-vision-heading>span {
   display: block;
-  color: #591015;
+  color: #24485e;
   font-size: 10px;
   font-weight: 850;
   letter-spacing: .2em;
@@ -1904,7 +1942,7 @@ main>.pt-24 {
 }
 
 .mission-vision-heading h2 {
-  color: #591015;
+  color: #24485e;
   font-size: clamp(38px, 5vw, 58px);
   line-height: 1.05;
   letter-spacing: -.04em;
@@ -1919,7 +1957,7 @@ main>.pt-24 {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 18px 38px rgba(89, 16, 21, .13);
-  border: 1px solid #59101514;
+  border: 1px solid #24485e14;
   max-width: 1060px
 }
 
@@ -1931,13 +1969,13 @@ main>.pt-24 {
 }
 
 .mission-vision-cards>div:first-child {
-  background: linear-gradient(135deg, #591015, #3f090d);
+  background: linear-gradient(135deg, #dce9f5, #cbdff0);
   color: #fff
 }
 
 .mission-vision-cards>div:last-child {
   background: #fffaf3;
-  color: #591015
+  color: #24485e
 }
 
 .mission-vision-cards>div:before {
@@ -1958,7 +1996,7 @@ main>.pt-24 {
 
 .mission-vision-cards>div:last-child:before {
   content: "VISION";
-  color: #591015;
+  color: #24485e;
   opacity: .09
 }
 
@@ -1977,7 +2015,7 @@ main>.pt-24 {
 }
 
 .mission-vision-cards>div:last-child span {
-  color: #591015
+  color: #24485e
 }
 
 .mission-vision-cards span:after {
@@ -1987,7 +2025,7 @@ main>.pt-24 {
   height: 3px;
   margin-top: 12px;
   border-radius: 3px;
-  background: #c98a4f
+  background: #5b8299
 }
 
 .mission-vision-cards p {
@@ -2031,7 +2069,7 @@ main>.pt-24 {
   left: 8%;
   right: 8%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #59101525, transparent)
+  background: linear-gradient(90deg, transparent, #dce9f525, transparent)
 }
 
 .about-values-section>div>div:first-child {
@@ -2040,7 +2078,7 @@ main>.pt-24 {
 
 .about-values-section h2 {
   font-size: 48px;
-  color: #591015;
+  color: #24485e;
   letter-spacing: -.04em
 }
 
@@ -2056,7 +2094,7 @@ main>.pt-24 {
 .about-value-card {
   position: relative;
   overflow: hidden;
-  border: 1px solid #59101512;
+  border: 1px solid #24485e12;
   border-radius: 8px !important;
   min-height: 330px;
   padding: 38px 34px 34px !important;
@@ -2071,7 +2109,7 @@ main>.pt-24 {
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, #591015, #c98a4f)
+  background: linear-gradient(90deg, #dce9f5, #5b8299)
 }
 
 .about-value-card:after {
@@ -2082,14 +2120,14 @@ main>.pt-24 {
   border-radius: 50%;
   right: -86px;
   bottom: -88px;
-  background: #59101508;
-  border: 1px solid #5910150d;
+  background: #dce9f508;
+  border: 1px solid #24485e0d;
   transition: transform .35s ease
 }
 
 .about-value-card:hover {
   transform: translateY(-9px);
-  border-color: #59101526;
+  border-color: #24485e26;
   box-shadow: 0 24px 48px rgba(89, 16, 21, .16) !important
 }
 
@@ -2101,7 +2139,7 @@ main>.pt-24 {
   position: absolute;
   right: 24px;
   top: 20px;
-  color: #59101512;
+  color: #24485e12;
   font-size: 46px;
   font-weight: 900;
   line-height: 1
@@ -2113,7 +2151,7 @@ main>.pt-24 {
   margin: 0 auto 22px !important;
   border-radius: 0 !important;
   background: transparent !important;
-  color: #591015 !important;
+  color: #24485e !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -2145,7 +2183,7 @@ main>.pt-24 {
 .about-value-card h3 {
   position: relative;
   z-index: 1;
-  color: #591015;
+  color: #24485e;
   font-size: 23px !important;
   line-height: 1.25;
   font-weight: 850;
@@ -2163,7 +2201,7 @@ main>.pt-24 {
 }
 
 .chairman-section {
-  background: linear-gradient(135deg, #591015 0%, #3f090d 100%) !important;
+  background: linear-gradient(135deg, #dce9f5 0%, #cbdff0 100%) !important;
   color: #fff;
   position: relative;
   overflow: hidden
@@ -2201,7 +2239,7 @@ main>.pt-24 {
 
 .chairman-message h1 {
   font-size: 42px !important;
-  color: #591015 !important;
+  color: #24485e !important;
   letter-spacing: -.04em
 }
 
@@ -2222,12 +2260,12 @@ main>.pt-24 {
 }
 
 .chairman-message>div:last-child {
-  border-top: 1px solid #59101518;
+  border-top: 1px solid #24485e18;
   padding-top: 22px
 }
 
 .chairman-message>div:last-child p:nth-child(2) {
-  color: #591015;
+  color: #24485e;
   font-size: 16px
 }
 
@@ -2311,7 +2349,7 @@ main>.pt-24 {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #280608c7 0%, #59101565 50%, #280608b8 100%);
+  background: linear-gradient(90deg, #d8e8f4c7 0%, #dce9f565 50%, #d8e8f4b8 100%);
   z-index: 1
 }
 
@@ -2339,7 +2377,7 @@ main>.pt-24 {
 
 .products-filter-section {
   background: #fffaf3ee !important;
-  border-color: #59101512 !important;
+  border-color: #24485e12 !important;
   backdrop-filter: blur(14px);
   box-shadow: 0 8px 24px rgba(89, 16, 21, .08)
 }
@@ -2356,38 +2394,38 @@ main>.pt-24 {
 }
 
 .product-category-pill.bg-gold {
-  background: #591015 !important;
+  background: #dce9f5 !important;
   box-shadow: 0 8px 18px rgba(89, 16, 21, .22) !important
 }
 
 .product-category-pill.bg-gray-100 {
   background: #fff !important;
-  border-color: #59101514 !important;
+  border-color: #24485e14 !important;
   color: #5d5355 !important
 }
 
 .product-category-pill.bg-gray-100:hover {
-  background: #f8f0e3 !important;
-  border-color: #59101530 !important;
-  color: #591015 !important
+  background: #dce9f5 !important;
+  border-color: #24485e30 !important;
+  color: #24485e !important
 }
 
 .product-sort {
   min-width: 180px;
-  border: 1px solid #59101520 !important;
+  border: 1px solid #24485e20 !important;
   background: #fff !important;
   color: #3e3133 !important;
   font-weight: 650
 }
 
 .products-catalog-section {
-  background: linear-gradient(180deg, #fffaf3, #f8f0e3) !important;
+  background: linear-gradient(180deg, #fffaf3, #dce9f5) !important;
   padding-top: 45px !important
 }
 
 .products-catalog-toolbar {
   background: #fff;
-  border: 1px solid #5910150e;
+  border: 1px solid #24485e0e;
   border-radius: 10px;
   padding: 14px 18px;
   margin-bottom: 28px !important;
@@ -2402,7 +2440,7 @@ main>.pt-24 {
 }
 
 .products-catalog-toolbar b {
-  color: #591015;
+  color: #24485e;
   font-size: 16px
 }
 
@@ -2410,7 +2448,7 @@ main>.pt-24 {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #591015 !important;
+  background: #dce9f5 !important;
   border-radius: 6px !important;
   padding: 11px 17px !important;
   font-size: 11px;
@@ -2420,7 +2458,7 @@ main>.pt-24 {
 }
 
 .catalog-download:hover {
-  background: #3f090d !important;
+  background: #cbdff0 !important;
   transform: translateY(-2px)
 }
 
@@ -2429,7 +2467,7 @@ main>.pt-24 {
 }
 
 .catalog-product-card {
-  border: 1px solid #5910150e;
+  border: 1px solid #24485e0e;
   border-radius: 10px !important;
   box-shadow: 0 10px 26px rgba(89, 16, 21, .07) !important;
   transition: transform .3s ease, box-shadow .3s ease !important;
@@ -2444,14 +2482,14 @@ main>.pt-24 {
 
 .catalog-product-image {
   background: linear-gradient(145deg, #f6e9dd, #fff) !important;
-  border-bottom: 1px solid #5910150b
+  border-bottom: 1px solid #24485e0b
 }
 
 .catalog-product-image:after {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 55%, #ffffff00 35%, #59101508 100%);
+  background: radial-gradient(circle at 50% 55%, #ffffff00 35%, #dce9f508 100%);
   pointer-events: none
 }
 
@@ -2475,7 +2513,7 @@ main>.pt-24 {
 }
 
 .catalog-product-info h3 {
-  color: #591015;
+  color: #24485e;
   font-size: 18px !important;
   line-height: 1.3;
   min-height: 47px
@@ -2490,7 +2528,7 @@ main>.pt-24 {
 
 .catalog-product-info>div:last-child {
   margin-top: auto;
-  border-color: #5910150e !important
+  border-color: #24485e0e !important
 }
 
 @media(max-width:900px) {
@@ -2514,7 +2552,7 @@ main>.pt-24 {
 @media(max-width:760px) {
   .products-hero {
     height: 330px;
-    background: #591015
+    background: #dce9f5
   }
 
   .products-hero h1 {
@@ -2567,10 +2605,10 @@ main>.pt-24 {
 
 /* Remove doubled spacing between features and products */
 .home-about-intro {
-  background: linear-gradient(180deg, #fffaf3 0%, #f8f0e3 100%);
+  background: linear-gradient(180deg, #fffaf3 0%, #dce9f5 100%);
   padding: 82px 0 70px;
-  border-top: 1px solid #5910150c;
-  border-bottom: 1px solid #5910150c
+  border-top: 1px solid #24485e0c;
+  border-bottom: 1px solid #24485e0c
 }
 
 .home-about-intro>.heritage-shell {
@@ -2585,7 +2623,7 @@ main>.pt-24 {
   min-height: 560px;
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid #59101512;
+  border: 1px solid #24485e12;
   box-shadow: 0 14px 34px rgba(89, 16, 21, .1)
 }
 
@@ -2600,7 +2638,7 @@ main>.pt-24 {
 
 .home-about-intro span {
   display: block;
-  color: #591015;
+  color: #24485e;
   font-size: 10px;
   font-weight: 850;
   letter-spacing: .2em;
@@ -2608,7 +2646,7 @@ main>.pt-24 {
 }
 
 .home-about-intro h2 {
-  color: #591015;
+  color: #24485e;
   font-size: clamp(38px, 4.5vw, 58px);
   line-height: 1.05;
   letter-spacing: -.04em;
@@ -2617,7 +2655,7 @@ main>.pt-24 {
 
 .home-about-intro article {
   background: #fff;
-  border: 1px solid #59101510;
+  border: 1px solid #24485e10;
   border-radius: 10px;
   padding: 34px 38px;
   box-shadow: 0 14px 34px rgba(89, 16, 21, .08)
@@ -2632,7 +2670,7 @@ main>.pt-24 {
 }
 
 .home-about-intro strong {
-  color: #591015;
+  color: #24485e;
   font-weight: 850
 }
 
@@ -2644,8 +2682,8 @@ main>.pt-24 {
   margin-top: 8px;
   padding: 0 22px;
   border-radius: 6px;
-  background: #591015;
-  color: #fff;
+  background: #dce9f5;
+  color: #24485e;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: .08em;
@@ -2655,7 +2693,7 @@ main>.pt-24 {
 }
 
 .home-about-intro a:hover {
-  background: #3f090d;
+  background: #cbdff0;
   transform: translateY(-2px);
   box-shadow: 0 14px 28px rgba(89, 16, 21, .34)
 }
@@ -2700,35 +2738,44 @@ main>.pt-24 {
 
 /* Home animated stats */
 .stats-section {
-  background: linear-gradient(135deg, #591015 0%, #3f090d 100%) !important;
-  padding: 78px 0 !important;
+  background: #dce9f5 !important;
+  padding: 34px 0 !important;
   overflow: hidden
 }
 
 .stats-section>div {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px !important;
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center !important;
+  gap: 0 !important;
   width: min(1180px, calc(100% - 48px));
   padding: 0 !important
 }
 
 .stat-card {
-  width: 100% !important;
-  min-height: 205px;
+  width: auto !important;
+  flex: 0 1 auto !important;
   margin: 0 !important;
-  border-radius: 8px !important;
-  padding: 38px 24px !important;
+  border-radius: 0 !important;
+  padding: 2px 50px !important;
   display: flex;
-  flex-direction: column;
+  flex-direction: row !important;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(145deg, #ffffff16, #ffffff08) !important;
-  border: 1px solid #c98a4f66 !important;
-  box-shadow: 0 18px 42px rgba(20, 2, 4, .28), inset 0 0 20px rgba(255, 255, 255, .04) !important;
+  gap: 16px;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
   opacity: 0;
   transform: translateY(24px) scale(.96);
-  transition: transform .6s cubic-bezier(.34, 1.56, .64, 1), opacity .55s ease, box-shadow .25s ease, border-color .25s ease !important
+  transition: transform .6s cubic-bezier(.34, 1.56, .64, 1), opacity .55s ease !important
+}
+
+/* Hairline divider between items */
+.stat-card+.stat-card {
+  border-left: 1px solid rgba(233, 200, 168, .22) !important
 }
 
 .stats-active .stat-card {
@@ -2744,32 +2791,56 @@ main>.pt-24 {
   transition-delay: .2s
 }
 
-.stat-card:hover {
-  transform: translateY(-7px) !important;
-  border-color: #f0b56f !important;
-  box-shadow: 0 24px 50px rgba(20, 2, 4, .36), inset 0 0 24px rgba(255, 255, 255, .07) !important
+.stats-active .stat-card:hover {
+  transform: none !important;
+  box-shadow: none !important
 }
 
 .stat-card:before {
-  background: linear-gradient(90deg, transparent, #f0b56f, transparent) !important
+  display: none !important
+}
+
+/* Gold outlined icon, left of the figure */
+.stat-icon {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(201, 168, 111, .5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9a86f
+}
+
+.stat-icon svg {
+  width: 21px;
+  height: 21px;
+  stroke-width: 1.5
+}
+
+.stat-text {
+  text-align: left
 }
 
 .stat-value {
-  font-size: clamp(46px, 5vw, 72px) !important;
+  font-family: var(--font-geist-sans), Arial, sans-serif !important;
+  font-size: clamp(27px, 2.7vw, 37px) !important;
   line-height: 1;
-  font-weight: 850 !important;
-  color: #fff !important;
-  text-shadow: 0 8px 22px rgba(0, 0, 0, .22) !important;
+  font-weight: 800 !important;
+  color: #fbf1e3 !important;
+  letter-spacing: -.01em;
+  text-shadow: none !important;
   font-variant-numeric: tabular-nums
 }
 
 .stat-label {
-  margin-top: 22px !important;
-  color: #f2d8d2 !important;
-  font-size: 17px !important;
-  letter-spacing: 0 !important;
-  text-transform: none !important;
-  font-weight: 700 !important;
+  margin-top: 7px !important;
+  color: #cfae9c !important;
+  font-size: 10px !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
   line-height: 1.25 !important;
   opacity: 1 !important
 }
@@ -2780,23 +2851,43 @@ main>.pt-24 {
   }
 
   .stats-section>div {
-    grid-template-columns: 1fr !important;
     width: calc(100% - 32px);
-    gap: 16px !important
+    gap: 0 !important
   }
 
   .stat-card {
-    min-height: 160px !important;
-    padding: 28px 18px !important
+    padding: 14px 24px !important;
+    gap: 13px
   }
 
-  .stat-value {
-    font-size: 44px !important
+  .stat-icon {
+    width: 42px;
+    height: 42px
+  }
+
+  .stat-icon svg {
+    width: 19px;
+    height: 19px
   }
 
   .stat-label {
-    font-size: 15px !important;
-    margin-top: 14px !important
+    font-size: 9px !important;
+    letter-spacing: .14em !important;
+    margin-top: 5px !important
+  }
+}
+
+/* Stack into rows on small phones */
+@media(max-width:560px) {
+  .stat-card {
+    width: 100% !important;
+    max-width: 250px;
+    justify-content: flex-start
+  }
+
+  .stat-card+.stat-card {
+    border-left: 0 !important;
+    border-top: 1px solid rgba(233, 200, 168, .2) !important
   }
 }
 
@@ -2828,7 +2919,7 @@ main>.pt-24 {
   position: relative;
   overflow: hidden;
   background: #fff !important;
-  border: 1px solid #59101512 !important;
+  border: 1px solid #24485e12 !important;
   border-radius: 8px !important;
   min-height: 330px !important;
   padding: 38px 28px 32px !important;
@@ -2843,7 +2934,7 @@ main>.pt-24 {
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, #591015, #c98a4f)
+  background: linear-gradient(90deg, #dce9f5, #5b8299)
 }
 
 .why-grid article:after {
@@ -2854,14 +2945,14 @@ main>.pt-24 {
   border-radius: 50%;
   right: -82px;
   bottom: -82px;
-  background: #59101508;
-  border: 1px solid #5910150d;
+  background: #dce9f508;
+  border: 1px solid #24485e0d;
   transition: transform .35s ease
 }
 
 .why-grid article:hover {
   transform: translateY(-9px) !important;
-  border-color: #59101526 !important;
+  border-color: #24485e26 !important;
   box-shadow: 0 24px 48px rgba(89, 16, 21, .16) !important
 }
 
@@ -2873,7 +2964,7 @@ main>.pt-24 {
   position: absolute;
   right: 22px;
   top: 20px;
-  color: #59101512;
+  color: #24485e12;
   font-size: 42px;
   font-weight: 900;
   line-height: 1
@@ -2903,7 +2994,7 @@ main>.pt-24 {
   padding: 0 !important;
   background: transparent !important;
   border-radius: 0 !important;
-  color: #591015 !important;
+  color: #24485e !important;
   margin: auto !important;
   stroke-width: 1.55 !important;
   grid-area: 1/1
@@ -2912,7 +3003,7 @@ main>.pt-24 {
 .why-grid h3 {
   position: relative;
   z-index: 1;
-  color: #591015 !important;
+  color: #24485e !important;
   font-size: 22px !important;
   line-height: 1.25;
   font-weight: 850;
@@ -2981,7 +3072,7 @@ main>.pt-24 {
   z-index: 60;
   height: 80px;
   background: #fffaf3;
-  color: var(--brand-red);
+  color: var(--brand-accent-ink);
   border-bottom: 1px solid rgba(89, 16, 21, .10);
   box-shadow: 0 6px 22px rgba(43, 9, 13, .10);
   transition: box-shadow .3s ease, height .3s ease, background .3s ease
@@ -3035,13 +3126,13 @@ main>.pt-24 {
 
 .site-nav-links a {
   position: relative;
-  color: #5a1c22;
+  color: #24485e;
   padding: 6px 0;
   transition: color .2s ease
 }
 
 .site-nav-links a:hover {
-  color: var(--brand-red)
+  color: var(--brand-accent-ink)
 }
 
 .site-nav-links a:after {
@@ -3052,7 +3143,7 @@ main>.pt-24 {
   bottom: -4px;
   height: 2px;
   border-radius: 2px;
-  background: #c98a4f;
+  background: #5b8299;
   transition: right .25s ease
 }
 
@@ -3100,10 +3191,10 @@ main>.pt-24 {
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  border: 1px solid #5910150d;
+  border: 1px solid #24485e0d;
   left: -240px;
   top: -160px;
-  box-shadow: 0 0 0 70px #59101505, 0 0 0 140px #59101503
+  box-shadow: 0 0 0 70px #24485e05, 0 0 0 140px #24485e03
 }
 
 .milestone-heading {
@@ -3116,12 +3207,12 @@ main>.pt-24 {
   font-size: 10px;
   font-weight: 800;
   letter-spacing: .22em;
-  color: #591015;
+  color: #24485e;
   margin-bottom: 16px
 }
 
 .milestone-heading h2 {
-  color: #591015
+  color: #24485e
 }
 
 .milestone-heading p {
@@ -3143,7 +3234,7 @@ main>.pt-24 {
   right: 10%;
   top: 0;
   height: 2px;
-  background: linear-gradient(90deg, #59101522, #591015, #59101522)
+  background: linear-gradient(90deg, #dce9f522, #dce9f5, #dce9f522)
 }
 
 .milestone-card {
@@ -3154,7 +3245,7 @@ main>.pt-24 {
 .milestone-content {
   min-height: 285px;
   background: #fff;
-  border: 1px solid #59101512;
+  border: 1px solid #24485e12;
   border-radius: 12px;
   padding: 78px 26px 28px;
   position: relative;
@@ -3178,9 +3269,9 @@ main>.pt-24 {
   display: grid;
   place-items: center;
   color: #fff;
-  background: linear-gradient(145deg, #70171d, #591015);
+  background: linear-gradient(145deg, #d5e6f3, #dce9f5);
   border: 7px solid #fffaf3;
-  box-shadow: 0 10px 24px rgba(89, 16, 21, .28)
+  box-shadow: 0 10px 24px rgba(89, 16, 21, .28);
 }
 
 .milestone-year span {
@@ -3196,12 +3287,12 @@ main>.pt-24 {
   font-size: 10px;
   font-weight: 800;
   letter-spacing: .14em;
-  color: #59101555
+  color: #24485e55
 }
 
 .milestone-content h4 {
   text-align: center;
-  color: #591015;
+  color: #24485e;
   font-size: 19px;
   font-weight: 800;
   margin: 0 0 14px
@@ -3269,7 +3360,7 @@ main>.pt-24 {
   display: none;
   background: none;
   border: 0;
-  color: var(--brand-red);
+  color: var(--brand-accent-ink);
   cursor: pointer;
   padding: 4px
 }
@@ -3338,4 +3429,111 @@ main>.pt-24 {
   .site-nav-cta {
     padding: 10px 16px
   }
+}
+/* ===== Pastel readability pass =====
+   Surfaces above are now light blush pastel, so anything that used to be
+   white text on maroon must become dark. Page heroes are deliberately
+   excluded: they still sit on a photo behind a dark overlay. */
+
+/* bg-* tokens are pastel now, but text-* tokens must stay dark */
+.text-gold,
+.text-gold-dark,
+.text-earth {
+  color: var(--brand-accent-ink) !important
+}
+
+/* Flat pastel sections: stats bar, footer, testimonials */
+.stats-section,
+.stats-section .text-white,
+.review-area,
+.review-area .text-white,
+.heritage-footer,
+.heritage-footer a,
+.heritage-footer p,
+footer.bg-deep-maroon,
+footer.bg-deep-maroon a,
+footer.bg-deep-maroon p,
+footer.bg-deep-maroon h4,
+footer.bg-deep-maroon span,
+footer.bg-deep-maroon .text-white {
+  color: var(--brand-accent-ink) !important
+}
+
+/* Solid pastel buttons/pills that previously carried white labels */
+.bg-gold,
+.bg-earth,
+.bg-gold .text-white,
+.site-nav-cta {
+  color: var(--brand-accent-ink) !important
+}
+
+/* Pastel gradient buttons (from-gold/to-earth) previously carried white labels */
+button[class*="from-gold"],
+a[class*="from-gold"],
+[class*="from-gold"].text-white,
+[class*="from-gold"] .text-white {
+  color: var(--brand-accent-ink) !important
+}
+
+.site-nav-cta:hover {
+  background: var(--brand-accent) !important;
+  color: var(--brand-accent-ink) !important
+}
+
+/* Stats bar on pastel */
+.stat-value {
+  color: var(--brand-accent-ink) !important
+}
+
+.stat-label {
+  color: #55788e !important
+}
+
+.stat-icon {
+  border-color: rgba(36, 72, 94, .38) !important;
+  color: #5b8299 !important
+}
+
+.stat-card+.stat-card {
+  border-left-color: rgba(36, 72, 94, .22) !important
+}
+
+/* Footer form fields were white-on-translucent-dark */
+footer.bg-deep-maroon input,
+footer.bg-deep-maroon textarea {
+  background: rgba(36, 72, 94, .08) !important;
+  color: var(--brand-accent-ink) !important
+}
+
+footer.bg-deep-maroon input::placeholder,
+footer.bg-deep-maroon textarea::placeholder {
+  color: rgba(36, 72, 94, .55) !important
+}
+
+footer.bg-deep-maroon .border-white\/10 {
+  border-color: rgba(36, 72, 94, .18) !important
+}
+
+/* Footer logo was filtered to white — restore it on pastel */
+footer.bg-deep-maroon .white-logo {
+  filter: none !important
+}
+
+/* Headings/kickers on pastel or cream must use the deep ink.
+   (Hero headings sit on photos and are excluded by their own rules.) */
+.section-title h2,
+.section-title p,
+.section-title>span,
+.review-area h2,
+.review-area header>span,
+.review-area p,
+.heritage-section h2,
+.product-area h2,
+.gallery-area h2 {
+  color: var(--brand-accent-ink) !important
+}
+
+.review-area .review-card blockquote,
+.review-area .review-card b {
+  color: var(--brand-accent-ink) !important
 }

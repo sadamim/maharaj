@@ -2580,7 +2580,7 @@
   inherits: false
 }
 .stats-section {
-  background: #510406;
+  background: #dce9f5;
 }
 
 .stat-card {
@@ -2615,7 +2615,7 @@
   width: 60%;
   height: 3px;
   transform: translateX(-50%);
-  background: linear-gradient(to right, transparent, #ac1e23, transparent);
+  background: linear-gradient(to right, transparent, #c3daed, transparent);
   opacity: 0.6;
 }
 

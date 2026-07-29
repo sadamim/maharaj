@@ -131,6 +131,9 @@ const SliderRow = ({ data, reverse = false }: SliderRowProps) => {
               <span className="ingredient-badge">{item.benefit}</span>
               <h3 className="text-lg font-semibold mb-2 text-center">{item.name}</h3>
               <p className="text-gray-600 text-sm">{item.description}</p>
+              <Link href="/products" className="ingredient-link">
+                View Product <span aria-hidden="true">&rarr;</span>
+              </Link>
             </div>
           </div>
         ))}
@@ -158,12 +161,12 @@ export function Ingredients() {
          
         </motion.div>
 
-        <h2 className="mb-6 text-center">SHASHI</h2>
+        <h2 className="brand-divider">SHASHI</h2>
         <SliderRow data={ingredients} />
 
         <div className="h-14" />
 
-        <h2 className="mb-6 text-center">SAVAAL</h2>
+        <h2 className="brand-divider">SAVAAL</h2>
         <SliderRow data={ingredients2} reverse />
 
         {/* CTA */}
@@ -172,17 +175,11 @@ export function Ingredients() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-center mt-16"
+          className="text-center mt-16 home-about-intro"
         >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-charcoal text-white rounded-full hover:bg-gold transition-colors duration-300"
-          >
-            <Link href="/products">
-              <span className="tracking-wide">View All Products</span>
+         <Link href="/products ">
+              <span >View All Products</span>
             </Link>
-          </motion.button>
         </motion.div>
       </div>
     </section>

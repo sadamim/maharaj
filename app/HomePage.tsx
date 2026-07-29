@@ -18,13 +18,142 @@ const reviews = [
 ];
 const gallery = ["g8.webp", "g12.webp", "g9.webp", "g13.webp", "g10.webp", "g15.webp"];
 
+function ProductSection() {
+    return (
+        <section className="heritage-section product-area" data-reveal>
+            <div className="heritage-shell">
+                <header className="section-title">
+                    <span>PREMIUM HOME-CARE ESSENTIALS</span>
+                    <h2>Carefully curated products for every home.</h2>
+                    <p>Discover trusted Maharaj essentials across detergent, dishcare, and bath categories.</p>
+                </header>
+                <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+                    {products.map(([brand, category, title, image]) => (
+                        <article key={title} className="group overflow-hidden rounded-[28px] bg-white shadow-[0_18px_50px_rgba(0,0,0,0.06)] transition-transform duration-300 hover:-translate-y-2">
+                            <div className="relative aspect-[4/3] overflow-hidden bg-[#eef5fb]">
+                                <Image src={image} alt={title} fill className="object-contain p-6 transition-transform duration-500 group-hover:scale-105" />
+                            </div>
+                            <div className="p-6">
+                                <span className="inline-flex items-center rounded-full bg-[#e2eef8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#2f6081]">
+                                    {brand}
+                                </span>
+                                <h3 className="mt-4 text-lg font-semibold text-[#2e1c18]">{title}</h3>
+                                <p className="mt-2 text-sm text-[#6d5b53]">{category}</p>
+                                <a href="/products" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#2f6081] transition-colors hover:text-[#1d3a4d]">
+                                    View Product <span aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+                <div className="mt-12 text-center ">
+                    <a href="/products" className="inline-flex items-center justify-center rounded-full bg-[#dce9f5] px-8 py-3 text-sm font-semibold text-[#24485e] transition hover:bg-[#c3daed]">
+                        View All Products
+                    </a>
+                </div>
+            </div>
+        </section>
+    );
+}
+
 export default function HomePage() {
-    const [tab, setTab] = useState("ALL"), [review, setReview] = useState(0), [light, setLight] = useState<string | null>(null); useEffect(() => { const o = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("show"); o.unobserve(e.target) } }), { threshold: .12 }); document.querySelectorAll("[data-reveal]").forEach(e => o.observe(e)); return () => o.disconnect() }, []); useEffect(() => { const t = setInterval(() => setReview(v => (v + 1) % reviews.length), 7000); return () => clearInterval(t) }, []); return <>
+    const [review, setReview] = useState(0);
+    const [light, setLight] = useState<string | null>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                    observer.unobserve(entry.target);
+                }
+            }),
+            { threshold: 0.12 }
+        );
+
+        document.querySelectorAll("[data-reveal]").forEach((element) => observer.observe(element));
+        return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+        const timer = setInterval(() => setReview((current) => (current + 1) % reviews.length), 7000);
+        return () => clearInterval(timer);
+    }, []);
+
+    return <>
         <Hero />
-        <section className="heritage-section why-area" data-reveal><div className="heritage-shell"><header className="section-title"><span>WHY MAHARAJA</span><h2>Care in every bar. Trust in every home.</h2><p>Rooted in Karnataka and raised on family values, we make products that work hard while staying gentle.</p></header><div className="why-grid">{features.map(([Icon, t, d], i) => <article key={String(t)}><div className="why-icon"><svg className="" width="0" height="0" aria-hidden="true" focusable="false"><linearGradient id={`why-gradient-${i}`} x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#591015" /><stop offset="100%" stopColor="#c98a4f" /></linearGradient></svg><Icon style={{ stroke: `url(#why-gradient-${i})` }} /></div><h3>{t as string}</h3><p>{d as string}</p></article>)}</div></div></section>
+        <section className="heritage-section why-area" data-reveal>
+            <div className="heritage-shell">
+                <header className="section-title">
+                    <span>WHY MAHARAJA</span>
+                    <h2>Care in every bar. Trust in every home.</h2>
+                    <p>Rooted in Karnataka and raised on family values, we make products that work hard while staying gentle.</p>
+                </header>
+                <div className="why-grid">
+                    {features.map(([Icon, title, description], index) => (
+                        <article key={String(title)}>
+                            <div className="why-icon">
+                                <svg className="" width="0" height="0" aria-hidden="true" focusable="false">
+                                    <linearGradient id={`why-gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stopColor="#24485e" />
+                                        <stop offset="100%" stopColor="#7fb0cc" />
+                                    </linearGradient>
+                                </svg>
+                                <Icon style={{ stroke: `url(#why-gradient-${index})` }} />
+                            </div>
+                            <h3>{title as string}</h3>
+                            <p>{description as string}</p>
+                        </article>
+                    ))}
+                </div>
+            </div>
+        </section>
         <Ingredients />
-        <section className="review-area" data-reveal><div className="heritage-shell"><header><span>WHAT OUR CUSTOMERS SAY</span><h2>Loved in homes, across generations.</h2><div className="stars">{[1, 2, 3, 4, 5].map(x => <Star key={x} />)}</div></header><article className="review-card"><blockquote>“{reviews[review][0]}”</blockquote><footer><div><b>{reviews[review][1]}</b><small>{reviews[review][2]}</small></div><nav><button onClick={() => setReview((review + reviews.length - 1) % reviews.length)}><ArrowLeft /></button><span>{review + 1}/{reviews.length}</span><button onClick={() => setReview((review + 1) % reviews.length)}><ArrowRight /></button></nav></footer></article></div></section>
-        <section className="heritage-section gallery-area" data-reveal><div className="heritage-shell"><header className="section-title"><span>INSIDE MAHARAJA</span><h2>Made close to home.</h2></header><div className="new-gallery">{gallery.map((g, i) => <button className={`g${i}`} key={g} onClick={() => setLight(`/images/${g}`)}><Image src={`/images/${g}`} alt="Maharaja gallery" fill loading="lazy" sizes="40vw" /><i><ZoomIn /> View</i></button>)}</div></div></section>
-        {light && <div className="new-lightbox" onClick={() => setLight(null)}><button><X /></button><div><Image src={light} alt="Gallery preview" fill sizes="90vw" /></div></div>}
-    </>
+        {/* <ProductSection /> */}
+        <section className="review-area" data-reveal>
+            <div className="heritage-shell">
+                <header>
+                    <span>WHAT OUR CUSTOMERS SAY</span>
+                    <h2>Loved in homes, across generations.</h2>
+                    <div className="stars">{[1, 2, 3, 4, 5].map((x) => <Star key={x} />)}</div>
+                </header>
+                <article className="review-card">
+                    <blockquote>“{reviews[review][0]}”</blockquote>
+                    <footer>
+                        <div>
+                            <b>{reviews[review][1]}</b>
+                            <small>{reviews[review][2]}</small>
+                        </div>
+                        <nav>
+                            <button onClick={() => setReview((review + reviews.length - 1) % reviews.length)}><ArrowLeft /></button>
+                            <span>{review + 1}/{reviews.length}</span>
+                            <button onClick={() => setReview((review + 1) % reviews.length)}><ArrowRight /></button>
+                        </nav>
+                    </footer>
+                </article>
+            </div>
+        </section>
+        <section className="heritage-section gallery-area" data-reveal>
+            <div className="heritage-shell">
+                <header className="section-title">
+                    <span>INSIDE MAHARAJA</span>
+                    <h2>Made close to home.</h2>
+                </header>
+                <div className="new-gallery">
+                    {gallery.map((image, index) => (
+                        <button className={`g${index}`} key={image} onClick={() => setLight(`/images/${image}`)}>
+                            <Image src={`/images/${image}`} alt="Maharaja gallery" fill loading="lazy" sizes="40vw" />
+                            <i><ZoomIn /> View</i>
+                        </button>
+                    ))}
+                </div>
+            </div>
+        </section>
+        {light && (
+            <div className="new-lightbox" onClick={() => setLight(null)}>
+                <button><X /></button>
+                <div><Image src={light} alt="Gallery preview" fill sizes="90vw" /></div>
+            </div>
+        )}
+    </>;
 }

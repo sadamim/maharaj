@@ -133,12 +133,12 @@ export function Hero() {
         <button
           onClick={() => setCurrent((current + 1) % banners.length)}
           className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-gold/80 hover:bg-gold p-3 rounded-full"
-          
+
         >
           <ArrowRight className="text-black" />
         </button>
       </section>
-      <section className="home-about-intro" data-reveal><div className="heritage-shell"><div className="home-about-media"><Image src="/images/Ourstory.webp" alt="Maharaj Soaps Industries" fill sizes="(max-width: 900px) 100vw, 42vw" /></div><article><span>ABOUT MAHARAJ SOAPS</span><h2 className="text-center mb-5">Clean living begins <br/> at home</h2><p>At Maharaj Soaps Industries, we believe that clean living begins at home. Since the year 2000, we have been dedicated to crafting dependable and high-quality home care solutions that families can trust every day. From detergent soaps and washing powders to liquid detergents, dish wash bars, and phenyls, each product is thoughtfully developed to deliver effective cleanliness with care.</p><p>Our products are manufactured under trusted brands such as <strong>Shashi</strong> and <strong>Savaal</strong>, reflecting our commitment to quality, consistency, and performance. What began as a focused manufacturing effort has grown into a purpose-driven organization serving thousands of households with reliable hygiene solutions.</p><a href="/about">View More</a></article></div></section>
+      <section className="home-about-intro" data-reveal><div className="heritage-shell"><div className="home-about-media"><Image src="/images/Ourstory.webp" alt="Maharaj Soaps Industries" fill sizes="(max-width: 900px) 100vw, 42vw" /></div><article><span>ABOUT MAHARAJ SOAPS</span><h2 className="text-center mb-5">Clean living begins <br /> at home</h2><p>At Maharaj Soaps Industries, we believe that clean living begins at home. Since the year 2000, we have been dedicated to crafting dependable and high-quality home care solutions that families can trust every day. From detergent soaps and washing powders to liquid detergents, dish wash bars, and phenyls, each product is thoughtfully developed to deliver effective cleanliness with care.</p><p>Our products are manufactured under trusted brands such as <strong>Shashi</strong> and <strong>Savaal</strong>, reflecting our commitment to quality, consistency, and performance. What began as a focused manufacturing effort has grown into a purpose-driven organization serving thousands of households with reliable hygiene solutions.</p><a href="/about">View More</a></article></div></section>
 
 
       {/* ================= STATS ================= */}
@@ -147,8 +147,10 @@ export function Hero() {
           {heroStats.map((stat, i) => (
             <div key={i} className="stat-card">
               <div className="stat-icon"><stat.Icon /></div>
-              <div className="stat-value">{statCounts[i]}{stat.suffix}</div>
-              <div className="stat-label">{stat.label}</div>
+              <div className="stat-text">
+                <div className="stat-value">{statCounts[i]}{stat.suffix}</div>
+                <div className="stat-label">{stat.label}</div>
+              </div>
             </div>
           ))}
         </div>

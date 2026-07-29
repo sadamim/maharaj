@@ -303,7 +303,7 @@ export default function AboutPage() {
                 >
                   <svg className="about-value-gradient-def" width="0" height="0" aria-hidden="true" focusable="false">
                     <linearGradient id={`about-value-gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#591015" />
+                      <stop offset="0%" stopColor="#24485e" />
                       <stop offset="100%" stopColor="#c98a4f" />
                     </linearGradient>
                   </svg>

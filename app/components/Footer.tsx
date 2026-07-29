@@ -22,7 +22,7 @@ export function Footer() {
 
     const timeoutId = setTimeout(() => {
       setShowEnquiry(true);
-    }, 30000); // 5 seconds
+    }, 30000); // 30 seconds
 
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -31,34 +31,28 @@ export function Footer() {
   }, []);
 
 
+  const [showEnquiry, setShowEnquiry] = useState(false);
   const footerLinks = {
     shop: [
-      { name: 'All Products', href: '#' },
-      { name: 'New Arrivals', href: '#' },
-      { name: 'Best Sellers', href: '#' },
-      { name: 'Maharaj Detergents', href: '#' },
-      { name: 'Maharaj Soaps', href: '#' },
+      { name: 'All Products', href: '/products' },
+      { name: 'Maharaj Detergents', href: '/products' },
+      { name: 'Maharaj Soaps', href: '/products' },
+      { name: 'New Arrivals', href: '/products' },
+      { name: 'Best Sellers', href: '/products' },
     ],
     company: [
-      { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
-    { name: "Products", href: "/products" },
-    { name: "Enquiry", href: "/enquiry" },
-        { name: "Contact", href: "/contact" },
-    ],
-    support: [
-
+      { name: 'Home', href: '/' },
+      { name: 'About Us', href: '/about' },
+      { name: 'Products', href: '/products' },
+      { name: 'Enquiry', href: '/enquiry' },
+      { name: 'Contact', href: '/contact' },
     ],
   };
 
   const socialLinks = [
     { icon: Facebook, href: 'https://www.facebook.com/msiplgroup/', label: 'Facebook' },
     { icon: Linkedin, href: 'https://www.linkedin.com/company/msipl/', label: 'LinkedIn' },
-    // { icon: Twitter, href: '#', label: 'X' }, 
-    // { icon: Youtube, href: '#', label: 'X' },
-
   ];
-  const [showEnquiry, setShowEnquiry] = useState(false);
 
   return (
     <footer className="text-white pt-20 pb-8 py-20 lg:py-32 bg-deep-maroon">
@@ -173,7 +167,7 @@ export function Footer() {
 
             {/* Copyright */}
             <p className="text-sm text-white">
-              © {new Date().getFullYear()} Shashi Soap. All rights reserved.
+              © {new Date().getFullYear()} Maharaj Soaps Pvt. Ltd. All rights reserved.
             </p>
 
             {/* Social Links */}
