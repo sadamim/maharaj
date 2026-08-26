@@ -34,17 +34,18 @@ export function Footer() {
   const [showEnquiry, setShowEnquiry] = useState(false);
   const footerLinks = {
     shop: [
-      { name: 'All Products', href: '/products' },
-      { name: 'Maharaj Detergents', href: '/products' },
-      { name: 'Maharaj Soaps', href: '/products' },
-      { name: 'New Arrivals', href: '/products' },
-      { name: 'Best Sellers', href: '/products' },
+      { name: 'Brand & Products', href: '/brands' },
+      { name: 'Shop Online', href: '/products' },
+      { name: 'Quality Assurance', href: '/quality-assurance' },
+      { name: 'Distributors', href: '/distributors' },
+      { name: 'News & Blog', href: '/news' },
     ],
     company: [
       { name: 'Home', href: '/' },
       { name: 'About Us', href: '/about' },
-      { name: 'Products', href: '/products' },
-      { name: 'Enquiry', href: '/enquiry' },
+      { name: "Chairman's Message", href: '/about#chairman' },
+      { name: 'Our Values', href: '/about#values' },
+      { name: 'Career', href: '/career' },
       { name: 'Contact', href: '/contact' },
     ],
   };
@@ -58,7 +59,7 @@ export function Footer() {
     <footer className="text-white pt-20 pb-8 py-20 bg-deep-maroon">
       <div className="container-padding mx-4 md:mx-[5%] lg:mx-[10%] ">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16 items-start text-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16 items-start text-center">
 
           <div className="">
             <motion.div
@@ -139,7 +140,23 @@ export function Footer() {
               ))}
             </ul>
           </div>
-        
+
+          <div className='margin-top-mov'>
+            <h4 className="text-white mb-6 font-semibold ">Business</h4>
+            <ul className="space-y-3">
+              {footerLinks.shop.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-white hover:text-gold transition-all hover:translate-x-1 inline-block"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           <div className="w-full max-w-md mx-auto ">
             <h4 className="text-white mb-4 text-base font-semibold enquity-from-h4">
               Quick Enquiry

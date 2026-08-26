@@ -3113,14 +3113,15 @@ main>.pt-24 {
 
 .site-nav-links {
   text-transform: uppercase;
-  letter-spacing: .09em;
+  letter-spacing: .04em;
   justify-self: center;
   align-items: center;
-  gap: 36px;
+  gap: 18px;
   font-family: var(--font-geist-sans), Arial, sans-serif !important;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
-  display: flex
+  display: flex;
+  white-space: nowrap
 }
 
 .site-nav-links a {
@@ -3364,7 +3365,7 @@ main>.pt-24 {
   padding: 4px
 }
 
-@media(max-width:860px) {
+@media(max-width:1360px) {
   .site-nav {
     height: 64px
   }

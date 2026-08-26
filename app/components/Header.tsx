@@ -7,8 +7,13 @@ import { EnquiryModal } from "./EnquiryModal";
 
 const LINKS: [string, string][] = [
   ["Home", "/"],
-  ["About", "/about"],
-  ["Products", "/products"],
+  ["About Us", "/about"],
+  ["Brand & Products", "/brands"],
+  ["Quality Assurance", "/quality-assurance"],
+  ["Distributors", "/distributors"],
+  ["Shop Online", "/products"],
+  ["News & Blog", "/news"],
+  ["Career", "/career"],
   ["Contact", "/contact"],
 ];
 

@@ -32,7 +32,7 @@ const products = [
 
 export function FeaturedGallary() {
   return (
-    <section id="shop" className="py-20 lg:py-32 bg-cream">
+    <section id="gallery" className="py-20 lg:py-32 bg-cream">
       <div className="container-padding mx-auto">
         {/* Header */}
         <motion.div
