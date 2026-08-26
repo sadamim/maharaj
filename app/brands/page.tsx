@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { useMemo, useState } from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { productsByBrand, type BrandKey } from '../content/products';
 import { brandTaglines } from '../content/msipl';
@@ -12,11 +13,30 @@ const brands: { key: BrandKey; name: string; tagline: string; extra?: string }[]
   { key: 'shashi-plus', name: 'SHASHI+', tagline: brandTaglines.shashiPlus, extra: brandTaglines.shashiPlusExtra },
 ];
 
+const brandKeys = brands.map((b) => b.key);
+
 const ALL = 'All Segments';
 
-export default function BrandsPage() {
-  const [activeBrand, setActiveBrand] = useState<BrandKey>('shashi');
+function BrandsPageInner() {
+  const searchParams = useSearchParams();
+  const requestedBrand = searchParams.get('brand');
+  const initialBrand: BrandKey =
+    requestedBrand && (brandKeys as string[]).includes(requestedBrand)
+      ? (requestedBrand as BrandKey)
+      : 'shashi';
+
+  const [activeBrand, setActiveBrand] = useState<BrandKey>(initialBrand);
   const [activeSegment, setActiveSegment] = useState(ALL);
+
+  // Keep in sync if the user arrives via a different nav dropdown link
+  // while already on this page (client-side navigation reuses the page).
+  useEffect(() => {
+    if (requestedBrand && (brandKeys as string[]).includes(requestedBrand)) {
+      setActiveBrand(requestedBrand as BrandKey);
+      setActiveSegment(ALL);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [requestedBrand]);
 
   const brand = brands.find((b) => b.key === activeBrand)!;
   const products = useMemo(
@@ -61,7 +81,7 @@ export default function BrandsPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <div className="inline-block px-4 py-2 bg-gold/20 rounded-full mb-6">
-              <span className="text-sm text-white tracking-wider uppercase">Brand &amp; Products</span>
+              <span className="text-sm text-white tracking-wider uppercase">Products</span>
             </div>
             <h1 className="text-white mb-6">Three Brands. One Promise of Clean.</h1>
           </motion.div>
@@ -97,8 +117,8 @@ export default function BrandsPage() {
             transition={{ duration: 0.4 }}
           >
             <h2 className="mb-2">{brand.name}</h2>
-            <p className="text-lg text-gray-700">{brand.tagline}</p>
-            {brand.extra && <p className="text-sm text-gray-500 italic mt-1">{brand.extra}</p>}
+            <p className="text-lg text-gray-700 text-center">{brand.tagline}</p>
+            {brand.extra && <p className="text-sm text-gray-500 italic mt-1 text-center">{brand.extra}</p>}
           </motion.div>
         </div>
       </section>
@@ -107,8 +127,8 @@ export default function BrandsPage() {
         <section className="py-20 lg:py-32 bg-white">
           <div className="container-padding mx-auto">
             <div className="max-w-xl mx-auto text-center bg-cream rounded-3xl border-2 border-dashed border-gray-200 py-20 px-8">
-              <p className="text-2xl text-gray-400 mb-3">SHASHI+ product lineup launching soon.</p>
-              <p className="text-sm text-gray-400">
+              <p className="text-2xl text-gray-400 mb-3 text-center">SHASHI+ product lineup launching soon.</p>
+              <p className="text-sm text-gray-400 text-center">
                 {brandTaglines.shashiPlusExtra} — full product listings will appear here once
                 available.
               </p>
@@ -184,5 +204,13 @@ export default function BrandsPage() {
         </>
       )}
     </div>
+  );
+}
+
+export default function BrandsPage() {
+  return (
+    <Suspense fallback={null}>
+      <BrandsPageInner />
+    </Suspense>
   );
 }

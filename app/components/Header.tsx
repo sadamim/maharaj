@@ -1,20 +1,26 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { EnquiryModal } from "./EnquiryModal";
 
 const LINKS: [string, string][] = [
   ["Home", "/"],
   ["About Us", "/about"],
-  ["Brand & Products", "/brands"],
+  ["Products", "/brands"],
   ["Quality Assurance", "/quality-assurance"],
   ["Distributors", "/distributors"],
   ["Shop Online", "/products"],
-  ["News & Blog", "/news"],
+  ["News & Blogs", "/news"],
   ["Career", "/career"],
   ["Contact", "/contact"],
+];
+
+const BRAND_LINKS: [string, string][] = [
+  ["SHASHI", "/brands?brand=shashi"],
+  ["SAVAAL", "/brands?brand=savaal"],
+  ["SHASHI+", "/brands?brand=shashi-plus"],
 ];
 
 export function Header() {
@@ -44,9 +50,25 @@ export function Header() {
         </Link>
 
         <nav className="site-nav-links">
-          {LINKS.map(([label, href]) => (
-            <Link href={href} key={href} onClick={close}>{label}</Link>
-          ))}
+          {LINKS.map(([label, href]) =>
+            label === "Products" ? (
+              <div className="site-nav-dropdown" key={href}>
+                <Link href={href} onClick={close} className="site-nav-dropdown-trigger">
+                  {label}
+                  <ChevronDown className="site-nav-caret" aria-hidden="true" />
+                </Link>
+                <div className="site-nav-dropdown-panel">
+                  {BRAND_LINKS.map(([brandLabel, brandHref]) => (
+                    <Link href={brandHref} key={brandHref} onClick={close}>
+                      {brandLabel}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link href={href} key={href} onClick={close}>{label}</Link>
+            )
+          )}
         </nav>
 
         <div className="site-nav-actions">

@@ -110,7 +110,7 @@ export default function CareerPage() {
             className="text-center mb-12"
           >
             <h2 className="mb-4">Apply Now</h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-center">
               No specific openings are listed at this time — submit your details and we&rsquo;ll
               reach out when a suitable role is available.
             </p>
@@ -185,7 +185,7 @@ export default function CareerPage() {
                 <CheckCircle2 className="w-12 h-12 text-green-600" />
               </div>
               <h3 className="text-2xl text-charcoal mb-3">Application Received</h3>
-              <p className="text-gray-600">Thank you for your interest in MSIPL.</p>
+              <p className="text-gray-600 text-center">Thank you for your interest in MSIPL.</p>
             </motion.div>
           )}
         </div>

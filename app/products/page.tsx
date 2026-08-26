@@ -31,26 +31,26 @@ export default function ProductsPage() {
       <div className='bg-cream'>
  {/* Hero Section */}
 
-      <section className="products-hero relative py-20 lg:py-32 bg-deep-maroon overflow-hidden">
-        <div className="absolute inset-0 opacity-100">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url('/images/MSIPL_banner.webp')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }} />
-        </div>
-        <div className="container-padding mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <div className="inline-block px-4 py-2 bg-white/20 rounded-full mb-6">
-              <span className="text-sm text-white tracking-wider uppercase">Our Collection</span>
-            </div>
-            <h1 className="text-white mb-6">Premium Home-Care Essentials</h1>
+      <section className="products-hero relative bg-deep-maroon overflow-hidden">
+        <img
+          src="/images/MSIPL_banner.webp"
+          alt="MSIPL premium home-care products"
+          className="block w-full h-auto"
+        />
+        <div className="absolute inset-0 flex items-center">
+          <div className="container-padding mx-auto relative z-10 w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="max-w-4xl mx-auto text-center"
+            >
+              <div className="inline-block px-4 py-2 bg-white/20 rounded-full mb-6">
+                <span className="text-sm text-white tracking-wider uppercase">Our Collection</span>
+              </div>
+              <h1 className="text-white mb-6">Premium Home-Care Essentials</h1>
 
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

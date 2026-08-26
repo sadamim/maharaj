@@ -40,21 +40,6 @@ export default function QualityAssurancePage() {
         </div>
       </section>
 
-      {/* Intro */}
-      <section className="py-20 bg-cream">
-        <div className="container-padding mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <p className="text-xl text-gray-700 leading-relaxed">{qualityAssurance.intro}</p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Pillars */}
       <section className="py-20 lg:py-32 bg-white">
         <div className="container-padding mx-auto">
@@ -69,29 +54,31 @@ export default function QualityAssurancePage() {
                 MSIPL Quality Assurance &amp; Commitment
               </span>
             </div>
-            <h2 className="mb-6">Every Product, Rigorously Verified</h2>
+            <h2 className="mb-4">Every Product, Rigorously Verified</h2>
+            <p className="text-gray-600 leading-relaxed max-w-2xl text-center">
+              Four pillars guide every batch that leaves our production floor before it reaches
+              an Indian household.
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {qualityAssurance.pillars.map((pillar, index) => {
               const Icon = pillarIcons[index] ?? ShieldCheck;
               return (
                 <motion.div
                   key={pillar.title}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-cream rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow group"
+                  className="group flex flex-col items-center text-center bg-cream rounded-2xl p-7 shadow-sm hover:shadow-xl transition-shadow border border-transparent hover:border-gold/40"
                 >
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-14 h-14 bg-gradient-to-br from-gold to-earth rounded-xl flex items-center justify-center mb-5 shadow-md"
-                  >
+                  <div className="w-14 h-14 bg-gradient-to-br from-gold to-earth rounded-xl flex items-center justify-center shadow-md transition-transform group-hover:scale-110 mb-4">
                     <Icon className="w-7 h-7 text-white" />
-                  </motion.div>
-                  <h3 className="text-xl mb-3">{pillar.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{pillar.description}</p>
+                  </div>
+                  <span className="text-xs font-bold text-gold tracking-wider mb-1">0{index + 1}</span>
+                  <h3 className="text-xl mb-2">{pillar.title}</h3>
+                  <p className="text-gray-600 leading-relaxed text-center">{pillar.description}</p>
                 </motion.div>
               );
             })}
@@ -109,7 +96,7 @@ export default function QualityAssurancePage() {
             className="text-center mx-auto mb-16"
           >
             <h2 className="mb-4">Quality Commitment</h2>
-            <p className="max-w-2xl mx-auto text-gray-700">{qualityAssurance.commitment}</p>
+            <p className="max-w-2xl mx-auto text-gray-700 text-center">{qualityAssurance.commitment}</p>
           </motion.div>
 
           <div className="flex flex-wrap items-center justify-center gap-3 md:gap-2">
@@ -149,7 +136,7 @@ export default function QualityAssurancePage() {
               <span className="text-sm text-gold tracking-wider uppercase">Compliance</span>
             </div>
             <h2 className="mb-4">Certifications &amp; Documentation</h2>
-            <p className="text-gray-600 max-w-2xl">
+            <p className="text-gray-600 max-w-2xl text-center">
               Official certifications and relevant documentation may be displayed here to
               substantiate our compliance with rigorous safety and quality standards.
             </p>
@@ -162,8 +149,8 @@ export default function QualityAssurancePage() {
                 className="aspect-[4/3] rounded-2xl border-2 border-dashed border-gray-300 bg-white flex flex-col items-center justify-center gap-2 text-center p-6"
               >
                 <FileCheck2 className="w-8 h-8 text-gray-300" />
-                <p className="text-sm text-gray-400">Certification document</p>
-                <p className="text-xs text-gray-300">To be added when available</p>
+                <p className="text-sm text-gray-400 text-center">Certification document</p>
+                <p className="text-xs text-gray-300 text-center">To be added when available</p>
               </div>
             ))}
           </div>

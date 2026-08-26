@@ -3,11 +3,36 @@
 import { motion } from 'framer-motion';
 import { Award, HandHeart, Lightbulb, ShieldCheck, Sparkles, Users } from 'lucide-react';
 import Image from 'next/image';
-import { chairmanMessage, mission, timeline, values, vision } from '../content/msipl';
+import { chairmanMessage, mission, values, vision } from '../content/msipl';
+
+const milestones = [
+  {
+    year: '2000',
+    title: 'The Beginning',
+    description:
+      'Started as a small-scale unit with a vision to uplift daily cleaning with better-quality products',
+  },
+  {
+    year: '2008',
+    title: 'Breakthrough in Formulation',
+    description:
+      'Developed advanced stain-removal and fabric-care formulas that set new standards in performance',
+  },
+  {
+    year: '2016',
+    title: 'Production Upgrade',
+    description:
+      'Enhanced manufacturing capabilities with improved processes for consistency, purity, and efficiency',
+  },
+  {
+    year: '2023',
+    title: 'Trusted by Millions',
+    description:
+      'Proudly serving families across the country, becoming a household name in dependable cleaning',
+  },
+];
 
 export default function AboutPage() {
-  const milestones = timeline;
-
   const valueIcons = [ShieldCheck, HandHeart, Users, Award, Sparkles, Lightbulb];
 
   return (
@@ -141,31 +166,34 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="mission-vision-section py-20 bg-white">
+      <section className="py-20 lg:py-28 bg-white">
         <div className="container-padding mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mission-vision-heading text-center mx-auto"
+            className="text-center mx-auto mb-16"
           >
-            <span>Purpose & Direction</span>
+            <div className="inline-block px-4 py-2 bg-gold/10 rounded-full mb-4">
+              <span className="text-sm text-gold tracking-wider uppercase">Purpose &amp; Direction</span>
+            </div>
             <h2>Our Vision &amp; Mission</h2>
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 35 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="mission-vision-cards"
+            className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto text-center"
           >
-            <div>
-              <span className="text-center">Our Mission</span>
-              <p className="text-justify-better primary-text">{mission}</p>
+            <div className="border border-gold/30 rounded-2xl p-8 shadow-sm">
+              <h3 className="text-xl font-semibold mb-4 text-charcoal">Our Mission</h3>
+              <p className="text-gray-700 leading-relaxed text-center">{mission}</p>
             </div>
-            <div>
-              <span className="text-center">Our Vision</span>
-              <p className="text-justify-better primary-text">“{vision}”</p>
+            <div className="border border-gold/30 rounded-2xl p-8 shadow-sm">
+              <h3 className="text-xl font-semibold mb-4 text-charcoal">Our Vision</h3>
+              <p className="text-gray-700 leading-relaxed text-center">“{vision}”</p>
             </div>
           </motion.div>
         </div>
@@ -180,7 +208,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="milestone-heading mx-auto mb-20 flex flex-col items-center"
           >
-            <h2 className="mb-6">Our Story</h2>
+            <h2 className="mb-6">Our Milestones</h2>
             <p className="text-gray-600">
               A journey of dedication, growth, and unwavering commitment to excellence.
             </p>
@@ -203,7 +231,7 @@ export default function AboutPage() {
                     </div>
                     <span className="milestone-index">0{index + 1}</span>
                     <h4>{milestone.title}</h4>
-                    <p>{milestone.description}</p>
+                    <p style={{ textAlign: 'center' }}>{milestone.description}</p>
                   </div>
                   {index < milestones.length - 1 && (
                     <div className="milestone-connector" />
@@ -228,7 +256,7 @@ export default function AboutPage() {
               <span className="text-sm text-gold tracking-wider uppercase">Our Values</span>
             </div>
             <h2 className="mb-6">What We Stand For</h2>
-            <p className="text-gray-600 mb-10">
+            <p className="text-gray-600 mb-10 text-center">
               The cornerstone of our growth — the core values embedded in our organizational
               culture that guide us in every endeavor.
             </p>
@@ -281,7 +309,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="chairman-wrap max-w-9xl mx-auto"
           >
-            <div className="chairman-grid grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="chairman-grid grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
 
               {/* Image Section */}
               <motion.div
@@ -289,9 +317,9 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="chairman-photo relative"
+                className="chairman-photo relative min-h-[420px]"
               >
-                <div className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-xl">
+                <div className="relative h-full w-full rounded-3xl overflow-hidden shadow-xl">
                   <Image
                     src="/images/raviraja.webp"
                     alt="Dr. Raviraja M.E. - Founder & CMD, MSIPL"

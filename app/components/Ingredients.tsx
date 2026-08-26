@@ -177,8 +177,8 @@ export function Ingredients() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-center mt-16 home-about-intro"
         >
-         <Link href="/products ">
-              <span >View All Products</span>
+         <Link href="/products">
+              <span>View All Products</span>
             </Link>
         </motion.div>
       </div>

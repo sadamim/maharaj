@@ -34,7 +34,7 @@ export default function NewsPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <div className="inline-block px-4 py-2 bg-gold/20 rounded-full mb-6">
-              <span className="text-sm text-white tracking-wider uppercase">News &amp; Blog</span>
+              <span className="text-sm text-white tracking-wider uppercase">News &amp; Blogs</span>
             </div>
             <h1 className="text-white mb-6">Stories from MSIPL</h1>
           </motion.div>
@@ -71,10 +71,10 @@ export default function NewsPage() {
               viewport={{ once: true }}
               className="max-w-xl mx-auto text-center bg-white rounded-3xl border-2 border-dashed border-gray-200 py-20 px-8"
             >
-              <p className="text-2xl text-gray-400 mb-3">
+              <p className="text-2xl text-gray-400 mb-3 text-center">
                 {active} content is coming soon.
               </p>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-gray-400 text-center">
                 This section will be populated with real {active.toLowerCase()} as it becomes
                 available.
               </p>

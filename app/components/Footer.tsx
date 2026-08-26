@@ -38,7 +38,7 @@ export function Footer() {
       { name: 'Shop Online', href: '/products' },
       { name: 'Quality Assurance', href: '/quality-assurance' },
       { name: 'Distributors', href: '/distributors' },
-      { name: 'News & Blog', href: '/news' },
+      { name: 'News & Blogs', href: '/news' },
     ],
     company: [
       { name: 'Home', href: '/' },
