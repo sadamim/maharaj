@@ -88,9 +88,6 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-             <div className="inline-block px-4 py-2 bg-white/20 rounded-full mb-6">
-              <span className="text-sm text-white tracking-wider uppercase">Get In Touch</span>
-            </div>
             <h1 className="text-white mb-6">
               We'd Love to
               <br />
@@ -116,9 +113,9 @@ export default function ContactPage() {
               >
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="w-14 h-14 bg-gradient-to-br from-gold to-earth rounded-xl flex items-center justify-center mb-4 shadow-md"
+                  className="flex items-center justify-center mb-4"
                 >
-                  <info.icon className="w-7 h-7 text-white" />
+                  <info.icon className="w-9 h-9 text-gold" />
                 </motion.div>
                 <h4 className="mb-3 group-hover:text-gold transition-colors">{info.title}</h4>
                 <div className="space-y-1">
@@ -128,14 +125,6 @@ export default function ContactPage() {
                     </p>
                   ))}
                 </div>
-                {info.action && (
-                  <a
-                    href={info.action}
-                    className="inline-block mt-4 text-sm text-gold hover:text-gold-dark transition-colors"
-                  >
-                    Contact →
-                  </a>
-                )}
               </motion.div>
             ))}
           </div>

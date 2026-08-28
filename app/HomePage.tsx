@@ -4,7 +4,16 @@ import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, Award, Heart, Leaf, Sparkles, Star, X, ZoomIn } from "lucide-react";
 import { Hero } from "./components/Hero";
 import { Ingredients } from "./components/Ingredients";
+import { blogPosts } from "./content/blogPosts";
 
+const blogs = blogPosts.map((post) => ({
+    id: post.slug,
+    title: post.title,
+    category: "BLOG",
+    description: post.metaDescription,
+    image: post.image,
+    link: `/news/blog/${post.slug}`,
+}));
 const features = [[Leaf, "Pure & Natural", "Carefully selected ingredients for everyday Indian homes."], [Award, "Handcrafted Quality", "Traditional care supported by modern manufacturing precision."], [Heart, "Cruelty-Free", "Responsible care for families, communities and our shared world."], [Sparkles, "Luxury Experience", "Rich lather and comforting fragrance in every wash."]];
 const products = [
     ["SHASHI", "Fabric care", "Pink M-Lore Detergent Cake", "/images/SHASHI PIKK DEETERGENT CAKE.webp"], ["SHASHI", "Fabric care", "Arya Blue Detergent Cake", "/images/SHASHI ARYA BLUE.webp"], ["SHASHI", "Fabric care", "Triple Action Powder", "/images/SHASHI TRIPLE ACTION.webp"], ["SHASHI", "Bath care", "Papaya Beauty Soap", "/images/SHASHI PAPAYA BEAUTY SOAP (4PC JAR).webp"],
@@ -133,22 +142,82 @@ export default function HomePage() {
                 </article>
             </div>
         </section>
+ 
         <section className="heritage-section gallery-area" data-reveal>
-            <div className="heritage-shell">
-                <header className="section-title">
-                    <span>INSIDE MAHARAJA</span>
-                    <h2>Made close to home.</h2>
-                </header>
-                <div className="new-gallery">
-                    {gallery.map((image, index) => (
-                        <button className={`g${index}`} key={image} onClick={() => setLight(`/images/${image}`)}>
-                            <Image src={`/images/${image}`} alt="Maharaja gallery" fill loading="lazy" sizes="40vw" />
-                            <i><ZoomIn /> View</i>
-                        </button>
-                    ))}
-                </div>
+    <div className="heritage-shell">
+
+        {/* Gallery */}
+        <header className="section-title">
+            <span>INSIDE MAHARAJA</span>
+            <h2>Made close to home.</h2>
+        </header>
+
+        <div className="new-gallery">
+            {gallery.map((image, index) => (
+                <button
+                    className={`g${index}`}
+                    key={image}
+                    onClick={() => setLight(`/images/${image}`)}
+                >
+                    <Image
+                        src={`/images/${image}`}
+                        alt="Maharaja gallery"
+                        fill
+                        loading="lazy"
+                        sizes="40vw"
+                    />
+
+                    <i>
+                        <ZoomIn /> View
+                    </i>
+                </button>
+            ))}
+        </div>
+
+
+        {/* Dynamic Blogs Section */}
+        <div className="blogs-area">
+            <header className="section-title">
+                <span>FROM MAHARAJA</span>
+                <h2>Stories from our journey.</h2>
+            </header>
+
+            <div className="blogs-grid">
+                {blogs.map((blog) => (
+                    <article className="blog-card" key={blog.id}>
+
+                        <div className="blog-image">
+                            <Image
+                                src={blog.image}
+                                alt={blog.title}
+                                fill
+                                loading="lazy"
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                            />
+                        </div>
+
+                        <div className="blog-content">
+                            <span className="blog-category">
+                                {blog.category}
+                            </span>
+
+                            <h3>{blog.title}</h3>
+
+                            <p>{blog.description}</p>
+
+                            <a href={blog.link}>
+                                Read Story →
+                            </a>
+                        </div>
+
+                    </article>
+                ))}
             </div>
-        </section>
+        </div>
+
+    </div>
+</section>
+
         {light && (
             <div className="new-lightbox" onClick={() => setLight(null)}>
                 <button><X /></button>

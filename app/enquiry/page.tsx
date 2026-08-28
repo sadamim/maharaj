@@ -87,9 +87,6 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-             <div className="inline-block px-4 py-2 bg-white/20 rounded-full mb-6">
-              <span className="text-sm text-white tracking-wider uppercase">Get In Touch</span>
-            </div>
             <h1 className="text-white mb-6">
              Let’s Build a
               <br />

@@ -64,9 +64,6 @@ export default function DistributorsPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="inline-block px-4 py-2 bg-gold/20 rounded-full mb-6">
-              <span className="text-sm text-white tracking-wider uppercase">Distributors</span>
-            </div>
             <h1 className="text-white mb-6">Why Partner with MSIPL?</h1>
           </motion.div>
         </div>
@@ -87,8 +84,8 @@ export default function DistributorsPage() {
                   transition={{ delay: index * 0.1 }}
                   className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-gold to-earth rounded-xl flex items-center justify-center mb-5 shadow-md">
-                    <Icon className="w-7 h-7 text-white" />
+                  <div className="flex items-center justify-center mb-5">
+                    <Icon className="w-10 h-10 text-gold" />
                   </div>
                   <h3 className="text-xl mb-3">{reason.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{reason.description}</p>

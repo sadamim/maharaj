@@ -44,9 +44,6 @@ export default function ProductsPage() {
               animate={{ opacity: 1, y: 0 }}
               className="max-w-4xl mx-auto text-center"
             >
-              <div className="inline-block px-4 py-2 bg-white/20 rounded-full mb-6">
-                <span className="text-sm text-white tracking-wider uppercase">Our Collection</span>
-              </div>
               <h1 className="text-white mb-6">Premium Home-Care Essentials</h1>
 
             </motion.div>
@@ -206,7 +203,7 @@ function ProductCard({ product, index }: { product: typeof allProducts[0]; index
 
       {/* Info */}
       <div className="catalog-product-info p-4 sm:p-6">
-        <div className="text-[10px] sm:text-xs text-gold tracking-wider uppercase mb-1 sm:mb-2">
+        <div className="text-[10px] sm:text-xs text-gold tracking-wider uppercase mb-1 sm:mb-2 text-center">
           {product.category}
         </div>
 
@@ -214,7 +211,7 @@ function ProductCard({ product, index }: { product: typeof allProducts[0]; index
 
 
         {/* Name */}
-        <h3 className="text-base sm:text-xl mb-1 sm:mb-2 line-clamp-2">
+        <h3 className="text-base sm:text-xl mb-1 sm:mb-2 line-clamp-2 text-center">
           {product.name}
         </h3>
 

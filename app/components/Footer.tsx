@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, X, Mail, Phone, MapPin, Twitter, Youtube, TicketX, Linkedin } from 'lucide-react';
+import { Facebook, Mail, Phone, MapPin, Linkedin } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { EnquiryModal } from './EnquiryModal';
 
@@ -56,7 +56,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="text-white pt-20 pb-8 py-20 bg-deep-maroon">
+    <footer className="footer-half-gradient text-white pt-20 pb-8 py-20 bg-deep-maroon">
       <div className="container-padding mx-4 md:mx-[5%] lg:mx-[10%] ">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16 items-start text-center">
@@ -73,7 +73,7 @@ export function Footer() {
                 height: windowWidth < 768 ? '140px' : '122px'
               }} className="flex-shrink-0">
                 <img
-                  src="/images/Maharaja_logo.webp"
+                  src="/images/Maharaja_logo_red.png"
                   alt="Maharaja Logo"
                   className="w-full h-full object-contain white-logo"
                 />
@@ -187,25 +187,20 @@ export function Footer() {
               © {new Date().getFullYear()} Maharaj Soaps Pvt. Ltd. All rights reserved.
             </p>
 
-            {/* Social Links */}
-
-
             {/* Legal Links + Enquiry Button */}
             <div className="flex items-center gap-4">
 
               <div className="flex items-center gap-6">
-                <a href="#" className="text-sm text-white hover:text-gold transition-colors">
+                <a href="/privacy-policy" className="text-sm text-white hover:text-gold transition-colors">
                   Privacy Policy
                 </a>
-                <a href="#" className="text-sm text-white hover:text-gold transition-colors">
+                <a href="/terms-of-service" className="text-sm text-white hover:text-gold transition-colors">
                   Terms of Service
                 </a>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Trust Badges */}
 
       </div>
       <EnquiryModal open={showEnquiry} onClose={() => setShowEnquiry(false)} />

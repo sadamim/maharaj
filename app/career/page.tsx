@@ -7,6 +7,15 @@ import { values } from '../content/msipl';
 
 const valueIcons = [ShieldCheck, HandHeart, Users, Award, Sparkles, Lightbulb];
 
+const openings = [
+  { title: 'Production Supervisor', department: 'Manufacturing', location: 'Davangere, Karnataka', type: 'Full-time' },
+  { title: 'Quality Control Executive', department: 'Quality Assurance', location: 'Davangere, Karnataka', type: 'Full-time' },
+  { title: 'Sales Executive', department: 'Distribution & Sales', location: 'Karnataka', type: 'Full-time' },
+  { title: 'Warehouse & Logistics Coordinator', department: 'Supply Chain', location: 'Davangere, Karnataka', type: 'Full-time' },
+  { title: 'Machine Operator', department: 'Production', location: 'Davangere, Karnataka', type: 'Full-time' },
+  { title: 'Marketing Executive', department: 'Brand & Marketing', location: 'Davangere, Karnataka', type: 'Full-time' },
+];
+
 export default function CareerPage() {
   const [formData, setFormData] = useState({
     name: '', email: '', phone: '', city: '', state: '',
@@ -55,9 +64,6 @@ export default function CareerPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="inline-block px-4 py-2 bg-gold/20 rounded-full mb-6">
-              <span className="text-sm text-white tracking-wider uppercase">Career</span>
-            </div>
             <h1 className="text-white mb-6">Build Your Career at MSIPL</h1>
           </motion.div>
         </div>
@@ -100,8 +106,50 @@ export default function CareerPage() {
         </div>
       </section>
 
-      {/* Application form */}
+      {/* Current Openings */}
       <section className="py-20 lg:py-32 bg-white">
+        <div className="container-padding mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mx-auto mb-16 flex flex-col items-center"
+          >
+            <div className="inline-block px-4 py-2 bg-gold/10 rounded-full mb-4">
+              <span className="text-sm text-gold tracking-wider uppercase">Join Our Team</span>
+            </div>
+            <h2 className="mb-4">Current Openings</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {openings.map((role, index) => (
+              <motion.div
+                key={role.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className="bg-cream rounded-2xl p-7 shadow-sm hover:shadow-xl transition-shadow border border-transparent hover:border-gold/40"
+              >
+                <span className="inline-block text-[11px] font-semibold text-gold uppercase tracking-wider bg-gold/10 rounded-full px-3 py-1 mb-4">
+                  {role.department}
+                </span>
+                <h3 className="text-lg mb-2">{role.title}</h3>
+                <p className="text-sm text-gray-500 mb-4">{role.location} &middot; {role.type}</p>
+                <a
+                  href="#apply-now"
+                  className="text-sm font-semibold text-gold hover:text-gold-dark transition-colors"
+                >
+                  Apply for this role →
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Application form */}
+      <section id="apply-now" className="py-20 lg:py-32 bg-white scroll-mt-24">
         <div className="container-padding mx-auto max-w-2xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

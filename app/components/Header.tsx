@@ -18,9 +18,9 @@ const LINKS: [string, string][] = [
 ];
 
 const BRAND_LINKS: [string, string][] = [
-  ["SHASHI", "/brands?brand=shashi"],
-  ["SAVAAL", "/brands?brand=savaal"],
-  ["SHASHI+", "/brands?brand=shashi-plus"],
+  ["SHASHI", "/brands/shashi"],
+  ["SAVAAL", "/brands/savaal"],
+  ["SHASHI+", "/brands/shashi-plus"],
 ];
 
 export function Header() {

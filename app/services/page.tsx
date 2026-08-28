@@ -97,9 +97,6 @@ export default function ServicesPage() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="inline-block px-4 py-2 bg-gold/20 rounded-full mb-6">
-              <span className="text-sm text-gold tracking-wider uppercase">Our Services</span>
-            </div>
             <h1 className="text-white mb-6">
               Tailored Solutions for
               <br />

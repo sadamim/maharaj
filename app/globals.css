@@ -103,7 +103,7 @@ p {
 .kicker,
 .section-title>span,
 .review-area header>span {
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: .2em;
   font-weight: 800;
   color: #2f6081
@@ -308,7 +308,7 @@ p {
 
 .section-title h2,
 .review-area h2 {
-  font-size: clamp(40px, 5vw, 61px);
+  font-size: clamp(40px, 5vw, 42px);
   line-height: 1.05;
   letter-spacing: -.04em;
   font-weight: 750
@@ -375,7 +375,7 @@ p {
 }
 
 .why-grid p {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.7;
   color: #6e6874;
   margin-top: 11px
@@ -666,7 +666,7 @@ p {
   }
 
   .hero-layout p {
-    font-size: 14px
+    font-size: 16px
   }
 
   .hero-pack {
@@ -1685,9 +1685,9 @@ main>.pt-24 {
 }
 
 .contact-info-card>div:first-child {
-  background: linear-gradient(145deg, #d5e6f3, #dce9f5) !important;
-  border-radius: 50% !important;
-  box-shadow: 0 10px 22px rgba(89, 16, 21, .24) !important
+  background: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important
 }
 
 .contact-info-card h4 {
@@ -1894,7 +1894,7 @@ main>.pt-24 {
   content: "OUR HERITAGE";
   display: block;
   color: #24485e;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: .2em;
   margin-bottom: 16px
@@ -1907,7 +1907,7 @@ main>.pt-24 {
 }
 
 .about-story-copy p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.8;
   color: #5f5961
 }
@@ -1941,7 +1941,7 @@ main>.pt-24 {
 .mission-vision-heading>span {
   display: block;
   color: #24485e;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 850;
   letter-spacing: .2em;
   text-transform: uppercase;
@@ -2038,7 +2038,7 @@ main>.pt-24 {
 .mission-vision-cards p {
   position: relative;
   margin: 0 !important;
-  font-size: 15px !important;
+  font-size: 16px !important;
   line-height: 1.78 !important;
   text-align: justify !important
 }
@@ -2103,8 +2103,8 @@ main>.pt-24 {
   overflow: hidden;
   border: 1px solid #24485e12;
   border-radius: 8px !important;
-  min-height: 330px;
-  padding: 38px 34px 34px !important;
+  min-height: 260px;
+  padding: 30px 34px 30px !important;
   box-shadow: 0 14px 32px rgba(89, 16, 21, .08) !important;
   transition: transform .32s ease, box-shadow .32s ease, border-color .32s ease !important
 }
@@ -2153,9 +2153,9 @@ main>.pt-24 {
 }
 
 .about-value-icon {
-  width: 118px !important;
-  height: 118px !important;
-  margin: 0 auto 22px !important;
+  width: 64px !important;
+  height: 64px !important;
+  margin: 0 auto 10px !important;
   border-radius: 0 !important;
   background: transparent !important;
   color: #24485e !important;
@@ -2181,8 +2181,8 @@ main>.pt-24 {
 
 .about-value-icon>svg:not(.about-value-gradient-def) {
   display: block !important;
-  width: 72px !important;
-  height: 72px !important;
+  width: 40px !important;
+  height: 40px !important;
   margin: auto !important;
   stroke-width: 1.55
 }
@@ -2195,16 +2195,20 @@ main>.pt-24 {
   line-height: 1.25;
   font-weight: 850;
   text-align: center;
-  margin-bottom: 18px !important
+  margin-bottom: 10px !important
 }
 
 .about-value-card p {
   position: relative;
   z-index: 1;
-  font-size: 14px !important;
+  font-size: 16px !important;
   line-height: 1.8;
   text-align: justify !important;
-  color: #615a5d !important
+  color: #615a5d !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden
 }
 
 .chairman-section {
@@ -2254,14 +2258,14 @@ main>.pt-24 {
   content: "FROM THE CHAIRMAN";
   display: block;
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: 9px;
+  font-size: 14px;
   letter-spacing: .2em;
   margin-bottom: 15px;
   color: #8a2830
 }
 
 .chairman-message>div p {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.75;
   color: #5f5961
 }
@@ -2639,7 +2643,7 @@ main>.pt-24 {
 .home-about-intro span {
   display: block;
   color: #24485e;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 850;
   letter-spacing: .2em;
   margin-bottom: 16px
@@ -2647,7 +2651,7 @@ main>.pt-24 {
 
 .home-about-intro h2 {
   color: #24485e;
-  font-size: clamp(38px, 4.5vw, 58px);
+  font-size: 42px;
   line-height: 1.05;
   letter-spacing: -.04em;
   font-weight: 800
@@ -2663,7 +2667,7 @@ main>.pt-24 {
 
 .home-about-intro p {
   color: #5f5961;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.82;
   margin: 0 0 16px;
   text-align: justify
@@ -3293,8 +3297,8 @@ main>.pt-24 {
 }
 
 .milestone-heading:before {
-  content: "OUR MILESTONES";
-  font-size: 10px;
+  content: "OUR JOURNEY";
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: .22em;
   color: #24485e;
@@ -3391,7 +3395,7 @@ main>.pt-24 {
 .milestone-content p {
   text-align: left;
   color: #68616a;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.7
 }
 
@@ -3626,4 +3630,165 @@ footer.bg-deep-maroon .white-logo {
 .review-area .review-card blockquote,
 .review-area .review-card b {
   color: var(--brand-accent-ink) !important
+}
+
+.blogs-area {
+    margin-top: 120px;
+}
+
+.blogs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.blog-card {
+    background: #f5f2eb;
+    overflow: hidden;
+}
+
+.blog-image {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.blog-image img {
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.05);
+}
+
+.blog-content {
+    padding: 28px;
+}
+
+.blog-category {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.blog-content h3 {
+    margin: 12px 0;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.blog-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+.blog-content a {
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .blogs-area {
+        margin-top: 80px;
+    }
+
+    .blogs-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .blog-image {
+        height: 240px;
+    }
+}
+
+/* Quality Assurance horseshoe process flow — plain custom classes,
+   not Tailwind's sm:hidden/sm:grid, because a stale frozen Tailwind
+   snapshot bundled in index.css wins the cascade for those utilities. */
+.horseshoe-mobile {
+  display: flex;
+}
+
+.horseshoe-desktop {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .horseshoe-mobile {
+    display: none;
+  }
+
+  .horseshoe-desktop {
+    display: grid;
+  }
+}
+
+.font-serif-quote {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+}
+
+.brand-tiles-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .brand-tiles-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Footer readability safeguards (see the ".text-white"/bare "a" rules
+   above) force dark ink on anything inside footer.bg-deep-maroon — correct
+   for text sitting on the footer's own light pastel background, but wrong
+   for these specific elements which sit on their own dark charcoal chip.
+   Scope a higher-specificity override to just them. */
+footer.bg-deep-maroon a.footer-text-white,
+footer.bg-deep-maroon button.footer-text-white,
+footer.bg-deep-maroon .footer-text-white {
+  color: #fff !important;
+}
+
+footer.bg-deep-maroon a.social-circle:hover svg {
+  color: #fff !important;
+}
+
+/* Footer: gradient across the top half, fading into the flat footer
+   base color by the vertical midpoint. */
+footer.footer-half-gradient {
+  background: linear-gradient(180deg, #a7c5db 0%, #dce9f5 50%, #dce9f5 100%) !important;
+}
+
+/* Blog article layout: content column + sidebar. Written as plain CSS
+   (rather than an arbitrary-value Tailwind grid utility) because new
+   bracket-syntax utilities aren't reliably picked up by this project's
+   dev CSS pipeline. */
+.blog-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .blog-layout {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    column-gap: 4rem;
+    row-gap: 0;
+  }
+
+  .blog-sidebar {
+    position: sticky;
+    top: 7rem;
+    max-height: calc(100vh - 9rem);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    padding-bottom: 1.5rem;
+  }
 }

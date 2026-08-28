@@ -30,11 +30,9 @@ export default function QualityAssurancePage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="inline-block px-4 py-2 bg-gold/20 rounded-full mb-6">
-              <span className="text-sm text-white tracking-wider uppercase">
-                {qualityAssurance.heroSubheading}
-              </span>
-            </div>
+            <span className="block text-sm text-white/80 tracking-wider uppercase mb-4">
+              {qualityAssurance.heroSubheading}
+            </span>
             <h1 className="text-white mb-6">{qualityAssurance.heroHeading}</h1>
           </motion.div>
         </div>
@@ -73,8 +71,8 @@ export default function QualityAssurancePage() {
                   transition={{ delay: index * 0.1 }}
                   className="group flex flex-col items-center text-center bg-cream rounded-2xl p-7 shadow-sm hover:shadow-xl transition-shadow border border-transparent hover:border-gold/40"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-gold to-earth rounded-xl flex items-center justify-center shadow-md transition-transform group-hover:scale-110 mb-4">
-                    <Icon className="w-7 h-7 text-white" />
+                  <div className="flex items-center justify-center mb-4 transition-transform group-hover:scale-110">
+                    <Icon className="w-10 h-10 text-gold" />
                   </div>
                   <span className="text-xs font-bold text-gold tracking-wider mb-1">0{index + 1}</span>
                   <h3 className="text-xl mb-2">{pillar.title}</h3>
@@ -87,39 +85,40 @@ export default function QualityAssurancePage() {
       </section>
 
       {/* Process flow */}
-      <section className="py-20 lg:py-32 bg-deep-maroon">
-        <div className="container-padding mx-auto">
+      <section className="relative py-24 lg:py-32 bg-deep-maroon overflow-hidden">
+        <div
+          className="pointer-events-none absolute -left-36 -top-36 w-[420px] h-[420px] rounded-full border border-white/25"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute -right-28 -bottom-28 w-[320px] h-[320px] rounded-full border border-white/20"
+          aria-hidden="true"
+        />
+
+        <div className="container-padding mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mx-auto mb-16"
           >
+            <span className="block h-1 w-14 bg-charcoal rounded-full mx-auto mb-6" />
+            <p className="text-sm font-bold text-charcoal uppercase tracking-[0.25em] mb-3 text-center">
+              Our Process
+            </p>
             <h2 className="mb-4">Quality Commitment</h2>
             <p className="max-w-2xl mx-auto text-gray-700 text-center">{qualityAssurance.commitment}</p>
           </motion.div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-2">
-            {qualityAssurance.process.map((step, index) => (
-              <div key={step} className="flex items-center gap-3 md:gap-2">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-2xl px-6 py-5 shadow-md text-center min-w-[140px]"
-                >
-                  <span className="block text-xs text-gold uppercase tracking-wider mb-1">
-                    0{index + 1}
-                  </span>
-                  <span className="font-semibold text-charcoal">{step}</span>
-                </motion.div>
-                {index < qualityAssurance.process.length - 1 && (
-                  <span className="text-2xl text-charcoal/40 hidden md:block">→</span>
-                )}
-              </div>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="bg-white/60 backdrop-blur-sm rounded-3xl border border-white/70 shadow-xl max-w-3xl mx-auto px-6 py-12 sm:px-10"
+          >
+            <HorseshoeFlow steps={qualityAssurance.process} />
+          </motion.div>
         </div>
       </section>
 
@@ -157,5 +156,101 @@ export default function QualityAssurancePage() {
         </div>
       </section>
     </div>
+  );
+}
+
+function FlowArrow({ direction }: { direction: 'right' | 'down' | 'left' }) {
+  const rotation = direction === 'right' ? 0 : direction === 'down' ? 90 : 180;
+  return (
+    <div className="flex items-center justify-center w-10 h-10">
+      <svg
+        viewBox="0 0 32 16"
+        className="w-8 h-4 text-charcoal/45"
+        style={{ transform: `rotate(${rotation}deg)` }}
+        fill="none"
+      >
+        <path
+          d="M0 8 H26 M26 8 L18 2 M26 8 L18 14"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  );
+}
+
+function FlowBox({ label, delay }: { label: string; delay: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay }}
+      className="bg-white rounded-2xl px-6 py-5 shadow-md text-center min-w-[150px] sm:min-w-[160px]"
+    >
+      <span className="font-semibold text-charcoal">{label}</span>
+    </motion.div>
+  );
+}
+
+/**
+ * Renders the 5-step process as a horseshoe/serpentine flow on sm+ screens
+ * (right, down, down, left) and as a simple vertical stack on mobile.
+ */
+function HorseshoeFlow({ steps }: { steps: readonly string[] }) {
+  const [s0, s1, s2, s3, s4] = steps;
+
+  return (
+    <>
+      {/* Mobile: simple vertical stack */}
+      <div className="horseshoe-mobile flex-col items-center gap-2">
+        {steps.map((step, index) => (
+          <div key={step} className="flex flex-col items-center gap-2">
+            <FlowBox label={step} delay={index * 0.08} />
+            {index < steps.length - 1 && <FlowArrow direction="down" />}
+          </div>
+        ))}
+      </div>
+
+      {/* sm+: horseshoe layout */}
+      <div
+        className="horseshoe-desktop mx-auto w-fit items-center justify-items-center gap-x-6 gap-y-2"
+        style={{ gridTemplateColumns: 'auto auto auto' }}
+      >
+        <div style={{ gridColumn: 1, gridRow: 1 }}>
+          <FlowBox label={s0} delay={0} />
+        </div>
+        <div style={{ gridColumn: 2, gridRow: 1 }}>
+          <FlowArrow direction="right" />
+        </div>
+        <div style={{ gridColumn: 3, gridRow: 1 }}>
+          <FlowBox label={s1} delay={0.1} />
+        </div>
+
+        <div style={{ gridColumn: 3, gridRow: 2 }}>
+          <FlowArrow direction="down" />
+        </div>
+
+        <div style={{ gridColumn: 3, gridRow: 3 }}>
+          <FlowBox label={s2} delay={0.2} />
+        </div>
+
+        <div style={{ gridColumn: 3, gridRow: 4 }}>
+          <FlowArrow direction="down" />
+        </div>
+
+        <div style={{ gridColumn: 1, gridRow: 5 }}>
+          <FlowBox label={s4} delay={0.4} />
+        </div>
+        <div style={{ gridColumn: 2, gridRow: 5 }}>
+          <FlowArrow direction="left" />
+        </div>
+        <div style={{ gridColumn: 3, gridRow: 5 }}>
+          <FlowBox label={s3} delay={0.3} />
+        </div>
+      </div>
+    </>
   );
 }

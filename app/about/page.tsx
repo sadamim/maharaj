@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Award, HandHeart, Lightbulb, ShieldCheck, Sparkles, Users } from 'lucide-react';
+import { Award, Eye, HandHeart, Lightbulb, ShieldCheck, Sparkles, Target, Users } from 'lucide-react';
 import Image from 'next/image';
 import { chairmanMessage, mission, values, vision } from '../content/msipl';
 
@@ -55,9 +55,6 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="inline-block px-4 py-2 bg-gold/20 rounded-full mb-6">
-              <span className="text-sm text-white tracking-wider uppercase">About Us</span>
-            </div>
             <h1 className="text-white mb-6">
               25 Years of Excellence
               <br />
@@ -113,51 +110,25 @@ export default function AboutPage() {
               className="about-collage relative"
             >
               <div className="grid grid-cols-2 gap-4">
-                {/* LEFT COLUMN */}
-                <div className="space-y-4">
-                  <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl">
-                    <Image
-                      src="/images/about1.webp"
-                      alt="MSIPL manufacturing"
-                      fill
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                      className="object-cover"
-                      priority
-                    />
-                  </div>
-
-                  <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-                    <Image
-                      src="/images/about2.webp"
-                      alt="MSIPL products"
-                      fill
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                      className="object-cover"
-                    />
-                  </div>
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+                  <Image
+                    src="/images/about1.webp"
+                    alt="MSIPL manufacturing"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover"
+                    priority
+                  />
                 </div>
 
-                {/* RIGHT COLUMN */}
-                <div className="space-y-4 pt-12">
-                  <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-                    <Image
-                      src="/images/about3.webp"
-                      alt="MSIPL production line"
-                      fill
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                      className="object-cover"
-                    />
-                  </div>
-
-                  <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl">
-                    <Image
-                      src="/images/about4.webp"
-                      alt="MSIPL quality"
-                      fill
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                      className="object-cover"
-                    />
-                  </div>
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl mt-12">
+                  <Image
+                    src="/images/about3.webp"
+                    alt="MSIPL production line"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </motion.div>
@@ -166,36 +137,63 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="container-padding mx-auto">
+      <section className="relative py-24 lg:py-32 bg-deep-maroon overflow-hidden">
+        <div
+          className="pointer-events-none absolute -right-40 -top-40 w-[480px] h-[480px] rounded-full border border-white/30"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute -left-32 -bottom-32 w-[360px] h-[360px] rounded-full border border-white/20"
+          aria-hidden="true"
+        />
+
+        <div className="container-padding mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mx-auto mb-16"
           >
-            <div className="inline-block px-4 py-2 bg-gold/10 rounded-full mb-4">
-              <span className="text-sm text-gold tracking-wider uppercase">Purpose &amp; Direction</span>
-            </div>
+            <span className="block h-1 w-14 bg-charcoal rounded-full mx-auto mb-6" />
+            <p className="text-sm font-bold text-charcoal uppercase tracking-[0.25em] mb-3 text-center">
+              Purpose &amp; Direction
+            </p>
             <h2>Our Vision &amp; Mission</h2>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto text-center"
-          >
-            <div className="border border-gold/30 rounded-2xl p-8 shadow-sm">
-              <h3 className="text-xl font-semibold mb-4 text-charcoal">Our Mission</h3>
-              <p className="text-gray-700 leading-relaxed text-center">{mission}</p>
-            </div>
-            <div className="border border-gold/30 rounded-2xl p-8 shadow-sm">
-              <h3 className="text-xl font-semibold mb-4 text-charcoal">Our Vision</h3>
-              <p className="text-gray-700 leading-relaxed text-center">“{vision}”</p>
-            </div>
-          </motion.div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white rounded-3xl shadow-xl p-10 lg:p-12 flex flex-col"
+            >
+              <Target className="w-10 h-10 text-gold mb-6" />
+              <span className="text-xs font-bold text-gold uppercase tracking-widest mb-4">
+                01 &middot; Our Mission
+              </span>
+              <p className="font-serif-quote text-2xl lg:text-[28px] leading-snug text-charcoal">
+                {mission}
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="bg-white rounded-3xl shadow-xl p-10 lg:p-12 flex flex-col"
+            >
+              <Eye className="w-10 h-10 text-gold mb-6" />
+              <span className="text-xs font-bold text-gold uppercase tracking-widest mb-4">
+                02 &middot; Our Vision
+              </span>
+              <p className="font-serif-quote text-2xl lg:text-[28px] leading-snug text-charcoal">
+                &ldquo;{vision}&rdquo;
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
