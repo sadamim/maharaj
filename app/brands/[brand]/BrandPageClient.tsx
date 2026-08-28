@@ -4,12 +4,19 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
 import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
+import { EnquiryModal } from '../../components/EnquiryModal';
 import { productsByBrand, type BrandKey } from '../../content/products';
 import { brandTaglines } from '../../content/msipl';
 
 export type BrandMeta = { key: BrandKey; name: string; tagline: string; extra?: string };
 
 const ALL = 'All Segments';
+
+const brandBanners: Record<BrandKey, string> = {
+  shashi: '/Shashi Banner-1.webp',
+  savaal: '/Savaal_banner-1.webp',
+  'shashi-plus': '/images/productbanner.webp',
+};
 
 export function BrandPageClient({
   brand,
@@ -19,6 +26,7 @@ export function BrandPageClient({
   allBrands: BrandMeta[];
 }) {
   const [activeSegment, setActiveSegment] = useState(ALL);
+  const [enquiryProduct, setEnquiryProduct] = useState<string | null>(null);
 
   const products = useMemo(
     () => (brand.key === 'shashi-plus' ? [] : productsByBrand(brand.key)),
@@ -41,7 +49,7 @@ export function BrandPageClient({
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: `url('/images/productbanner.webp')`,
+              backgroundImage: `url('${brandBanners[brand.key]}')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
@@ -121,13 +129,15 @@ export function BrandPageClient({
             <div className="container-padding mx-auto">
               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
                 {filtered.map((product, index) => (
-                  <motion.div
+                  <motion.button
                     key={product.id}
+                    type="button"
+                    onClick={() => setEnquiryProduct(product.name)}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.04 }}
-                    className="bg-cream rounded overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-500"
+                    className="bg-cream rounded overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-500 text-left cursor-pointer"
                   >
                     <div className="relative aspect-square overflow-hidden bg-gray-100">
                       <ImageWithFallback
@@ -143,14 +153,11 @@ export function BrandPageClient({
                       <h3 className="text-base sm:text-lg mb-1 sm:mb-2 line-clamp-2">
                         {product.name}
                       </h3>
-                      <a
-                        href="/products"
-                        className="inline-flex items-center gap-1 text-sm font-semibold text-gold hover:text-gold-dark transition-colors"
-                      >
-                        View in Shop →
-                      </a>
+                      <span className="inline-flex items-center gap-1 text-xs font-semibold text-gold">
+                        Enquire Now →
+                      </span>
                     </div>
-                  </motion.div>
+                  </motion.button>
                 ))}
               </div>
 
@@ -163,6 +170,12 @@ export function BrandPageClient({
           </section>
         </>
       )}
+
+      <EnquiryModal
+        open={!!enquiryProduct}
+        onClose={() => setEnquiryProduct(null)}
+        productName={enquiryProduct ?? undefined}
+      />
     </div>
   );
 }

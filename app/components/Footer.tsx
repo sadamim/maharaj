@@ -35,10 +35,9 @@ export function Footer() {
   const footerLinks = {
     shop: [
       { name: 'Brand & Products', href: '/brands' },
-      { name: 'Shop Online', href: '/products' },
       { name: 'Quality Assurance', href: '/quality-assurance' },
       { name: 'Distributors', href: '/distributors' },
-      { name: 'News & Blogs', href: '/news' },
+      { name: 'Blogs', href: '/news' },
     ],
     company: [
       { name: 'Home', href: '/' },

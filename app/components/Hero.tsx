@@ -14,8 +14,8 @@ export function Hero() {
   const banners = [
     {
       id: 1,
-      desktop: "/images/web banner.webp",
-      mobile: "/images/mobile_banner.webp",
+      desktop: "/images/Mahraja_Banner_new.webp",
+      mobile: "/images/Maharaja_banner_mob_version.webp",
     },
     {
       id: 2,

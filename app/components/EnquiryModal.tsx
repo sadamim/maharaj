@@ -2,14 +2,18 @@
 
 import { motion } from "framer-motion";
 import { X, Send, MessageSquare, CheckCircle2 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function EnquiryModal({
   open,
   onClose,
+  productName,
 }: {
   open: boolean;
   onClose: () => void;
+  /** When set, the form is scoped to a specific product (name shown in the
+   *  header and pre-filled into the message field). */
+  productName?: string;
 }) {
   const [formData, setFormData] = useState({
     name: "",
@@ -19,6 +23,15 @@ export function EnquiryModal({
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      setFormData((prev) => ({
+        ...prev,
+        message: productName ? `I'm interested in ${productName}. Please share more details.` : prev.message,
+      }));
+    }
+  }, [open, productName]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -74,9 +87,11 @@ export function EnquiryModal({
                 <MessageSquare className="h-5 w-5 text-[#2f6081]" />
               </span>
               <div>
-                <h3 className="text-lg font-bold leading-tight text-[#24485e]">Quick Enquiry</h3>
+                <h3 className="text-lg font-bold leading-tight text-[#24485e]">
+                  {productName ? "Enquire About This Product" : "Quick Enquiry"}
+                </h3>
                 <p className="text-xs text-[#4b7690]">
-                  We&apos;d love to hear from you.
+                  {productName ? productName : "We’d love to hear from you."}
                 </p>
               </div>
             </div>

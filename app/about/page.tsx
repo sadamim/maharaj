@@ -41,7 +41,7 @@ export default function AboutPage() {
       <section className="relative py-20 lg:py-32 bg-deep-maroon overflow-hidden ">
         <div className="absolute inset-0">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url('/images/aboutbanner.webp')`,
+            backgroundImage: `url('/About us-banner-1.webp')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }} />
@@ -109,27 +109,15 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
               className="about-collage relative"
             >
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-                  <Image
-                    src="/images/about1.webp"
-                    alt="MSIPL manufacturing"
-                    fill
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-
-                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl mt-12">
-                  <Image
-                    src="/images/about3.webp"
-                    alt="MSIPL production line"
-                    fill
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                    className="object-cover"
-                  />
-                </div>
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/images/about1.webp"
+                  alt="MSIPL manufacturing"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 42vw"
+                  className="object-cover"
+                  priority
+                />
               </div>
             </motion.div>
           </div>
@@ -137,13 +125,13 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="relative py-24 lg:py-32 bg-deep-maroon overflow-hidden">
+      <section className="relative py-24 lg:py-32 vision-mission-section overflow-hidden">
         <div
-          className="pointer-events-none absolute -right-40 -top-40 w-[480px] h-[480px] rounded-full border border-white/30"
+          className="pointer-events-none absolute -right-40 -top-40 w-[480px] h-[480px] rounded-full border border-white/15"
           aria-hidden="true"
         />
         <div
-          className="pointer-events-none absolute -left-32 -bottom-32 w-[360px] h-[360px] rounded-full border border-white/20"
+          className="pointer-events-none absolute -left-32 -bottom-32 w-[360px] h-[360px] rounded-full border border-white/10"
           aria-hidden="true"
         />
 
@@ -154,42 +142,44 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mx-auto mb-16"
           >
-            <span className="block h-1 w-14 bg-charcoal rounded-full mx-auto mb-6" />
-            <p className="text-sm font-bold text-charcoal uppercase tracking-[0.25em] mb-3 text-center">
+            <span className="block h-1 w-14 bg-gold rounded-full mx-auto mb-6" />
+            <p className="text-sm font-bold text-gold uppercase tracking-[0.25em] mb-3 text-center">
               Purpose &amp; Direction
             </p>
-            <h2>Our Vision &amp; Mission</h2>
+            <h2 className="text-white">Our Vision &amp; Mission</h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="vision-mission-grid max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-3xl shadow-xl p-10 lg:p-12 flex flex-col"
+              className="vision-mission-block"
             >
-              <Target className="w-10 h-10 text-gold mb-6" />
-              <span className="text-xs font-bold text-gold uppercase tracking-widest mb-4">
-                01 &middot; Our Mission
-              </span>
-              <p className="font-serif-quote text-2xl lg:text-[28px] leading-snug text-charcoal">
+              <div className="vision-mission-icon">
+                <Target />
+              </div>
+              <span className="vision-mission-label">01 &middot; Our Mission</span>
+              <p className="font-serif-quote vision-mission-text">
                 {mission}
               </p>
             </motion.div>
+
+            <div className="vision-mission-divider" aria-hidden="true" />
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="bg-white rounded-3xl shadow-xl p-10 lg:p-12 flex flex-col"
+              className="vision-mission-block"
             >
-              <Eye className="w-10 h-10 text-gold mb-6" />
-              <span className="text-xs font-bold text-gold uppercase tracking-widest mb-4">
-                02 &middot; Our Vision
-              </span>
-              <p className="font-serif-quote text-2xl lg:text-[28px] leading-snug text-charcoal">
+              <div className="vision-mission-icon">
+                <Eye />
+              </div>
+              <span className="vision-mission-label">02 &middot; Our Vision</span>
+              <p className="font-serif-quote vision-mission-text">
                 &ldquo;{vision}&rdquo;
               </p>
             </motion.div>

@@ -49,7 +49,7 @@ export default function CareerPage() {
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: `url('/images/Servicesbanner.webp')`,
+              backgroundImage: `url('/Careers-banner-1.webp')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}

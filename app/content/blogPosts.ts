@@ -23,8 +23,8 @@ export const blogPosts: BlogPost[] = [
     title: 'What Goes Into Making a Quality Detergent Powder?',
     metaDescription:
       'Discover what goes into a quality detergent powder—from surfactants and builders to enzymes, fragrance and quality testing—and how each element contributes to effective washing.',
-    image: '/images/SHASHI TRIPLE ACTION.webp',
-    imageAlt: 'Shashi Triple Action detergent powder pack',
+    image: '/Blog-1.webp',
+    imageAlt: 'What Goes Into Making a Quality Detergent Powder',
     blocks: [
       { type: 'heading', level: 2, text: 'What Makes a Detergent Powder a Quality Product?' },
       {
@@ -327,8 +327,8 @@ export const blogPosts: BlogPost[] = [
     title: 'What FMCG Brands Does MSIPL Group Own?',
     metaDescription:
       'Discover the FMCG brands owned by MSIPL Group, including Shashi and Savaal, and explore their range of detergent, washing powder and dishwash products.',
-    image: '/images/Mahraja_Banner_new.webp',
-    imageAlt: 'Maharaja Soaps Industry brand banner',
+    image: '/Blog-2.webp',
+    imageAlt: 'What FMCG Brands Does MSIPL Group Own',
     blocks: [
       { type: 'heading', level: 2, text: 'What FMCG Brands Does MSIPL Group Own?' },
       {
@@ -537,8 +537,8 @@ export const blogPosts: BlogPost[] = [
     title: 'How Does MSIPL Maintain Quality in Its FMCG Products?',
     metaDescription:
       'Discover how MSIPL approaches quality across its FMCG portfolio, from raw materials and formulation to manufacturing, quality checks, packaging and everyday product performance.',
-    image: '/images/factory page.webp',
-    imageAlt: 'Inside the MSIPL manufacturing facility',
+    image: '/Blog-3.webp',
+    imageAlt: 'How Does MSIPL Maintain Quality in Its FMCG Products',
     blocks: [
       { type: 'heading', level: 2, text: 'How Does MSIPL Maintain Quality in Its FMCG Products?' },
       {

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { ArrowLeft, ArrowRight, Award, Heart, Leaf, Sparkles, Star, X, ZoomIn } from "lucide-react";
+import { Award, Heart, Leaf, Quote, Sparkles, Star, X, ZoomIn } from "lucide-react";
 import { Hero } from "./components/Hero";
 import { Ingredients } from "./components/Ingredients";
 import { blogPosts } from "./content/blogPosts";
@@ -27,6 +27,16 @@ const reviews = [
 ];
 const gallery = ["g8.webp", "g12.webp", "g9.webp", "g13.webp", "g10.webp", "g15.webp"];
 
+function initials(name: string) {
+    return name
+        .split(" ")
+        .filter(Boolean)
+        .map((word) => word[0])
+        .join("")
+        .slice(0, 2)
+        .toUpperCase();
+}
+
 function ProductSection() {
     return (
         <section className="heritage-section product-area" data-reveal>
@@ -48,7 +58,7 @@ function ProductSection() {
                                 </span>
                                 <h3 className="mt-4 text-lg font-semibold text-[#2e1c18]">{title}</h3>
                                 <p className="mt-2 text-sm text-[#6d5b53]">{category}</p>
-                                <a href="/products" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#2f6081] transition-colors hover:text-[#1d3a4d]">
+                                <a href="/brands" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#2f6081] transition-colors hover:text-[#1d3a4d]">
                                     View Product <span aria-hidden="true">→</span>
                                 </a>
                             </div>
@@ -56,7 +66,7 @@ function ProductSection() {
                     ))}
                 </div>
                 <div className="mt-12 text-center ">
-                    <a href="/products" className="inline-flex items-center justify-center rounded-full bg-[#dce9f5] px-8 py-3 text-sm font-semibold text-[#24485e] transition hover:bg-[#c3daed]">
+                    <a href="/brands" className="inline-flex items-center justify-center rounded-full bg-[#dce9f5] px-8 py-3 text-sm font-semibold text-[#24485e] transition hover:bg-[#c3daed]">
                         View All Products
                     </a>
                 </div>
@@ -66,7 +76,6 @@ function ProductSection() {
 }
 
 export default function HomePage() {
-    const [review, setReview] = useState(0);
     const [light, setLight] = useState<string | null>(null);
 
     useEffect(() => {
@@ -82,11 +91,6 @@ export default function HomePage() {
 
         document.querySelectorAll("[data-reveal]").forEach((element) => observer.observe(element));
         return () => observer.disconnect();
-    }, []);
-
-    useEffect(() => {
-        const timer = setInterval(() => setReview((current) => (current + 1) % reviews.length), 7000);
-        return () => clearInterval(timer);
     }, []);
 
     return <>
@@ -119,27 +123,36 @@ export default function HomePage() {
         </section>
         <Ingredients />
         {/* <ProductSection /> */}
-        <section className="review-area" data-reveal>
+        <section className="testimonial-section" data-reveal>
             <div className="heritage-shell">
-                <header>
+                <header className="section-title center">
                     <span>WHAT OUR CUSTOMERS SAY</span>
                     <h2>Loved in homes, across generations.</h2>
-                    <div className="stars">{[1, 2, 3, 4, 5].map((x) => <Star key={x} />)}</div>
+                    <p>Real experiences from families and businesses who trust Maharaja every day.</p>
                 </header>
-                <article className="review-card">
-                    <blockquote>“{reviews[review][0]}”</blockquote>
-                    <footer>
-                        <div>
-                            <b>{reviews[review][1]}</b>
-                            <small>{reviews[review][2]}</small>
-                        </div>
-                        <nav>
-                            <button onClick={() => setReview((review + reviews.length - 1) % reviews.length)}><ArrowLeft /></button>
-                            <span>{review + 1}/{reviews.length}</span>
-                            <button onClick={() => setReview((review + 1) % reviews.length)}><ArrowRight /></button>
-                        </nav>
-                    </footer>
-                </article>
+
+                <div className="testimonial-summary">
+                    <div className="stars">{[1, 2, 3, 4, 5].map((x) => <Star key={x} />)}</div>
+                    <span>5.0 rating &middot; {reviews.length}+ verified stories</span>
+                </div>
+            </div>
+
+            <div className="testimonial-marquee">
+                <div className="testimonial-track">
+                    {[...reviews, ...reviews].map(([quote, name, role], i) => (
+                        <article className="testimonial-tile" key={i}>
+                            <Quote className="testimonial-tile-icon" aria-hidden="true" />
+                            <blockquote>{quote}</blockquote>
+                            <div className="testimonial-person">
+                                <div className="testimonial-avatar">{initials(name)}</div>
+                                <div>
+                                    <b>{name}</b>
+                                    <small>{role}</small>
+                                </div>
+                            </div>
+                        </article>
+                    ))}
+                </div>
             </div>
         </section>
  

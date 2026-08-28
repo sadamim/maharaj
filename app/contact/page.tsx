@@ -74,7 +74,7 @@ export default function ContactPage() {
        <section className="contact-hero relative py-20 lg:py-32 bg-deep-maroon overflow-hidden ">
         <div className="absolute inset-0">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url('/images/contact_us.webp')`,
+            backgroundImage: `url('/Contact us-banner-1.webp')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }} />

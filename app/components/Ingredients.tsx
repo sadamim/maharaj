@@ -143,21 +143,9 @@ export function Ingredients() {
   return (
     <section
       id="ingredients"
-      className="py-20 lg:py-32 bg-gradient-to-b from-cream to-white"
+      className="py-20 lg:py-32 bg-white"
     >
       <div className="container-padding mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16 mx-auto"
-        >
-          <h2 className="mb-6">Premium Home-Care Essentials</h2>
-         
-        </motion.div>
-
         <h2 className="brand-divider">SHASHI</h2>
         <SliderRow data={ingredients} />
 
@@ -174,7 +162,7 @@ export function Ingredients() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-center mt-16 home-about-intro"
         >
-         <Link href="/products">
+         <Link href="/brands">
               <span>View All Products</span>
             </Link>
         </motion.div>

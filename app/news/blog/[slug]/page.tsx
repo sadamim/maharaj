@@ -96,7 +96,7 @@ export default async function BlogPostPage({
   const toc = getTableOfContents(post);
 
   return (
-    <div className="pt-24 min-h-screen">
+    <div className="pt-24 min-h-screen blog-post-page">
       {/* Hero */}
       <section className="relative py-20 lg:py-28 bg-deep-maroon overflow-hidden">
         <div className="absolute inset-0">
@@ -202,7 +202,7 @@ export default async function BlogPostPage({
                   Browse the full Shashi and Savaal range of detergents, dishwash and home-care essentials.
                 </p>
                 <Link
-                  href="/products"
+                  href="/brands"
                   className="inline-flex items-center gap-1 text-sm font-semibold bg-white/10 hover:bg-white/20 rounded-full px-4 py-2 transition-colors"
                 >
                   View Products →

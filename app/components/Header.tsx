@@ -11,8 +11,7 @@ const LINKS: [string, string][] = [
   ["Products", "/brands"],
   ["Quality Assurance", "/quality-assurance"],
   ["Distributors", "/distributors"],
-  ["Shop Online", "/products"],
-  ["News & Blogs", "/news"],
+  ["Blogs", "/news"],
   ["Career", "/career"],
   ["Contact", "/contact"],
 ];

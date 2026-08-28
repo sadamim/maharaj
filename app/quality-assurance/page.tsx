@@ -15,7 +15,7 @@ export default function QualityAssurancePage() {
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: `url('/images/factory page.webp')`,
+              backgroundImage: `url('/Quality Assurance-banner-1.webp')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
@@ -31,9 +31,9 @@ export default function QualityAssurancePage() {
             className="max-w-4xl mx-auto text-center"
           >
             <span className="block text-sm text-white/80 tracking-wider uppercase mb-4">
-              {qualityAssurance.heroSubheading}
+              {/* {qualityAssurance.heroSubheading} */}
             </span>
-            <h1 className="text-white mb-6">{qualityAssurance.heroHeading}</h1>
+            {/* <h1 className="text-white mb-6">{qualityAssurance.heroHeading}</h1> */}
           </motion.div>
         </div>
       </section>
@@ -47,12 +47,9 @@ export default function QualityAssurancePage() {
             viewport={{ once: true }}
             className="text-center mx-auto mb-16 flex flex-col items-center"
           >
-            <div className="inline-block px-4 py-2 bg-gold/10 rounded-full mb-4">
-              <span className="text-sm text-gold tracking-wider uppercase">
-                MSIPL Quality Assurance &amp; Commitment
-              </span>
-            </div>
-            <h2 className="mb-4">Every Product, Rigorously Verified</h2>
+                        <h1 className="text-gold mb-6" style={{ fontSize: '3.5rem' }}>{qualityAssurance.heroHeading}</h1>
+
+            
             <p className="text-gray-600 leading-relaxed max-w-2xl text-center">
               Four pillars guide every batch that leaves our production floor before it reaches
               an Indian household.
@@ -72,11 +69,11 @@ export default function QualityAssurancePage() {
                   className="group flex flex-col items-center text-center bg-cream rounded-2xl p-7 shadow-sm hover:shadow-xl transition-shadow border border-transparent hover:border-gold/40"
                 >
                   <div className="flex items-center justify-center mb-4 transition-transform group-hover:scale-110">
-                    <Icon className="w-10 h-10 text-gold" />
+                    <Icon className="w-20 h-20 text-gold m-2" />
                   </div>
-                  <span className="text-xs font-bold text-gold tracking-wider mb-1">0{index + 1}</span>
+                  {/* <span className="text-xs font-bold text-gold tracking-wider mb-1">0{index + 1}</span> */}
                   <h3 className="text-xl mb-2">{pillar.title}</h3>
-                  <p className="text-gray-600 leading-relaxed text-center">{pillar.description}</p>
+                  <p className="text-gray-600 leading-relaxed text-center text-sm">{pillar.description}</p>
                 </motion.div>
               );
             })}
