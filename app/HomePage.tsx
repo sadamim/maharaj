@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Award, Heart, Leaf, Quote, Sparkles, Star, X, ZoomIn } from "lucide-react";
 import { Hero } from "./components/Hero";
 import { Ingredients } from "./components/Ingredients";
@@ -78,6 +78,32 @@ function ProductSection() {
 
 export default function HomePage() {
     const [light, setLight] = useState<string | null>(null);
+    const [whySlide, setWhySlide] = useState(0);
+    const whyGridRef = useRef<HTMLDivElement | null>(null);
+
+    const scrollToWhySlide = (index: number) => {
+        const el = whyGridRef.current;
+        if (!el) return;
+        el.scrollTo({ left: index * el.clientWidth, behavior: "smooth" });
+    };
+
+    useEffect(() => {
+        const el = whyGridRef.current;
+        if (!el) return;
+        let frame = 0;
+        const onScroll = () => {
+            cancelAnimationFrame(frame);
+            frame = requestAnimationFrame(() => {
+                const index = Math.round(el.scrollLeft / Math.max(el.clientWidth, 1));
+                setWhySlide(index);
+            });
+        };
+        el.addEventListener("scroll", onScroll, { passive: true });
+        return () => {
+            el.removeEventListener("scroll", onScroll);
+            cancelAnimationFrame(frame);
+        };
+    }, []);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -103,7 +129,7 @@ export default function HomePage() {
                     <h2>Care in every bar. Trust in every home.</h2>
                     <p>Rooted in Karnataka and raised on family values, we make products that work hard while staying gentle.</p>
                 </header>
-                <div className="why-grid">
+                <div className="why-grid" ref={whyGridRef}>
                     {features.map(([Icon, title, description], index) => (
                         <article key={String(title)}>
                             <div className="why-icon">
@@ -118,6 +144,17 @@ export default function HomePage() {
                             <h3>{title as string}</h3>
                             <p>{description as string}</p>
                         </article>
+                    ))}
+                </div>
+                <div className="why-slider-dots">
+                    {features.map(([, title], index) => (
+                        <button
+                            key={String(title)}
+                            type="button"
+                            aria-label={`Show ${String(title)}`}
+                            className={index === whySlide ? "active" : ""}
+                            onClick={() => scrollToWhySlide(index)}
+                        />
                     ))}
                 </div>
             </div>
@@ -193,7 +230,7 @@ export default function HomePage() {
         <div className="blogs-area">
             <header className="section-title">
                 <span>FROM MAHARAJA</span>
-                <h2>Stories from our journey.</h2>
+                <h2>Blogs from our journey.</h2>
             </header>
 
             <div className="blogs-grid">
@@ -220,7 +257,7 @@ export default function HomePage() {
                             <p>{blog.description}</p>
 
                             <span className="blog-read-more">
-                                Read Story →
+                                Read More →
                             </span>
                         </div>
 

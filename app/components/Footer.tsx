@@ -42,10 +42,10 @@ export function Footer() {
     <footer className="site-footer bg-charcoal text-white pt-20 pb-8">
       <div className="container-padding footer-inner mx-auto">
         {/* Main Footer Content */}
-        <div className="footer-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="footer-grid grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
 
           {/* Logo + contact */}
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -134,7 +134,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <h4 className="footer-heading">Quick Enquiry</h4>
             <form className="space-y-3">
               <input className="w-full px-3 py-2 rounded bg-white/10 text-white text-sm" placeholder="Your Name" />

@@ -15,7 +15,7 @@ export function Hero() {
     {
       id: 1,
       desktop: "/images/Mahraja_Banner_new.webp",
-      mobile: "/images/Maharaja_banner_mob_version.webp",
+      mobile: "/Maharaja_mob_banner.webp",
     },
     {
       id: 2,
