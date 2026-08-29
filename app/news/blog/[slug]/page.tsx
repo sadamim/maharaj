@@ -112,9 +112,6 @@ export default async function BlogPostPage({
         </div>
         <div className="container-padding mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block text-xs font-semibold text-gold uppercase tracking-wider bg-white/10 rounded-full px-4 py-1.5 mb-6">
-              Blog &bull; {getReadingTime(post)} min read
-            </span>
             <h1 className="text-white mb-4">{post.title}</h1>
             <p className="text-white/75 text-lg">{post.metaDescription}</p>
           </div>
@@ -248,7 +245,7 @@ export default async function BlogPostPage({
                     />
                   </div>
                   <div className="p-8">
-                    <h3 className="text-xl mb-3 group-hover:text-gold transition-colors">
+                    <h3 className="text-xl mb-3">
                       {p.title}
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed line-clamp-2">

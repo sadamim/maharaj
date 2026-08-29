@@ -134,7 +134,7 @@ export default function ContactPage() {
       {/* Contact Form & Map */}
       <section className="contact-main-section py-20 lg:py-32 bg-white">
         <div className="container-padding mx-auto">
-          <div className="contact-main-grid grid lg:grid-cols-2 gap-16">
+          <div className="contact-main-grid grid lg:grid-cols-2 gap-16 items-stretch">
             {/* Form */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -269,16 +269,15 @@ export default function ContactPage() {
               <EnquiryModal open={showEnquiry} onClose={() => setShowEnquiry(false)} />
             </motion.div>
 
-            {/* Map & Additional Info */}
+            {/* Map */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="contact-side-panel space-y-8"
+              className="contact-side-panel"
             >
-              {/* Map */}
-              <div className="contact-map aspect-square lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-gray-200">
+              <div className="contact-map rounded-2xl overflow-hidden shadow-xl bg-gray-200 h-full min-h-[420px]">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3864.063950497897!2d75.930972!3d14.423477!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bba2533c6e96893%3A0x959d11254ad198b0!2sMaharaj%20Soaps%20Industry%20Private%20Limited.!5e0!3m2!1sen!2sin!4v1767094072547!5m2!1sen!2sin"
                   width="100%"
@@ -289,34 +288,39 @@ export default function ContactPage() {
                   title="Location Map"
                 />
               </div>
-
-              {/* FAQ */}
-              <div className="contact-answers bg-cream rounded-2xl p-8">
-                <h3 className="mb-6">Quick Answers</h3>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="text-sm mb-2">How long does shipping take?</h4>
-                    <p className="text-sm text-gray-600">
-                      Standard shipping takes 5-7 business days. Express options available.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-sm mb-2">Do you offer wholesale pricing?</h4>
-                    <p className="text-sm text-gray-600">
-                      Yes! Contact us for bulk order pricing and custom solutions.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-sm mb-2">Can I customize a soap?</h4>
-                    <p className="text-sm text-gray-600">
-                      Absolutely! We offer custom creation services for orders of 50+ bars.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
             </motion.div>
           </div>
+
+          {/* Quick Answers - below the form/map, one row of three columns */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="contact-quick-answers mt-16"
+          >
+            <h3 className="mb-8 text-center">Quick Answers</h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-cream rounded-2xl p-8">
+                <h4 className="text-sm mb-2">How long does shipping take?</h4>
+                <p className="text-sm text-gray-600">
+                  Standard shipping takes 5-7 business days. Express options available.
+                </p>
+              </div>
+              <div className="bg-cream rounded-2xl p-8">
+                <h4 className="text-sm mb-2">Do you offer wholesale pricing?</h4>
+                <p className="text-sm text-gray-600">
+                  Yes! Contact us for bulk order pricing and custom solutions.
+                </p>
+              </div>
+              <div className="bg-cream rounded-2xl p-8">
+                <h4 className="text-sm mb-2">Can I customize a soap?</h4>
+                <p className="text-sm text-gray-600">
+                  Absolutely! We offer custom creation services for orders of 50+ bars.
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

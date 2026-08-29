@@ -95,7 +95,7 @@ export default function AboutPage() {
                 <p className="text-justify-better">
                   With a strong market presence across the country, we have successfully diversified
                   our operations into key sectors including FMCG Manufacturing, E-commerce, Retail,
-                  Education, Logistics, and more — remaining committed to delivering quality, value,
+                  Education, Logistics, and more - remaining committed to delivering quality, value,
                   and innovation in everything we do.
                 </p>
               </div>
@@ -146,7 +146,7 @@ export default function AboutPage() {
             <p className="text-sm font-bold text-gold uppercase tracking-[0.25em] mb-3 text-center">
               Purpose &amp; Direction
             </p>
-            <h2 className="text-white">Our Vision &amp; Mission</h2>
+            <h2 className="text-white">Our Mission &amp; Vision</h2>
           </motion.div>
 
           <div className="vision-mission-grid max-w-5xl mx-auto">
@@ -245,7 +245,7 @@ export default function AboutPage() {
             </div>
             <h2 className="mb-6">What We Stand For</h2>
             <p className="text-gray-600 mb-10 text-center">
-              The cornerstone of our growth — the core values embedded in our organizational
+              The cornerstone of our growth - the core values embedded in our organizational
               culture that guide us in every endeavor.
             </p>
           </motion.div>
@@ -336,7 +336,7 @@ export default function AboutPage() {
                 </div>
 
                 <div className="mt-10">
-                  <p className="font-semibold mt-1">— {chairmanMessage.signatureName}</p>
+                  <p className="font-semibold mt-1">- {chairmanMessage.signatureName}</p>
                   <p className="text-gray-600">{chairmanMessage.signatureTitle}</p>
                 </div>
               </motion.section>

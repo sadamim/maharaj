@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Award, Heart, Leaf, Quote, Sparkles, Star, X, ZoomIn } from "lucide-react";
 import { Hero } from "./components/Hero";
@@ -20,7 +21,7 @@ const products = [
     ["SAVAAL", "Fabric care", "Gold Washing Powder", "/images/SAVAAL_GOLD_WASHING_POWDER.webp"], ["SAVAAL", "Dish care", "Oxydol Dishwash Gel", "/images/SAVAAL_OXYDOL_DISHWASH_GEL.webp"], ["SAVAAL", "Home care", "Captain Floor Cleaner", "/images/SAVAAL_CAPTAIN_FLOOR_CLEANER.webp"]];
 const reviews = [
     ["I started using Maharaj soaps after my kids developed skin sensitivity. Five years later, we still haven’t switched. The soaps feel gentle, smell natural, and give me peace of mind every day.", "Anita Sharma", "Homemaker, Bengaluru"],
-    ["After long workdays, I look for products that are simple and effective. Maharaj’s herbal soaps do exactly that — no harsh feel, no overpowering fragrance, just clean and refreshing.", "Rahul Verma", "Working Professional"],
+    ["After long workdays, I look for products that are simple and effective. Maharaj’s herbal soaps do exactly that - no harsh feel, no overpowering fragrance, just clean and refreshing.", "Rahul Verma", "Working Professional"],
     ["I’m very particular about what touches my skin. Maharaj soaps leave my skin feeling fresh and hydrated without dryness. It’s become a small but important part of my daily routine.", "Sneha Joshi", "Fitness Enthusiast"],
     ["We introduced Maharaj soaps across our hotel properties, and guests noticed the change immediately. The feedback has been genuinely positive, especially about fragrance and skin comfort.", "Arjun Patel", "Hospitality Business Owner"],
     ["From elders to kids, everyone at home uses Maharaj soap. It feels reassuring to use a product that’s affordable, reliable, and proudly made in India.", "Meena Kaur", "Mother & Homemaker"],
@@ -197,7 +198,7 @@ export default function HomePage() {
 
             <div className="blogs-grid">
                 {blogs.map((blog) => (
-                    <article className="blog-card" key={blog.id}>
+                    <Link href={blog.link} className="blog-card" key={blog.id}>
 
                         <div className="blog-image">
                             <Image
@@ -218,12 +219,12 @@ export default function HomePage() {
 
                             <p>{blog.description}</p>
 
-                            <a href={blog.link}>
+                            <span className="blog-read-more">
                                 Read Story →
-                            </a>
+                            </span>
                         </div>
 
-                    </article>
+                    </Link>
                 ))}
             </div>
         </div>

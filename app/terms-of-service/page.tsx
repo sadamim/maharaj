@@ -21,7 +21,7 @@ const sections = [
   },
   {
     title: '5. Intellectual Property',
-    body: 'All content on this website — including the MSIPL name, SHASHI and SAVAAL brand names, logos, images, and text — is the property of Maharaj Soaps Industry Private Limited and may not be used without permission.',
+    body: 'All content on this website - including the MSIPL name, SHASHI and SAVAAL brand names, logos, images, and text - is the property of Maharaj Soaps Industry Private Limited and may not be used without permission.',
   },
   {
     title: '6. Limitation of Liability',

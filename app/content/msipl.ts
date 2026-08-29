@@ -37,15 +37,15 @@ export const timeline = [
     year: "Today",
     title: "Expanded presence and diversified operations",
     description:
-      "An expanded operational presence across India, driven by innovation, quality assurance, and customer satisfaction — with diversification into FMCG Manufacturing, E-commerce, Retail, Education, Logistics, and more.",
+      "An expanded operational presence across India, driven by innovation, quality assurance, and customer satisfaction - with diversification into FMCG Manufacturing, E-commerce, Retail, Education, Logistics, and more.",
   },
 ];
 
 export const chairmanMessage = {
   paragraphs: [
-    "Maharaj Industries has come a long way since its inception in the year 2000. It gives me great pleasure to reflect on the journey and success we have achieved over the past decades. The cornerstone of our growth has been the unwavering commitment to our core values — Integrity, Respect, Teamwork, Motivation, Excellence, and Innovation. These values are deeply embedded in our organizational culture and guide us in every endeavor.",
+    "Maharaj Industries has come a long way since its inception in the year 2000. It gives me great pleasure to reflect on the journey and success we have achieved over the past decades. The cornerstone of our growth has been the unwavering commitment to our core values - Integrity, Respect, Teamwork, Motivation, Excellence, and Innovation. These values are deeply embedded in our organizational culture and guide us in every endeavor.",
     "Today, we are proud manufacturers of a diverse range of products under the renowned brand names SHASHI and SAVAAL. Our continued success is a testament to the quality and trust we have built over the years.",
-    "In alignment with the saying, “success breeds success”, the accomplishments of Maharaj Industries paved the way for the establishment of our new venture — Maharaj Soaps Industry Private Limited, launched in 2010. This company has added a new dimension to our business, enabling us to reach greater heights. We are among the pioneers in introducing the Pink Detergent Cake, which has become one of the best-selling detergent products in India.",
+    "In alignment with the saying, “success breeds success”, the accomplishments of Maharaj Industries paved the way for the establishment of our new venture - Maharaj Soaps Industry Private Limited, launched in 2010. This company has added a new dimension to our business, enabling us to reach greater heights. We are among the pioneers in introducing the Pink Detergent Cake, which has become one of the best-selling detergent products in India.",
     "With a strong market presence across the country, we have successfully diversified our operations into key sectors including FMCG Manufacturing, E-commerce, Retail, Education, Logistics, and more. As we continue to grow and evolve, we remain committed to delivering quality, value, and innovation in everything we do.",
   ],
   signatureName: "Dr. Raviraja M.E",
@@ -122,7 +122,7 @@ export const qualityAssurance = {
     },
   ],
   commitment:
-    "Our manufacturing protocols strictly adhere to rigorous internal quality controls. At MSIPL, we do not merely satisfy industry benchmarks—we consistently strive to redefine corporate excellence.",
+    "Our manufacturing protocols strictly adhere to rigorous internal quality controls. At MSIPL, we do not merely satisfy industry benchmarks - we consistently strive to redefine corporate excellence.",
   process: ["Raw Material", "Production", "Batch Testing", "Quality Control", "Distribution"],
 };
 
@@ -142,7 +142,7 @@ export const distributorReasons = [
 ];
 
 // Real, existing MSIPL contact details (already live on the site's
-// Contact page and Footer) — reused so every page that references them
+// Contact page and Footer) - reused so every page that references them
 // stays consistent, none of it is invented.
 export const contact = {
   email: "customercare@msiplgroup.com",

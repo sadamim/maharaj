@@ -52,11 +52,11 @@ export function BrandStory() {
     For over two decades, Maharaj Soaps Industries Pvt. Ltd. has stood for pure,
     reliable, and effective home care solutions. Born in Davangere, India, our
     products are thoughtfully designed to bring freshness and hygiene to every
-    household — with quality you can trust and care you can feel.
+    household - with quality you can trust and care you can feel.
   </p>
 
   <p>
-    Our legacy is built on commitment — to purity, performance, and a brighter
+    Our legacy is built on commitment - to purity, performance, and a brighter
     everyday life. Every product reflects our dedication to responsible
     manufacturing, consistent quality, and the well-being of the families who
     rely on us.

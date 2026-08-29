@@ -93,7 +93,7 @@ export default function ContactPage() {
              Business Partnership
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
-              For bulk orders, wholesale pricing, private labeling, or custom manufacturing enquiries — our business team is ready to assist you.
+              For bulk orders, wholesale pricing, private labeling, or custom manufacturing enquiries - our business team is ready to assist you.
             </p>
           </motion.div>
         </div>

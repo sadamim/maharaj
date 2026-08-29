@@ -1,4 +1,4 @@
-// Real MSIPL product catalog (existing site data — not invented).
+// Real MSIPL product catalog (existing site data - not invented).
 // Shared by /products (Shop Online) and /brands (Brand & Products) so both
 // pages stay in sync with a single source of product data.
 

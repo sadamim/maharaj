@@ -16,7 +16,7 @@ const testimonials = [
     name: 'Rahul Verma',
     role: 'Working Professional',
     content:
-      'After long workdays, I look for products that are simple and effective. Maharaj’s herbal soaps do exactly that — no harsh feel, no overpowering fragrance, just clean and refreshing.',
+      'After long workdays, I look for products that are simple and effective. Maharaj’s herbal soaps do exactly that - no harsh feel, no overpowering fragrance, just clean and refreshing.',
     rating: 5,
   },
   {

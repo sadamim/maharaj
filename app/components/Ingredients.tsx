@@ -1,9 +1,8 @@
 "use client";
 
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import Link from "next/link";
-import { useEffect } from "react";
 
 /* ---------------- SHASHI ---------------- */
 const ingredients = [
@@ -84,37 +83,14 @@ type SliderRowProps = {
 };
 
 /* ---------------- SLIDER ROW ---------------- */
+/* Continuous CSS marquee (matches the testimonials marquee) instead of a
+   JS-driven framer-motion animation — avoids the hover glitch where
+   stopping/restarting the transform mid-flight clipped cards against the
+   track's overflow:hidden edge. */
 const SliderRow = ({ data, reverse = false }: SliderRowProps) => {
-  const controls = useAnimation();
-
-  useEffect(() => {
-    controls.start({
-      x: reverse ? ["0%", "-50%"] : ["-50%", "0%"],
-      transition: {
-        duration: 35,
-        repeat: Infinity,
-        ease: "linear",
-      },
-    });
-  }, [controls, reverse]);
-
   return (
-    <div className="ingredients-slider overflow-hidden">
-      <motion.div
-        className="ingredients-track flex"
-        animate={controls}
-        onHoverStart={() => controls.stop()}
-        onHoverEnd={() =>
-          controls.start({
-            x: reverse ? ["0%", "-50%"] : ["-50%", "0%"],
-            transition: {
-              duration: 35,
-              repeat: Infinity,
-              ease: "linear",
-            },
-          })
-        }
-      >
+    <div className="ingredients-slider">
+      <div className={`ingredients-track${reverse ? " reverse" : ""}`}>
         {[...data, ...data].map((item, index) => (
           <div className="ingredient-card" key={index}>
             {/* Image */}
@@ -134,7 +110,7 @@ const SliderRow = ({ data, reverse = false }: SliderRowProps) => {
             </div>
           </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };

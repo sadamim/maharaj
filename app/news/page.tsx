@@ -22,11 +22,6 @@ export default function NewsPage() {
           <div className="absolute inset-0 bg-black opacity-60" />
         </div>
 
-        
-      </section>
-
-      {/* Blog posts */}
-      <section className="py-20 lg:py-32 bg-cream">
         <div className="container-padding mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -37,12 +32,16 @@ export default function NewsPage() {
             <span className="inline-block text-xs font-semibold text-gold uppercase tracking-wider bg-white/10 rounded-full px-4 py-1.5 mb-6">
               Blog
             </span>
-            <h1 className="text-gold text-lg mb-4">Stories from MSIPL</h1>
-            <p className="text-gold/75 text-sm mb-20">
+            <h1 className="text-white mb-4">Stories from MSIPL</h1>
+            <p className="text-white/75 text-lg">
               Insights on quality, ingredients and everyday home care from the MSIPL team.
             </p>
           </motion.div>
         </div>
+      </section>
+
+      {/* Blog posts */}
+      <section className="py-20 lg:py-32 bg-cream">
         <div className="container-padding mx-auto">
           {/* Featured post */}
           {blogPosts[0] && (
@@ -70,7 +69,7 @@ export default function NewsPage() {
                   <span className="inline-flex items-center gap-2 text-[11px] font-semibold text-gold uppercase tracking-wider bg-gold/10 rounded-full px-3 py-1 mb-5 w-fit">
                     Featured &bull; Blog
                   </span>
-                  <h3 className="text-2xl lg:text-3xl mb-4 group-hover:text-gold transition-colors">
+                  <h3 className="text-2xl lg:text-3xl mb-4">
                     {blogPosts[0].title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-6">
@@ -114,7 +113,7 @@ export default function NewsPage() {
                     <span className="inline-block text-[11px] font-semibold text-gold uppercase tracking-wider bg-gold/10 rounded-full px-3 py-1 mb-4">
                       Blog
                     </span>
-                    <h3 className="text-xl mb-3 group-hover:text-gold transition-colors">
+                    <h3 className="text-xl mb-3">
                       {post.title}
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">

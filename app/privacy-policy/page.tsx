@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const sections = [
   {
     title: '1. Information We Collect',
-    body: 'When you use our website — including our contact, enquiry, distributor, and career forms — we may collect information you provide directly, such as your name, email address, phone number, city, state, company name, and any message or resume you submit.',
+    body: 'When you use our website - including our contact, enquiry, distributor, and career forms - we may collect information you provide directly, such as your name, email address, phone number, city, state, company name, and any message or resume you submit.',
   },
   {
     title: '2. How We Use Your Information',

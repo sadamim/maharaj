@@ -57,13 +57,13 @@ export function BrandPageClient({
           <div className="absolute inset-0 bg-black opacity-50" />
         </div>
 
-        <div className="container-padding mx-auto relative z-10">
+        <div className="container-padding relative z-10 w-full">
           <motion.div
             key={brand.key}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-xl text-left"
           >
             <h1 className="text-white mb-4">{brand.name}</h1>
             <p className="text-white/85 text-lg">{brand.tagline}</p>
@@ -97,7 +97,7 @@ export function BrandPageClient({
             <div className="max-w-xl mx-auto text-center bg-cream rounded-3xl border-2 border-dashed border-gray-200 py-20 px-8">
               <p className="text-2xl text-gray-400 mb-3 text-center">SHASHI+ product lineup launching soon.</p>
               <p className="text-sm text-gray-400 text-center">
-                {brandTaglines.shashiPlusExtra} — full product listings will appear here once
+                {brandTaglines.shashiPlusExtra} - full product listings will appear here once
                 available.
               </p>
             </div>

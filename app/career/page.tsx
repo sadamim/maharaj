@@ -98,7 +98,7 @@ export default function CareerPage() {
                 >
                   <Icon className="w-8 h-8 text-gold mb-4" />
                   <h3 className="text-xl mb-3">{value.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">“{value.quote}”</p>
+                  <p className="text-gray-600 leading-relaxed" style={{ fontSize: '1.05rem' }}>“{value.quote}”</p>
                 </motion.div>
               );
             })}
@@ -107,7 +107,7 @@ export default function CareerPage() {
       </section>
 
       {/* Current Openings */}
-      <section className="py-20 lg:py-32 bg-white">
+      <section className="pt-20 lg:pt-32 pb-8 lg:pb-12 bg-white">
         <div className="container-padding mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -149,7 +149,7 @@ export default function CareerPage() {
       </section>
 
       {/* Application form */}
-      <section id="apply-now" className="py-20 lg:py-32 bg-white scroll-mt-24">
+      <section id="apply-now" className="pt-6 lg:pt-10 pb-20 lg:pb-32 bg-white scroll-mt-24">
         <div className="container-padding mx-auto max-w-2xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -159,7 +159,7 @@ export default function CareerPage() {
           >
             <h2 className="mb-4">Apply Now</h2>
             <p className="text-gray-600 text-center">
-              No specific openings are listed at this time — submit your details and we&rsquo;ll
+              No specific openings are listed at this time - submit your details and we&rsquo;ll
               reach out when a suitable role is available.
             </p>
           </motion.div>

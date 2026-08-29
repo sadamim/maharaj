@@ -61,7 +61,7 @@ export default function DistributorsPage() {
       </section>
 
       {/* Reasons */}
-      <section className="py-20 lg:py-32 bg-cream">
+      <section className="pt-20 lg:pt-32 pb-8 lg:pb-12 bg-cream">
         <div className="container-padding mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -75,24 +75,6 @@ export default function DistributorsPage() {
               Six reasons distributors across India choose to grow their business with us.
             </p>
           </motion.div>
-
-           <div className="container-padding mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <span className="inline-block text-xs font-semibold text-gold uppercase tracking-wider bg-white/10 rounded-full px-4 py-1.5 mb-6">
-              Distributors
-            </span>
-            {/* <h1 className="text-gold mb-4 text-sm">Partner With MSIPL</h1> */}
-            <p className="text-white/75 text-lg">
-              Join a growing network of distributors carrying trusted, high-demand brands
-              into homes across India.
-            </p>
-          </motion.div>
-        </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {distributorReasons.map((reason, index) => {
@@ -140,14 +122,14 @@ export default function DistributorsPage() {
 ===================================================== */}
 <section
   id="become-a-distributor"
-  className="relative py-20 lg:py-32 bg-cream scroll-mt-24 overflow-hidden"
+  className="relative pt-6 lg:pt-10 pb-20 lg:pb-32 bg-cream scroll-mt-24 overflow-hidden"
 >
   <div className="container-padding mx-auto">
 
     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
       {/* =================================================
-          LEFT — DISTRIBUTOR OPPORTUNITY
+          LEFT - DISTRIBUTOR OPPORTUNITY
       ================================================= */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
@@ -249,7 +231,7 @@ export default function DistributorsPage() {
 
 
       {/* =================================================
-          RIGHT — FORM
+          RIGHT - FORM
       ================================================= */}
       <motion.div
         initial={{ opacity: 0, x: 30 }}

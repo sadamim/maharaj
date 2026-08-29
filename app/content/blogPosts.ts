@@ -22,7 +22,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'what-goes-into-making-a-quality-detergent-powder',
     title: 'What Goes Into Making a Quality Detergent Powder?',
     metaDescription:
-      'Discover what goes into a quality detergent powder—from surfactants and builders to enzymes, fragrance and quality testing—and how each element contributes to effective washing.',
+      'Discover what goes into a quality detergent powder - from surfactants and builders to enzymes, fragrance and quality testing - and how each element contributes to effective washing.',
     image: '/Blog-1.webp',
     imageAlt: 'What Goes Into Making a Quality Detergent Powder',
     blocks: [
@@ -55,7 +55,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'Modern detergent powders can therefore contain many different components, each serving a specific purpose. Scientific literature describes detergent formulations as combinations of surfactants, builders, bleaching systems and auxiliary additives, with manufacturing processes designed around the properties of these materials. The result should be a powder that performs consistently—not only in the laboratory, but in everyday washing.',
+        text: 'Modern detergent powders can therefore contain many different components, each serving a specific purpose. Scientific literature describes detergent formulations as combinations of surfactants, builders, bleaching systems and auxiliary additives, with manufacturing processes designed around the properties of these materials. The result should be a powder that performs consistently - not only in the laboratory, but in everyday washing.',
       },
 
       { type: 'heading', level: 2, text: 'What Ingredients Go Into Detergent Powder?' },
@@ -122,15 +122,15 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'list',
         items: [
-          'Protease — Helps break down protein-based soils such as those found in certain food residues and bodily soils.',
-          'Amylase — Targets starch-based soils.',
-          'Lipase — Helps break down fats and oils.',
-          'Cellulase — Can support the care and appearance of cotton fabrics by acting on certain fibre-surface characteristics.',
+          'Protease - Helps break down protein-based soils such as those found in certain food residues and bodily soils.',
+          'Amylase - Targets starch-based soils.',
+          'Lipase - Helps break down fats and oils.',
+          'Cellulase - Can support the care and appearance of cotton fabrics by acting on certain fibre-surface characteristics.',
         ],
       },
       {
         type: 'p',
-        text: 'Enzymes are particularly useful because they can work effectively at relatively low concentrations when appropriately formulated. But enzymes also require care. They are sensitive functional ingredients. Their activity can be affected by factors such as temperature, moisture and formulation conditions. For this reason, manufacturing processes need to account for when and how sensitive ingredients are incorporated into the final powder. This is another example of why quality is created through process—not simply through ingredients.',
+        text: 'Enzymes are particularly useful because they can work effectively at relatively low concentrations when appropriately formulated. But enzymes also require care. They are sensitive functional ingredients. Their activity can be affected by factors such as temperature, moisture and formulation conditions. For this reason, manufacturing processes need to account for when and how sensitive ingredients are incorporated into the final powder. This is another example of why quality is created through process - not simply through ingredients.',
       },
 
       { type: 'heading', level: 2, text: 'Anti-Redeposition Agents: Keeping Dirt Away' },
@@ -181,13 +181,13 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'list',
         items: [
-          'Raw Material Selection — The process begins with selecting raw materials that meet the required quality specifications. Consistency starts here. If the incoming raw materials vary significantly, the finished product can vary too.',
-          'Weighing and Batching — Ingredients are measured according to the approved formulation. Precision matters because detergent is a balanced system. Even relatively small changes in the formulation can influence the characteristics of the finished product.',
-          'Mixing or Slurry Preparation — Depending on the manufacturing method, selected ingredients are combined to form a slurry or dry blend. The objective is uniform distribution. Every part of the final powder should contain the appropriate balance of functional ingredients.',
-          "Drying or Granulation — In spray-drying processes, a detergent slurry can be processed into granules through controlled drying. Alternative processes can use dry blending, agglomeration or granulation. The chosen method affects the final powder's physical properties, including particle size, density and flowability.",
-          'Post-Addition of Sensitive Ingredients — Certain ingredients, including enzymes, fragrances and some optical brighteners, may be incorporated after high-temperature processing. This helps protect ingredients that can be sensitive to heat or other processing conditions.',
-          'Final Blending — The different components are blended to achieve a consistent finished powder. Uniformity matters. A consumer should not receive a different formulation simply because one scoop came from a different section of the pack.',
-          'Quality Control — The finished detergent is evaluated against defined quality parameters before packaging and distribution. Only after the product meets the required specifications should it move forward.',
+          'Raw Material Selection - The process begins with selecting raw materials that meet the required quality specifications. Consistency starts here. If the incoming raw materials vary significantly, the finished product can vary too.',
+          'Weighing and Batching - Ingredients are measured according to the approved formulation. Precision matters because detergent is a balanced system. Even relatively small changes in the formulation can influence the characteristics of the finished product.',
+          'Mixing or Slurry Preparation - Depending on the manufacturing method, selected ingredients are combined to form a slurry or dry blend. The objective is uniform distribution. Every part of the final powder should contain the appropriate balance of functional ingredients.',
+          "Drying or Granulation - In spray-drying processes, a detergent slurry can be processed into granules through controlled drying. Alternative processes can use dry blending, agglomeration or granulation. The chosen method affects the final powder's physical properties, including particle size, density and flowability.",
+          'Post-Addition of Sensitive Ingredients - Certain ingredients, including enzymes, fragrances and some optical brighteners, may be incorporated after high-temperature processing. This helps protect ingredients that can be sensitive to heat or other processing conditions.',
+          'Final Blending - The different components are blended to achieve a consistent finished powder. Uniformity matters. A consumer should not receive a different formulation simply because one scoop came from a different section of the pack.',
+          'Quality Control - The finished detergent is evaluated against defined quality parameters before packaging and distribution. Only after the product meets the required specifications should it move forward.',
         ],
       },
 
@@ -218,12 +218,12 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'list',
         items: [
-          'Consistent Raw Materials — The quality of the starting materials influences the final product.',
-          'Controlled Formulation — Ingredients must be added according to the approved formulation.',
-          'Controlled Processing — Mixing, temperature, drying and other production parameters need to remain within defined limits.',
-          'Uniform Distribution — Functional ingredients must be distributed evenly throughout the powder.',
-          'Quality Testing — Finished products need to be checked against defined specifications.',
-          "Proper Packaging — The product needs protection from moisture and other storage conditions that can affect powder quality.",
+          'Consistent Raw Materials - The quality of the starting materials influences the final product.',
+          'Controlled Formulation - Ingredients must be added according to the approved formulation.',
+          'Controlled Processing - Mixing, temperature, drying and other production parameters need to remain within defined limits.',
+          'Uniform Distribution - Functional ingredients must be distributed evenly throughout the powder.',
+          'Quality Testing - Finished products need to be checked against defined specifications.',
+          "Proper Packaging - The product needs protection from moisture and other storage conditions that can affect powder quality.",
         ],
       },
       { type: 'p', text: 'Together, these controls turn a formulation into a reliable consumer product.' },
@@ -374,18 +374,18 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'The variety within the Shashi portfolio is important. It shows that the brand is not limited to one detergent format. Instead, it covers multiple everyday cleaning occasions—from washing clothes to cleaning utensils.',
+        text: 'The variety within the Shashi portfolio is important. It shows that the brand is not limited to one detergent format. Instead, it covers multiple everyday cleaning occasions - from washing clothes to cleaning utensils.',
       },
 
       { type: 'heading', level: 2, text: 'What Products Does Shashi Offer?' },
       {
         type: 'list',
         items: [
-          'Shashi Pink M-Lore Detergent Cake — Positioned on the MSIPL website as a detergent cake designed for daily washing. Its product description highlights everyday dirt removal while helping keep clothes fresh and well maintained. For consumers who prefer a solid detergent format for handwashing, detergent cakes remain a familiar part of household laundry routines.',
-          'Shashi Pink Pouch — A compact detergent format intended for everyday use. Its smaller format provides a convenient way to purchase and use detergent powder without requiring a larger pack. MSIPL describes it as a compact detergent pouch designed around everyday cleaning performance.',
-          'Shashi Pink Bullet Set — Positioned for hand-wash cleaning and described by MSIPL as a product designed to tackle tough stains and grease while maintaining fabric quality and freshness. Its format gives the Shashi portfolio another option within the laundry-care category.',
-          'Shashi Arya Blue Detergent Cake — Positioned around deep cleaning and stubborn stain removal. Described on the MSIPL website as a detergent cake designed to remove stubborn stains while keeping clothes bright, giving Shashi a product positioned around more intensive cleaning needs.',
-          'Shashi Scouring Dishwash Powder — Shashi is not limited to laundry. This product is designed for utensil cleaning, intended to remove grease and food residue efficiently while leaving utensils clean and hygienic — making the Shashi portfolio broader than a traditional laundry-only brand.',
+          'Shashi Pink M-Lore Detergent Cake - Positioned on the MSIPL website as a detergent cake designed for daily washing. Its product description highlights everyday dirt removal while helping keep clothes fresh and well maintained. For consumers who prefer a solid detergent format for handwashing, detergent cakes remain a familiar part of household laundry routines.',
+          'Shashi Pink Pouch - A compact detergent format intended for everyday use. Its smaller format provides a convenient way to purchase and use detergent powder without requiring a larger pack. MSIPL describes it as a compact detergent pouch designed around everyday cleaning performance.',
+          'Shashi Pink Bullet Set - Positioned for hand-wash cleaning and described by MSIPL as a product designed to tackle tough stains and grease while maintaining fabric quality and freshness. Its format gives the Shashi portfolio another option within the laundry-care category.',
+          'Shashi Arya Blue Detergent Cake - Positioned around deep cleaning and stubborn stain removal. Described on the MSIPL website as a detergent cake designed to remove stubborn stains while keeping clothes bright, giving Shashi a product positioned around more intensive cleaning needs.',
+          'Shashi Scouring Dishwash Powder - Shashi is not limited to laundry. This product is designed for utensil cleaning, intended to remove grease and food residue efficiently while leaving utensils clean and hygienic - making the Shashi portfolio broader than a traditional laundry-only brand.',
         ],
       },
 
@@ -407,11 +407,11 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'list',
         items: [
-          'Savaal Gold Washing Powder — Positioned as a premium washing powder within the Savaal portfolio. MSIPL describes it as a washing powder designed for superior cleanliness and freshness, sitting within the washing-powder segment of the Savaal range.',
-          'Savaal 999 Washing Powder — Positioned around high-performance washing and tough stain removal. Described as a high-performance washing powder designed to address tough stains, and one of the key washing-powder products within the Savaal portfolio.',
-          'Savaal Blue Pouch — Provides a compact washing-powder format. MSIPL positions it as a compact and economical option for daily household use, designed around convenience and everyday accessibility.',
-          'Savaal White Pouch — Another washing-powder format within the Savaal portfolio, described as a white detergent pouch designed for everyday fabric care. Together, the Savaal pouch products extend the brand beyond larger washing-powder formats.',
-          'Savaal Max Blue Detergent Cake — A solid detergent format within the Savaal portfolio, positioned around powerful stain removal and designed for consumers who prefer detergent cakes for washing — giving Savaal representation across both powdered and solid detergent formats.',
+          'Savaal Gold Washing Powder - Positioned as a premium washing powder within the Savaal portfolio. MSIPL describes it as a washing powder designed for superior cleanliness and freshness, sitting within the washing-powder segment of the Savaal range.',
+          'Savaal 999 Washing Powder - Positioned around high-performance washing and tough stain removal. Described as a high-performance washing powder designed to address tough stains, and one of the key washing-powder products within the Savaal portfolio.',
+          'Savaal Blue Pouch - Provides a compact washing-powder format. MSIPL positions it as a compact and economical option for daily household use, designed around convenience and everyday accessibility.',
+          'Savaal White Pouch - Another washing-powder format within the Savaal portfolio, described as a white detergent pouch designed for everyday fabric care. Together, the Savaal pouch products extend the brand beyond larger washing-powder formats.',
+          'Savaal Max Blue Detergent Cake - A solid detergent format within the Savaal portfolio, positioned around powerful stain removal and designed for consumers who prefer detergent cakes for washing - giving Savaal representation across both powdered and solid detergent formats.',
         ],
       },
 
@@ -438,10 +438,10 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'list',
         items: [
-          'Different Product Positions — One brand can be positioned around one set of consumer expectations while another can occupy a different position.',
-          'Different Product Formats — Consumers do not all purchase cleaning products in the same format. Some prefer powders. Others prefer detergent cakes or smaller pouches. A broader brand portfolio can accommodate these different formats.',
-          'Different Household Needs — Laundry and dishwashing are related home-care categories, but the cleaning requirements are different. A portfolio can address both.',
-          "Wider Market Coverage — Multiple products and brands can give a manufacturer greater flexibility in reaching different segments of the FMCG market.",
+          'Different Product Positions - One brand can be positioned around one set of consumer expectations while another can occupy a different position.',
+          'Different Product Formats - Consumers do not all purchase cleaning products in the same format. Some prefer powders. Others prefer detergent cakes or smaller pouches. A broader brand portfolio can accommodate these different formats.',
+          'Different Household Needs - Laundry and dishwashing are related home-care categories, but the cleaning requirements are different. A portfolio can address both.',
+          "Wider Market Coverage - Multiple products and brands can give a manufacturer greater flexibility in reaching different segments of the FMCG market.",
         ],
       },
       { type: 'p', text: 'For MSIPL, the combination of Shashi and Savaal creates a portfolio across several everyday home-care categories.' },
@@ -451,11 +451,11 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'list',
         items: [
-          'Detergent Soaps — Solid detergent products designed for laundry cleaning.',
-          'Washing Powders — Powder detergents intended for household washing.',
-          'Liquid Detergents — Liquid-format cleaning products.',
-          'Dishwash Products — Products designed for cleaning utensils and kitchenware.',
-          'Phenyls — Home-care products intended for cleaning applications.',
+          'Detergent Soaps - Solid detergent products designed for laundry cleaning.',
+          'Washing Powders - Powder detergents intended for household washing.',
+          'Liquid Detergents - Liquid-format cleaning products.',
+          'Dishwash Products - Products designed for cleaning utensils and kitchenware.',
+          'Phenyls - Home-care products intended for cleaning applications.',
         ],
       },
       {
@@ -577,11 +577,11 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'list',
         items: [
-          'Raw Materials — The starting point of product quality.',
-          'Formulation — The combination and balance of ingredients.',
-          'Manufacturing — The process used to turn the formulation into a finished product.',
-          'Quality Control — The checks used to ensure the finished product meets defined requirements.',
-          'Packaging — The final layer that protects the product through storage, transportation and use.',
+          'Raw Materials - The starting point of product quality.',
+          'Formulation - The combination and balance of ingredients.',
+          'Manufacturing - The process used to turn the formulation into a finished product.',
+          'Quality Control - The checks used to ensure the finished product meets defined requirements.',
+          'Packaging - The final layer that protects the product through storage, transportation and use.',
         ],
       },
       { type: 'p', text: 'These stages are connected. If one stage is inconsistent, it can affect the final product.' },
@@ -649,11 +649,11 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'list',
         items: [
-          'Physical Characteristics — Appearance, colour, texture, density, viscosity or other product-specific characteristics.',
-          'Chemical Characteristics — Formulation-related parameters that help verify product consistency.',
-          'Performance — The product can be evaluated against relevant performance requirements.',
-          'Stability — The product needs to maintain appropriate characteristics during its intended storage period.',
-          'Packaging — The finished pack needs to protect the product and remain suitable for transportation and handling.',
+          'Physical Characteristics - Appearance, colour, texture, density, viscosity or other product-specific characteristics.',
+          'Chemical Characteristics - Formulation-related parameters that help verify product consistency.',
+          'Performance - The product can be evaluated against relevant performance requirements.',
+          'Stability - The product needs to maintain appropriate characteristics during its intended storage period.',
+          'Packaging - The finished pack needs to protect the product and remain suitable for transportation and handling.',
         ],
       },
       {
@@ -674,12 +674,12 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'list',
         items: [
-          'Cleaning Performance — The formulation needs to support removal of everyday soils.',
-          'Powder Characteristics — The powder needs to remain practical to handle, measure and use.',
-          "Fragrance — Where fragrance is part of the product experience, it needs to remain appropriate through the product's intended life.",
-          'Fabric Experience — The formulation needs to be designed for its intended washing application.',
-          'Storage Stability — The product should maintain suitable characteristics during storage.',
-          'Packaging Integrity — The pack should protect the powder through distribution and household storage.',
+          'Cleaning Performance - The formulation needs to support removal of everyday soils.',
+          'Powder Characteristics - The powder needs to remain practical to handle, measure and use.',
+          "Fragrance - Where fragrance is part of the product experience, it needs to remain appropriate through the product's intended life.",
+          'Fabric Experience - The formulation needs to be designed for its intended washing application.',
+          'Storage Stability - The product should maintain suitable characteristics during storage.',
+          'Packaging Integrity - The pack should protect the powder through distribution and household storage.',
         ],
       },
       { type: 'p', text: 'A quality detergent is therefore not defined by a single metric. It is the result of multiple elements working together.' },
@@ -796,7 +796,7 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       {
         q: 'How does MSIPL maintain quality in its FMCG products?',
-        a: "MSIPL's quality approach can be understood across the complete product lifecycle—from raw-material selection and formulation through manufacturing, quality control and packaging. The company manufactures home-care and hygiene products across several categories, including washing powders, detergent soaps, liquid detergents, dishwash products and phenyls. Maintaining consistency across such a portfolio requires product-specific formulation and manufacturing controls.",
+        a: "MSIPL's quality approach can be understood across the complete product lifecycle - from raw-material selection and formulation through manufacturing, quality control and packaging. The company manufactures home-care and hygiene products across several categories, including washing powders, detergent soaps, liquid detergents, dishwash products and phenyls. Maintaining consistency across such a portfolio requires product-specific formulation and manufacturing controls.",
       },
       {
         q: 'Does MSIPL manufacture its own FMCG products?',

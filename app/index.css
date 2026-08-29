@@ -2741,14 +2741,45 @@
 .ingredients-slider {
   overflow: hidden;
   position: relative;
+  padding: 24px 0;
 }
 
-/* Smooth track */
+/* Smooth track: continuous CSS marquee, duplicated content scrolls from
+   0 to -50% (or the reverse) and loops seamlessly. Paused on hover so
+   cards can be read without the row sliding under the cursor. */
 .ingredients-track {
   display: flex;
   width: max-content;
   gap: 1.5rem;
-  will-change: transform;
+  animation: ingredients-scroll-left 35s linear infinite;
+}
+
+.ingredients-track.reverse {
+  animation-name: ingredients-scroll-right;
+}
+
+.ingredients-slider:hover .ingredients-track {
+  animation-play-state: paused;
+}
+
+@keyframes ingredients-scroll-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes ingredients-scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* Card */
@@ -2758,12 +2789,12 @@
   border-radius: 1rem;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: box-shadow 0.35s ease;
 }
 
-/* Hover effect */
+/* Hover effect: shadow only (no lift) so it never gets clipped by the
+   slider's overflow:hidden edge. */
 .ingredient-card:hover {
-  transform: translateY(-6px);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
@@ -2784,8 +2815,8 @@
   display: inline-block;
   margin-bottom: 0.5rem;
   padding: 0.25rem 0.75rem;
-  background: rgba(212, 175, 55, 0.12); /* gold */
-  color: #d4af37;
+  background: #dce9f5;
+  color: #24485e;
   font-size: 0.7rem;
   border-radius: 9999px;
   text-transform: uppercase;
