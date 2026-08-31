@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Award, Heart, Leaf, Quote, Sparkles, Star, X, ZoomIn } from "lucide-react";
+import { ArrowLeft, ArrowRight, Award, Heart, Leaf, Quote, Sparkles, Star, X, ZoomIn } from "lucide-react";
 import { Hero } from "./components/Hero";
 import { Ingredients } from "./components/Ingredients";
 import { blogPosts } from "./content/blogPosts";
@@ -20,11 +20,11 @@ const products = [
     ["SHASHI", "Fabric care", "Pink M-Lore Detergent Cake", "/images/SHASHI PIKK DEETERGENT CAKE.webp"], ["SHASHI", "Fabric care", "Arya Blue Detergent Cake", "/images/SHASHI ARYA BLUE.webp"], ["SHASHI", "Fabric care", "Triple Action Powder", "/images/SHASHI TRIPLE ACTION.webp"], ["SHASHI", "Bath care", "Papaya Beauty Soap", "/images/SHASHI PAPAYA BEAUTY SOAP (4PC JAR).webp"],
     ["SAVAAL", "Fabric care", "Gold Washing Powder", "/images/SAVAAL_GOLD_WASHING_POWDER.webp"], ["SAVAAL", "Dish care", "Oxydol Dishwash Gel", "/images/SAVAAL_OXYDOL_DISHWASH_GEL.webp"], ["SAVAAL", "Home care", "Captain Floor Cleaner", "/images/SAVAAL_CAPTAIN_FLOOR_CLEANER.webp"]];
 const reviews = [
-    ["I started using Maharaj soaps after my kids developed skin sensitivity. Five years later, we still haven’t switched. The soaps feel gentle, smell natural, and give me peace of mind every day.", "Anita Sharma", "Homemaker, Bengaluru"],
-    ["After long workdays, I look for products that are simple and effective. Maharaj’s herbal soaps do exactly that - no harsh feel, no overpowering fragrance, just clean and refreshing.", "Rahul Verma", "Working Professional"],
-    ["I’m very particular about what touches my skin. Maharaj soaps leave my skin feeling fresh and hydrated without dryness. It’s become a small but important part of my daily routine.", "Sneha Joshi", "Fitness Enthusiast"],
-    ["We introduced Maharaj soaps across our hotel properties, and guests noticed the change immediately. The feedback has been genuinely positive, especially about fragrance and skin comfort.", "Arjun Patel", "Hospitality Business Owner"],
-    ["From elders to kids, everyone at home uses Maharaj soap. It feels reassuring to use a product that’s affordable, reliable, and proudly made in India.", "Meena Kaur", "Mother & Homemaker"],
+    ["I started using Maharaj soaps after my kids developed skin sensitivity. Five years later, we still haven’t switched. The soaps feel gentle, smell natural, and give me peace of mind every day.", "Lakshmi Hegde", "Homemaker"],
+    ["After long workdays, I look for products that are simple and effective. Maharaj’s herbal soaps do exactly that - no harsh feel, no overpowering fragrance, just clean and refreshing.", "Venkata Ramana", "Working Professional"],
+    ["I’m very particular about what touches my skin. Maharaj soaps leave my skin feeling fresh and hydrated without dryness. It’s become a small but important part of my daily routine.", "Deepa Shetty", "Fitness Enthusiast"],
+    ["We introduced Maharaj soaps across our hotel properties, and guests noticed the change immediately. The feedback has been genuinely positive, especially about fragrance and skin comfort.", "Srinivasa Reddy", "Hospitality Business Owner"],
+    ["From elders to kids, everyone at home uses Maharaj soap. It feels reassuring to use a product that’s affordable, reliable, and proudly made in India.", "Manjula Gowda", "Mother & Homemaker"],
 ];
 const gallery = ["g8.webp", "g12.webp", "g9.webp", "g13.webp", "g10.webp", "g15.webp"];
 
@@ -146,16 +146,32 @@ export default function HomePage() {
                         </article>
                     ))}
                 </div>
-                <div className="why-slider-dots">
-                    {features.map(([, title], index) => (
-                        <button
-                            key={String(title)}
-                            type="button"
-                            aria-label={`Show ${String(title)}`}
-                            className={index === whySlide ? "active" : ""}
-                            onClick={() => scrollToWhySlide(index)}
-                        />
-                    ))}
+                <div className="why-slider-controls">
+                    <button
+                        type="button"
+                        aria-label="Previous"
+                        onClick={() => scrollToWhySlide(Math.max(whySlide - 1, 0))}
+                    >
+                        <ArrowLeft />
+                    </button>
+                    <div className="why-slider-dots">
+                        {features.map(([, title], index) => (
+                            <button
+                                key={String(title)}
+                                type="button"
+                                aria-label={`Show ${String(title)}`}
+                                className={index === whySlide ? "active" : ""}
+                                onClick={() => scrollToWhySlide(index)}
+                            />
+                        ))}
+                    </div>
+                    <button
+                        type="button"
+                        aria-label="Next"
+                        onClick={() => scrollToWhySlide(Math.min(whySlide + 1, features.length - 1))}
+                    >
+                        <ArrowRight />
+                    </button>
                 </div>
             </div>
         </section>

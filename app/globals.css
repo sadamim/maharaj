@@ -4170,19 +4170,51 @@ footer.footer-half-gradient {
   }
 }
 
-/* Dot navigation for the "Why Maharaja" mobile slider - hidden on desktop
-   where the four cards already show side by side in a grid. */
-.why-slider-dots {
+/* Arrow + dot navigation for the "Why Maharaja" mobile slider - hidden on
+   desktop where the four cards already show side by side in a grid. */
+.why-slider-controls {
   display: none;
 }
 
 @media (max-width: 760px) {
+  .why-slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 20px;
+  }
+
+  .why-slider-controls>button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(36, 72, 94, 0.2);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #24485e;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background .2s ease, color .2s ease;
+  }
+
+  .why-slider-controls>button:hover {
+    background: #24485e;
+    color: #fff;
+  }
+
+  .why-slider-controls>button svg {
+    width: 18px;
+    height: 18px;
+  }
+
   .why-slider-dots {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px;
   }
 
   .why-slider-dots button {
