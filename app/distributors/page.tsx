@@ -136,7 +136,6 @@ export default function DistributorsPage() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="lg:sticky lg:top-32"
       >
         <span className="section-kicker">
           Become A Partner

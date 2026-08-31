@@ -67,7 +67,7 @@ export default function AboutPage() {
       {/* Our Story */}
       <section className="about-story-section py-20 lg:py-32 bg-cream">
         <div className="container-padding mx-auto">
-          <div className="about-story-grid grid lg:grid-cols-2 gap-16 items-center">
+          <div className="about-story-grid grid lg:grid-cols-2 gap-16 items-stretch">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -107,9 +107,9 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="about-collage relative"
+              className="about-collage relative h-full"
             >
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+              <div className="relative h-full min-h-[360px] rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/images/about1.webp"
                   alt="MSIPL manufacturing"
@@ -217,7 +217,6 @@ export default function AboutPage() {
                     <div className="milestone-year">
                       <span>{milestone.year}</span>
                     </div>
-                    <span className="milestone-index">0{index + 1}</span>
                     <h4>{milestone.title}</h4>
                     <p style={{ textAlign: 'center' }}>{milestone.description}</p>
                   </div>

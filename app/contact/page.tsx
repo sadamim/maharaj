@@ -111,13 +111,10 @@ export default function ContactPage() {
                 transition={{ delay: index * 0.1 }}
                 className="contact-info-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow group"
               >
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="flex items-center justify-center mb-4"
-                >
-                  <info.icon className="w-9 h-9 text-gold" />
-                </motion.div>
-                <h4 className="mb-3 group-hover:text-gold transition-colors">{info.title}</h4>
+                <div className="contact-info-icon">
+                  <info.icon />
+                </div>
+                <h4 className="mb-3">{info.title}</h4>
                 <div className="space-y-1">
                   {info.details.map((detail, i) => (
                     <p key={i} className="text-sm text-gray-600">

@@ -57,14 +57,18 @@ export default function CareerPage() {
           <div className="absolute inset-0 bg-black opacity-50" />
         </div>
 
-        <div className="container-padding mx-auto relative z-10">
+        <div className="container-padding relative z-10 w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-xl ml-auto text-right"
           >
-            <h1 className="text-white mb-6">Build Your Career at MSIPL</h1>
+            <h1 className="text-white mb-6" style={{ fontSize: 'clamp(32px, 4vw, 48px)' }}>
+              Build Your Career
+              <br />
+              at MSIPL
+            </h1>
           </motion.div>
         </div>
       </section>

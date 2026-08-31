@@ -22,22 +22,16 @@ export default function NewsPage() {
           <div className="absolute inset-0 bg-black opacity-60" />
         </div>
 
-        <div className="container-padding mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <span className="inline-block text-xs font-semibold text-gold uppercase tracking-wider bg-white/10 rounded-full px-4 py-1.5 mb-6">
-              Blog
-            </span>
-            <h1 className="text-white mb-4">Stories from MSIPL</h1>
-            <p className="text-white/75 text-lg">
-              Insights on quality, ingredients and everyday home care from the MSIPL team.
-            </p>
-          </motion.div>
-        </div>
+        {/* Kept off-screen (not visually shown on the banner) so the page
+            still has a real h1 for accessibility/SEO. */}
+        <h1
+          style={{
+            position: 'absolute', width: 1, height: 1, padding: 0, margin: -1,
+            overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', border: 0,
+          }}
+        >
+          Stories from MSIPL
+        </h1>
       </section>
 
       {/* Blog posts */}

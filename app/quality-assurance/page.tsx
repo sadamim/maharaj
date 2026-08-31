@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { FlaskConical, Factory, UsersRound, TrendingUp, ShieldCheck, FileCheck2 } from 'lucide-react';
+import { FlaskConical, Factory, UsersRound, TrendingUp, ShieldCheck, FileCheck2, Package, Truck, type LucideIcon } from 'lucide-react';
 import { qualityAssurance } from '../content/msipl';
 
 const pillarIcons = [FlaskConical, Factory, UsersRound, TrendingUp];
@@ -82,13 +82,13 @@ export default function QualityAssurancePage() {
       </section>
 
       {/* Process flow */}
-      <section className="relative py-24 lg:py-32 bg-deep-maroon overflow-hidden">
+      <section className="relative py-24 lg:py-32 bg-charcoal overflow-hidden">
         <div
-          className="pointer-events-none absolute -left-36 -top-36 w-[420px] h-[420px] rounded-full border border-white/25"
+          className="pointer-events-none absolute -left-36 -top-36 w-[420px] h-[420px] rounded-full border border-white/15"
           aria-hidden="true"
         />
         <div
-          className="pointer-events-none absolute -right-28 -bottom-28 w-[320px] h-[320px] rounded-full border border-white/20"
+          className="pointer-events-none absolute -right-28 -bottom-28 w-[320px] h-[320px] rounded-full border border-white/10"
           aria-hidden="true"
         />
 
@@ -99,12 +99,12 @@ export default function QualityAssurancePage() {
             viewport={{ once: true }}
             className="text-center mx-auto mb-16"
           >
-            <span className="block h-1 w-14 bg-charcoal rounded-full mx-auto mb-6" />
-            <p className="text-sm font-bold text-charcoal uppercase tracking-[0.25em] mb-3 text-center">
+            <span className="block h-1 w-14 bg-gold rounded-full mx-auto mb-6" />
+            <p className="text-sm font-bold text-gold uppercase tracking-[0.25em] mb-3 text-center">
               Our Process
             </p>
-            <h2 className="mb-4">Quality Commitment</h2>
-            <p className="max-w-2xl mx-auto text-gray-700 text-center">{qualityAssurance.commitment}</p>
+            <h2 className="mb-4 text-white">Quality Commitment</h2>
+            <p className="max-w-2xl mx-auto text-white/70 text-center">{qualityAssurance.commitment}</p>
           </motion.div>
 
           <motion.div
@@ -112,7 +112,7 @@ export default function QualityAssurancePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-white/60 backdrop-blur-sm rounded-3xl border border-white/70 shadow-xl max-w-3xl mx-auto px-6 py-12 sm:px-10"
+            className="bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 shadow-xl max-w-3xl mx-auto px-6 py-12 sm:px-10"
           >
             <HorseshoeFlow steps={qualityAssurance.process} />
           </motion.div>
@@ -162,8 +162,8 @@ function FlowArrow({ direction }: { direction: 'right' | 'down' | 'left' }) {
     <div className="flex items-center justify-center w-10 h-10">
       <svg
         viewBox="0 0 32 16"
-        className="w-8 h-4 text-charcoal/45"
-        style={{ transform: `rotate(${rotation}deg)` }}
+        className="w-8 h-4"
+        style={{ transform: `rotate(${rotation}deg)`, color: '#c9a86f' }}
         fill="none"
       >
         <path
@@ -178,15 +178,28 @@ function FlowArrow({ direction }: { direction: 'right' | 'down' | 'left' }) {
   );
 }
 
+const processIcons: Record<string, LucideIcon> = {
+  'Raw Material': Package,
+  'Production': Factory,
+  'Batch Testing': FlaskConical,
+  'Quality Control': ShieldCheck,
+  'Distribution': Truck,
+};
+
 function FlowBox({ label, delay }: { label: string; delay: number }) {
+  const Icon = processIcons[label] ?? Package;
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay }}
-      className="bg-white rounded-2xl px-6 py-5 shadow-md text-center min-w-[150px] sm:min-w-[160px]"
+      whileHover={{ y: -4 }}
+      className="flow-box flex flex-col items-center gap-3 bg-white rounded-2xl px-6 py-6 shadow-lg text-center min-w-[150px] sm:min-w-[160px]"
     >
+      <div className="flow-box-icon">
+        <Icon />
+      </div>
       <span className="font-semibold text-charcoal">{label}</span>
     </motion.div>
   );
