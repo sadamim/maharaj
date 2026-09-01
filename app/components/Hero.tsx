@@ -95,7 +95,11 @@ export function Hero() {
       {/* ================= HERO BANNER SLIDER ================= */}
       <section className="hero-banner relative overflow-hidden bg-charcoal">
         {/* SLIDE */}
-        <div key={current} className="absolute inset-0">
+        <div
+          key={current}
+          className="absolute inset-0"
+          style={banners[current].id === 1 ? { top: 50 } : undefined}
+        >
           <picture>
             {/* MOBILE IMAGE */}
             <source
