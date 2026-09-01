@@ -98,24 +98,15 @@ export default async function BlogPostPage({
   return (
     <div className="pt-24 min-h-screen blog-post-page">
       {/* Hero */}
-      <section className="relative py-20 lg:py-28 bg-deep-maroon overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src={post.image}
-            alt={post.imageAlt}
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/60" />
-        </div>
-        <div className="container-padding mx-auto relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-white mb-4">{post.title}</h1>
-            <p className="text-white/75 text-lg">{post.metaDescription}</p>
-          </div>
-        </div>
+      <section className="relative h-64 lg:h-96 bg-deep-maroon overflow-hidden">
+        <Image
+          src={post.image}
+          alt={post.imageAlt}
+          fill
+          sizes="100vw"
+          className="object-cover"
+          priority
+        />
       </section>
 
       {/* Body */}

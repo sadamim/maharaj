@@ -71,31 +71,12 @@ export default function ContactPage() {
       {/* Hero Section */}
      
 
-       <section className="contact-hero relative py-20 lg:py-32 bg-deep-maroon overflow-hidden ">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url('/Contact us-banner-1.webp')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }} />
-          <div className="absolute inset-0 bg-black opacity-50" />
-        </div>
-
-        <div className="container-padding mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <h1 className="text-white mb-6">
-              We'd Love to
-              <br />
-              Hear From You
-            </h1>
-           
-          </motion.div>
-        </div>
+       <section className="contact-hero relative h-64 lg:h-96 bg-deep-maroon overflow-hidden ">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url('/Contact us-banner-1.webp')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }} />
       </section>
 
       {/* Contact Info Cards */}

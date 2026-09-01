@@ -395,6 +395,17 @@ p {
   background: var(--brand-cream)
 }
 
+.product-area .view-all-products-cta {
+  margin-top: 24px;
+  margin-bottom: -55px
+}
+
+@media(max-width:768px) {
+  .product-area .view-all-products-cta {
+    margin-bottom: -40px
+  }
+}
+
 .brand-tabs {
   display: flex;
   justify-content: center;

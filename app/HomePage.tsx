@@ -66,7 +66,7 @@ function ProductSection() {
                         </article>
                     ))}
                 </div>
-                <div className="mt-12 text-center ">
+                <div className="mt-6 text-center view-all-products-cta">
                     <a href="/brands" className="inline-flex items-center justify-center rounded-full bg-[#dce9f5] px-8 py-3 text-sm font-semibold text-[#24485e] transition hover:bg-[#c3daed]">
                         View All Products
                     </a>
